@@ -46,7 +46,7 @@ export default function Home() {
 			</Head>
 			<h1 className="text-3xl font-bold underline">Sprigatito</h1>
 			<p>Under Construction</p>
-			<CatImage name={cat?.name} imageId={1} />
+			{cat && <CatImage name={cat.name} imageId={1} />}
 			<Button onClick={() => loadCat('Fearless')}>Fearless</Button>
 			<Button onClick={() => loadCat('Harvey')}>Harvey</Button>
 			<Button onClick={() => loadCat('Lalo')}>Lalo</Button>
