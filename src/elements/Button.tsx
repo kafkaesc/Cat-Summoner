@@ -5,7 +5,6 @@ interface ButtonProps {
 }
 
 export default function Button({ className, disabled, ...props }: ButtonProps) {
-	console.log('disabled: ', disabled);
 	return disabled ? (
 		className ? (
 			<button
