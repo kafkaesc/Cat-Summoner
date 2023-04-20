@@ -9,6 +9,7 @@ export default function Navbar() {
 					<NavItem aria-label="Home" href="/">
 						🐱
 					</NavItem>
+					<NavItem href="/Catbook">Catbook</NavItem>
 					<NavItem href="/About">About</NavItem>
 					<NavItem href="/FAQs">FAQs</NavItem>
 				</ul>
