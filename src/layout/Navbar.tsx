@@ -3,7 +3,7 @@ import NavItem from './NavItem';
 
 export default function Navbar() {
 	return (
-		<div className="text-center bg-cs-blue text-cs-white">
+		<div className="text-center bg-cs-primary text-cs-white">
 			<ContentColumn>
 				<ul>
 					<NavItem aria-label="Home" href="/">
