@@ -1,5 +1,8 @@
 import Head from 'next/head';
 
+import H1 from '@/elements/H1';
+import P from '@/elements/P';
+
 import Layout from '@/layout/Layout';
 
 export default function Catbook() {
@@ -8,10 +11,10 @@ export default function Catbook() {
 			<Head>
 				<title>Catbook 🐱 Sprigatito</title>
 			</Head>
-			<h1 className="text-3xl font-bold underline">Catbook</h1>
-			<p>
-				{`I said to him --"My dear Fortunato, you are luckily met. How remarkably well you are looking to-day. But I have received a pipe of what passes for Amontillado, and I have my doubts."`}
-			</p>
+			<H1>Catbook</H1>
+			<P>
+				{`I took from their sconces two flambeaux, and giving one to Fortunato, bowed him through several suites of rooms to the archway that led into the vaults. I passed down a long and winding staircase, requesting him to be cautious as he followed. We came at length to the foot of the descent, and stood together upon the damp ground of the catacombs of the Montresors.`}
+			</P>
 		</Layout>
 	);
 }

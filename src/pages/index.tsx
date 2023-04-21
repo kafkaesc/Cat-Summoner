@@ -2,10 +2,15 @@ import { useState } from 'react';
 
 import Head from 'next/head';
 
-import { ICat } from '@/interfaces/ICat';
 import Button from '@/elements/Button';
-import Layout from '@/layout/Layout';
+import H1 from '@/elements/H1';
+import H2 from '@/elements/H2';
+
 import CatImage from '@/components/CatImage';
+
+import Layout from '@/layout/Layout';
+
+import { ICat } from '@/interfaces/ICat';
 
 export default function Home() {
 	const [cat, setCat] = useState<ICat | null>({});
@@ -35,7 +40,8 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Layout>
-				<h1 className="text-3xl font-bold underline">Sprigatito</h1>
+				<H1>Sprigatito</H1>
+				<H2>Subhead</H2>
 				<Button onClick={() => loadCat('Fearless')}>Fearless</Button>
 				<Button onClick={() => loadCat('Harvey')}>Harvey</Button>
 				<Button onClick={() => loadCat('Lalo')}>Lalo</Button>
