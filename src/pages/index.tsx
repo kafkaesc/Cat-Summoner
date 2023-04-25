@@ -1,33 +1,18 @@
-import { useState } from 'react';
-
 import Head from 'next/head';
+import Image from 'next/image';
 
 import Button from '@/elements/Button';
 import H1 from '@/elements/H1';
 
-import CatImage from '@/components/CatImage';
-
 import Layout from '@/layout/Layout';
 
-import { ICat } from '@/interfaces/ICat';
+import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 
 export default function Home() {
-	const [cat, setCat] = useState<ICat | null>({});
+	const { imageDetails: catImage, setCat } = useCatImageDetails();
 
 	function loadCat(name: string) {
-		switch (name.toLowerCase()) {
-			case 'fearless':
-				setCat({ name: 'Fearless' });
-				break;
-			case 'harvey':
-				setCat({ name: 'Harvey' });
-				break;
-			case 'lalo':
-				setCat({ name: 'Lalo' });
-				break;
-			default:
-				break;
-		}
+		setCat(name, 1);
 	}
 
 	return (
@@ -49,7 +34,7 @@ export default function Home() {
 				<Button buttonStyle="secondary" onClick={() => loadCat('Lalo')}>
 					Lalo
 				</Button>
-				{cat && <CatImage name={cat.name} imageId={1} />}
+				{catImage && <Image {...catImage} alt={catImage.alt} />}
 			</Layout>
 		</>
 	);
