@@ -4,7 +4,6 @@ import Head from 'next/head';
 
 import Button from '@/elements/Button';
 import H1 from '@/elements/H1';
-import H2 from '@/elements/H2';
 
 import CatImage from '@/components/CatImage';
 
@@ -41,10 +40,15 @@ export default function Home() {
 			</Head>
 			<Layout>
 				<H1>Sprigatito</H1>
-				<H2>Subhead</H2>
-				<Button onClick={() => loadCat('Fearless')}>Fearless</Button>
-				<Button onClick={() => loadCat('Harvey')}>Harvey</Button>
-				<Button onClick={() => loadCat('Lalo')}>Lalo</Button>
+				<Button buttonStyle="secondary" onClick={() => loadCat('Fearless')}>
+					Fearless
+				</Button>
+				<Button buttonStyle="secondary" onClick={() => loadCat('Harvey')}>
+					Harvey
+				</Button>
+				<Button buttonStyle="secondary" onClick={() => loadCat('Lalo')}>
+					Lalo
+				</Button>
 				{cat && <CatImage name={cat.name} imageId={1} />}
 			</Layout>
 		</>
