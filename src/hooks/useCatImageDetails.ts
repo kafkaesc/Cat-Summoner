@@ -41,11 +41,24 @@ export function useCatImageDetails() {
 		return 'getAltText err';
 	}
 
-	function setCat(name: string, imageId: number | null) {
-		const id: number = imageId ? imageId : 1;
-		const idString: string = imageId ? '0' + imageId : '01';
+	function randomizeId(name: string) {
+		if (__imageDetails && __imageDetails.name.toLowerCase() === 'fearless') {
+			return 1;
+		}
+		if (__imageDetails && __imageDetails.name.toLowerCase() === 'harvey') {
+			return 1;
+		}
+		if (__imageDetails && __imageDetails.name.toLowerCase() === 'lalo') {
+			return Math.floor(Math.random() * (5 - 1) + 1);
+		}
+		return 1;
+	}
+
+	function setCat(name: string, imageId?: number | null) {
+		const id: number = imageId ? imageId : randomizeId(name);
+		const idString: string = '0' + id;
 		const alt: string = getAltText(name, id);
-		const src: string = `/assets/images/cats/${name.toLowerCase()}-01.jpg`;
+		const src: string = `/assets/images/cats/${name.toLowerCase()}-${idString}.jpg`;
 		const imageDetails: CatImageProps = {
 			alt: alt,
 			height: 500,
