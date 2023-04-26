@@ -18,28 +18,28 @@ export function useCatImageDetails() {
 	// Return alt tet for the image associated with the name and image ID.
 	function getAltText(name: string, imageId: number) {
 		if (name.toLowerCase() === 'fearless' && imageId === 1) {
-			return 'A black cat is sitting on a table with their two front legs covering a stack of cards. The logo is visible on the cards, revealing that the cat is interrupting a game of Exploding Kittens. The cat stares up into the camera with a deadpan expression, unconcerned with their interruption of the game.';
+			return 'A black cat sits on a table with their two front legs covering a stack of cards. The logo is visible on the cards, revealing that the cat is interrupting a game of Exploding Kittens. The cat stares up into the camera with a deadpan expression, unconcerned with their interruption of the game.';
 		}
 		if (name.toLowerCase() === 'harvey' && imageId === 1) {
 			return 'An orange cat sits on a gray bed sheet. They are sitting back, with their front legs facing forward and their back legs facing toward the camera. Their tail is wrapped around their back legs. Their ears are perked up and their eyes are squeezed near-shut in a pleasant expression.';
 		}
 		if (name.toLowerCase() === 'harvey' && imageId === 2) {
-			return 'TODO: Allan please add the alt text for this image.';
+			return 'An orange cat sits on the hood of an electric-blue car. They lean slightly toward the camera with a curious look on their face.';
 		}
 		if (name.toLowerCase() === 'harvey' && imageId === 3) {
 			return 'TODO: Allan please add the alt text for this image.';
 		}
 		if (name.toLowerCase() === 'harvey' && imageId === 4) {
-			return 'TODO: Allan please add the alt text for this image.';
+			return 'A close-up head shot of an orange cat. Their face resembles a human face expressing irritation and annoyance.';
 		}
 		if (name.toLowerCase() === 'lalo' && imageId === 1) {
-			return 'A mostly white cat with black spots around their eyes and on their back is facing the camera. The cat is walking forward with their front right paw tucked under their body. Their black tail is held up with a hook at the top. Their eyes look into the camera with curiosity.';
+			return 'A mostly white cat with black spots around their eyes and on their back faces the camera. The cat is walking forward with their front right paw tucked under their body. Their black tail is held up with a hook at the top. Their eyes look into the camera with curiosity.';
 		}
 		if (name.toLowerCase() === 'lalo' && imageId === 2) {
-			return 'TODO: Allan please add the alt text for this image.';
+			return 'A cat sits at the edge of a porch beneath a black night sky. Their fur is mostly white with some black spots down the back. The cat has their back to the camera, but their head is turned to face backward, making them seem peaceful and contemplative.';
 		}
 		if (name.toLowerCase() === 'lalo' && imageId === 3) {
-			return 'TODO: Allan please add the alt text for this image.';
+			return 'A cat lies inside of a cylindrical wicker enclosed bed. Their head peeks out of the circular hole on its front. Inside the enclosure the cat can be seen holding onto a stuffed chile pepper toy.';
 		}
 		if (name.toLowerCase() === 'lalo' && imageId === 4) {
 			return 'TODO: Allan please add the alt text for this image.';
