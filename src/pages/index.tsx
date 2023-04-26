@@ -12,7 +12,7 @@ export default function Home() {
 	const { imageDetails: catImage, setCat } = useCatImageDetails();
 
 	function loadCat(name: string) {
-		setCat(name, 1);
+		setCat(name);
 	}
 
 	return (

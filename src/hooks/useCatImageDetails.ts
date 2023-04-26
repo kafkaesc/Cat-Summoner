@@ -23,6 +23,15 @@ export function useCatImageDetails() {
 		if (name.toLowerCase() === 'harvey' && imageId === 1) {
 			return 'An orange cat sits on a gray bed sheet. They are sitting back, with their front legs facing forward and their back legs facing toward the camera. Their tail is wrapped around their back legs. Their ears are perked up and their eyes are squeezed near-shut in a pleasant expression.';
 		}
+		if (name.toLowerCase() === 'harvey' && imageId === 2) {
+			return 'TODO: Allan please add the alt text for this image.';
+		}
+		if (name.toLowerCase() === 'harvey' && imageId === 3) {
+			return 'TODO: Allan please add the alt text for this image.';
+		}
+		if (name.toLowerCase() === 'harvey' && imageId === 4) {
+			return 'TODO: Allan please add the alt text for this image.';
+		}
 		if (name.toLowerCase() === 'lalo' && imageId === 1) {
 			return 'A mostly white cat with black spots around their eyes and on their back is facing the camera. The cat is walking forward with their front right paw tucked under their body. Their black tail is held up with a hook at the top. Their eyes look into the camera with curiosity.';
 		}
@@ -42,14 +51,14 @@ export function useCatImageDetails() {
 	}
 
 	function randomizeId(name: string) {
-		if (__imageDetails && __imageDetails.name.toLowerCase() === 'fearless') {
+		if (name.toLowerCase() === 'fearless') {
 			return 1;
 		}
-		if (__imageDetails && __imageDetails.name.toLowerCase() === 'harvey') {
-			return 1;
-		}
-		if (__imageDetails && __imageDetails.name.toLowerCase() === 'lalo') {
+		if (name.toLowerCase() === 'harvey') {
 			return Math.floor(Math.random() * (5 - 1) + 1);
+		}
+		if (name.toLowerCase() === 'lalo') {
+			return Math.floor(Math.random() * (6 - 1) + 1);
 		}
 		return 1;
 	}
