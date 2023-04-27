@@ -9,7 +9,7 @@ export default function Faqs() {
 	return (
 		<Layout>
 			<Head>
-				<title>Frequently Asked Questions 🐱 Sprigatito</title>
+				<title>Frequently Asked Questions 🐱 Cat Summoner</title>
 			</Head>
 			<H1>FAQs</H1>
 			<P>

@@ -1,8 +1,8 @@
-# Sprigatito
+# Cat Summoner
 
 Built by Jared Hettinger
 
-Work in progress. Sprigatito is a test project for summoning cats.
+Work in progress. Cat Summoner is a test project for summoning cats.
 
 ## Run
 

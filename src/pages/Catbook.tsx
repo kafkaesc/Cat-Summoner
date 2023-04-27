@@ -5,11 +5,16 @@ import P from '@/elements/P';
 
 import Layout from '@/layout/Layout';
 
+const imgData = {
+	alt: 'imgData alt',
+	src: 'imgData src',
+};
+
 export default function Catbook() {
 	return (
 		<Layout>
 			<Head>
-				<title>Catbook 🐱 Sprigatito</title>
+				<title>Catbook 🐱 Cat Summoner</title>
 			</Head>
 			<H1>Catbook</H1>
 			<P>

@@ -10,7 +10,7 @@ export default function About() {
 	return (
 		<Layout>
 			<Head>
-				<title>About 🐱 Sprigatito</title>
+				<title>About 🐱 Cat Summoner</title>
 			</Head>
 			<H1>About</H1>
 			<P>

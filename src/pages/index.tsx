@@ -18,13 +18,13 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Sprigatito 🐱 the next cat app</title>
-				<meta name="description" content="Sprigatito 🐱 the next cat app" />
+				<title>Cat Summoner 🐱 the next cat app</title>
+				<meta name="description" content="Cat-Summoner 🐱 the next cat app" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Layout>
-				<H1>Sprigatito</H1>
+				<H1>Cat Summoner</H1>
 				<Button buttonStyle="secondary" onClick={() => loadCat('Fearless')}>
 					Fearless
 				</Button>
