@@ -1,8 +1,6 @@
 import Head from 'next/head';
-
 import H1 from '@/elements/H1';
 import P from '@/elements/P';
-
 import Layout from '@/layout/Layout';
 import SocialLinks from '@/components/SocialLinks';
 

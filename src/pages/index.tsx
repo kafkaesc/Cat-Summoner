@@ -1,11 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
-
 import Button from '@/elements/Button';
 import H1 from '@/elements/H1';
-
 import Layout from '@/layout/Layout';
-
 import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 
 export default function Home() {

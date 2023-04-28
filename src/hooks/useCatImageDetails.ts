@@ -15,6 +15,69 @@ export function useCatImageDetails() {
 		null
 	);
 
+	function getallFor(name: string) {
+		if (name.toLowerCase() === 'fearless') {
+			return [
+				{
+					alt: getAltText('fearless', 1),
+					src: '/assets/images/cats/fearless-01.jpg',
+					name: 'fearless',
+				},
+			];
+		} else if (name.toLowerCase() === 'harvey') {
+			return [
+				{
+					alt: getAltText('harvey', 1),
+					src: '/assets/images/cats/harvey-01.jpg',
+					name: 'harvey',
+				},
+				{
+					alt: getAltText('harvey', 2),
+					src: '/assets/images/cats/harvey-02.jpg',
+					name: 'harvey',
+				},
+				{
+					alt: getAltText('harvey', 3),
+					src: '/assets/images/cats/harvey-03.jpg',
+					name: 'harvey',
+				},
+				{
+					alt: getAltText('harvey', 4),
+					src: '/assets/images/cats/harvey-04.jpg',
+					name: 'harvey',
+				},
+			];
+		} else if (name.toLowerCase() === 'lalo') {
+			return [
+				{
+					alt: getAltText('lalo', 1),
+					src: '/assets/images/cats/lalo-01.jpg',
+					name: 'lalo',
+				},
+				{
+					alt: getAltText('lalo', 2),
+					src: '/assets/images/cats/lalo-02.jpg',
+					name: 'lalo',
+				},
+				{
+					alt: getAltText('lalo', 3),
+					src: '/assets/images/cats/lalo-03.jpg',
+					name: 'lalo',
+				},
+				{
+					alt: getAltText('lalo', 4),
+					src: '/assets/images/cats/lalo-04.jpg',
+					name: 'lalo',
+				},
+				{
+					alt: getAltText('lalo', 5),
+					src: '/assets/images/cats/lalo-05.jpg',
+					name: 'lalo',
+				},
+			];
+		}
+	}
+
 	// Return alt tet for the image associated with the name and image ID.
 	function getAltText(name: string, imageId: number) {
 		if (name.toLowerCase() === 'fearless' && imageId === 1) {
@@ -87,5 +150,5 @@ export function useCatImageDetails() {
 		});
 	}
 
-	return { imageDetails: __imageDetails, setCat, setImageId };
+	return { getallFor, imageDetails: __imageDetails, setCat, setImageId };
 }

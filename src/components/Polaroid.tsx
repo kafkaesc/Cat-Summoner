@@ -14,8 +14,11 @@ interface PolaroidProps {
 
 export default function Polaroid({ alt, src, ...props }: PolaroidProps) {
 	return (
-		<div className="p-2">
-			<Image alt={alt} height={200} src={src} width={200} {...props} />
+		<div
+			className="inline-block p-2 mx-1 border border-cs-black"
+			style={{ aspectRatio: '5/6' }}
+		>
+			<Image alt={alt} height={150} src={src} width={150} {...props} />
 		</div>
 	);
 }
