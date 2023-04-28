@@ -102,13 +102,13 @@ export function useCatImageDetails() {
 			return 'A cat sits at the edge of a porch beneath a black night sky. Their fur is mostly white with some black spots down the back. The cat has their back to the camera, but their head is turned to face backward, making them seem peaceful and contemplative.';
 		}
 		if (name.toLowerCase() === 'lalo' && imageId === 3) {
-			return 'A cat lies inside of a cylindrical wicker enclosed bed. Their head peeks out of the circular hole on its front. Inside the enclosure the cat can be seen holding onto a stuffed chile pepper toy.';
+			return 'A mostly white cat with black spots around their eyes lies inside of a cylindrical wicker enclosed bed. Their head peeks out of the circular hole on its front. Inside the enclosure the cat can be seen holding onto a stuffed chile pepper toy.';
 		}
 		if (name.toLowerCase() === 'lalo' && imageId === 4) {
-			return 'TODO: Allan please add the alt text for this image.';
+			return 'A mostly white cat with black spots around their eyes and on their back sits on the edge of a blue porch that stretches off into the background. Their body is perpendicular to the camera with their tail wrapping forward, creating a classic cat silhouette.';
 		}
 		if (name.toLowerCase() === 'lalo' && imageId === 5) {
-			return 'TODO: Allan please add the alt text for this image.';
+			return 'A mostly white cat with black spots around their eyes and on their back stands atop a roof. They are perched above the camera and face downward with their mouth open mid-meow. Behind them arcs a rainbow.';
 		}
 		return 'getAltText err';
 	}
