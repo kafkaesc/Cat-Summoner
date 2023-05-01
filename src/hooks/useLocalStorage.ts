@@ -1,19 +1,3 @@
-/*
-	TODO: Custom hook for general use of local storage.
-	
-	- add (key: string, val: any): receives a key to store the val on in 
-		localStorage, (1) if there is no val for that key, add the key/val pair, 
-		(2) if there is already a value for the key, add val to that array/object
-	
-	- clear (): clear all local storage
-	
-	- get (key: string): get the value for the key, use JSON parse, 
-		and return the primitive/array/object
-
-	- set (key: string, val: any), inserts the key/val pair into 
-		localStorage regardless of existing key/val or not
-*/
-
 export function useLocalStorage() {
 	function add(key: string, val: any) {
 		if (typeof val === 'undefined') {
@@ -35,14 +19,23 @@ export function useLocalStorage() {
 		}
 	}
 
-	function clear() {
+	/* Clear all local storage */
+	function clearAll() {
 		localStorage.clear();
 	}
 
+	/* Delete a specific attribute from local storage */
+	function clear(attributeName: string) {
+		delete localStorage[attributeName];
+	}
+
+	/* Returns the value tied to key in localStorage */
 	function get(key: string) {
 		return JSON.parse('' + localStorage.getItem(key));
 	}
 
+	/* Sets the value of key to val in localStorage.
+	 * Previous stored value(s) will be overwritten. */
 	function set(key: string, val: any) {
 		if (typeof val === 'undefined') {
 			val = null;
@@ -50,5 +43,5 @@ export function useLocalStorage() {
 		localStorage.setItem(key, JSON.stringify(val));
 	}
 
-	return { add, clear, get, set };
+	return { add, clearAll, clear, get, set };
 }

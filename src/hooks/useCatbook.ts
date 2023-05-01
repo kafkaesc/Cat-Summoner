@@ -12,21 +12,29 @@ export function useCatbook() {
 	const ls = useLocalStorage();
 
 	function clearCatbook() {
-		// TODO: Clear the entire catbook but do not change
-		// anything else in localStorage.
+		ls.clear('fearless');
+		ls.clear('harvey');
+		ls.clear('lalo');
 	}
 
 	function unlockCatbookImage(name: string, imageId: number) {
 		// TODO: Add the imageId into data as catbookData[name]: [...prev, imageId]
 		// Duplicate numbers should not be inserted into the array.
 		// Write the new array into localStorage.
-		// Unlocking cat images should be a one-way process except when clearing
-		// the entire catbook.
+		// Unlocking cat images should be a one-way process except
+		// when clearing the entire catbook.
+		ls.add(name, imageId);
 	}
 
 	useEffect(() => {
-		// TODO: Load the catbook data from localStorage.
-	}, [ls]);
+		const localCatbookData = {
+			fearless: ls.get('fearless'),
+			harvey: ls.get('harvey'),
+			lalo: ls.get('lalo'),
+		};
+		setCatbookData(localCatbookData);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
-	return { catbookData, unlockCatbookImage };
+	return { catbookData, clearCatbook, unlockCatbookImage };
 }

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Button from '@/elements/Button';
 import H1 from '@/elements/H1';
 import Layout from '@/layout/Layout';
+import CatbookHookDebug from '@/components/CatbookHookDebug';
 import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
 			</Head>
 			<Layout>
 				<H1>Cat Summoner</H1>
+				{/*<CatbookHookDebug />*/}
 				<Button buttonStyle="secondary" onClick={() => loadCat('Fearless')}>
 					Fearless
 				</Button>
