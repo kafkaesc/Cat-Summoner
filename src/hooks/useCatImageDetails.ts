@@ -15,7 +15,7 @@ export function useCatImageDetails() {
 		null
 	);
 
-	function getallFor(name: string) {
+	function getAllFor(name: string) {
 		if (name.toLowerCase() === 'fearless') {
 			return [
 				{
@@ -76,6 +76,10 @@ export function useCatImageDetails() {
 				},
 			];
 		}
+	}
+
+	function getUnlockedFor(name: string) {
+		//catbookData[name];
 	}
 
 	// Return alt tet for the image associated with the name and image ID.
@@ -150,5 +154,11 @@ export function useCatImageDetails() {
 		});
 	}
 
-	return { getallFor, imageDetails: __imageDetails, setCat, setImageId };
+	return {
+		getAllFor,
+		getUnlockedFor,
+		imageDetails: __imageDetails,
+		setCat,
+		setImageId,
+	};
 }

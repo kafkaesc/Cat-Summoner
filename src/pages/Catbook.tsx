@@ -4,11 +4,13 @@ import H1 from '@/elements/H1';
 import H2 from '@/elements/H2';
 import Layout from '@/layout/Layout';
 import Polaroid from '@/components/Polaroid';
+import { useCatbook } from '@/hooks/useCatbook';
 import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 
 export default function Catbook() {
 	const [catPics, setCatPics] = useState<any>({});
-	const { getallFor: getCatImagesFor } = useCatImageDetails();
+	const { catbookData: catbook } = useCatbook();
+	const { getAllFor: getCatImagesFor } = useCatImageDetails();
 
 	useEffect(() => {
 		const newCatPics = {
@@ -27,6 +29,12 @@ export default function Catbook() {
 			</Head>
 			<H1>Catbook</H1>
 			<H2>Fearless</H2>
+			{/*
+			{catbook.fearless &&
+				catbook.fearless.map((cb, index) => {
+					return <p key={`fearless-${index}`}>Fearless {cb}</p>;
+				})}
+			*/}
 			{catPics.lalo &&
 				catPics.fearless.map((pic: any, index: number) => (
 					<Polaroid key={index} {...pic} />
