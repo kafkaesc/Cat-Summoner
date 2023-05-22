@@ -1,5 +1,5 @@
 export function useLocalStorage() {
-	function add(key: string, val: any) {
+	function add(key: string, val: any, arrayFlag?: boolean) {
 		if (typeof val === 'undefined') {
 			val = null;
 		}
@@ -14,6 +14,8 @@ export function useLocalStorage() {
 			} else {
 				localStorage.setItem(key, JSON.stringify([prevStorage, val]));
 			}
+		} else if (arrayFlag) {
+			localStorage.setItem(key, JSON.stringify([val]));
 		} else {
 			localStorage.setItem(key, JSON.stringify(val));
 		}
