@@ -23,7 +23,7 @@ export function useCatbook() {
 		// Write the new array into localStorage.
 		// Unlocking cat images should be a one-way process except
 		// when clearing the entire catbook.
-		ls.add(name, imageId);
+		ls.add(name, imageId, true);
 	}
 
 	useEffect(() => {

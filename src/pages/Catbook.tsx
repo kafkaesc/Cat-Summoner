@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import H1 from '@/elements/H1';
 import H2 from '@/elements/H2';
+import P from '@/elements/P';
 import Layout from '@/layout/Layout';
 import Polaroid from '@/components/Polaroid';
 import { useCatbook } from '@/hooks/useCatbook';
@@ -29,26 +30,47 @@ export default function Catbook() {
 			</Head>
 			<H1>Catbook</H1>
 			<H2>Fearless</H2>
-			{/*
-			{catbook.fearless &&
+			{catbook.fearless ? (
 				catbook.fearless.map((cb, index) => {
-					return <p key={`fearless-${index}`}>Fearless {cb}</p>;
-				})}
-			*/}
-			{catPics.lalo &&
-				catPics.fearless.map((pic: any, index: number) => (
-					<Polaroid key={index} {...pic} />
-				))}
+					return (
+						<Polaroid
+							alt={`Picture ${cb} of Fearless`}
+							key={`fearless-${index}-${cb}`}
+							src={`/assets/images/cats/fearless-0${cb}.jpg`}
+						/>
+					);
+				})
+			) : (
+				<P>You have not unlocked any Fearless pictures.</P>
+			)}
 			<H2>Harvey</H2>
-			{catPics.lalo &&
-				catPics.harvey.map((pic: any, index: number) => (
-					<Polaroid key={index} {...pic} />
-				))}
+			{catbook.harvey ? (
+				catbook.harvey.map((cb, index) => {
+					return (
+						<Polaroid
+							alt={`Picture ${cb} of Harvey`}
+							key={index}
+							src={`/assets/images/cats/harvey-0${cb}.jpg`}
+						/>
+					);
+				})
+			) : (
+				<P>You have not unlocked any Harvey pictures.</P>
+			)}
 			<H2>Lalo</H2>
-			{catPics.lalo &&
-				catPics.lalo.map((pic: any, index: number) => (
-					<Polaroid key={index} {...pic} />
-				))}
+			{catbook.lalo ? (
+				catbook.lalo.map((cb, index) => {
+					return (
+						<Polaroid
+							alt={`Picture ${cb} of Lalo`}
+							key={index}
+							src={`/assets/images/cats/lalo-0${cb}.jpg`}
+						/>
+					);
+				})
+			) : (
+				<P>You have not unlocked any Lalo pictures.</P>
+			)}
 		</Layout>
 	);
 }
