@@ -4,10 +4,24 @@ import { useCatbook } from '@/hooks/useCatbook';
 export default function CatbookHookDebug() {
 	const { clearCatbook, unlockCatbookImage } = useCatbook();
 
+	function unlockAll() {
+		unlockCatbookImage('fearless', 1);
+		unlockCatbookImage('harvey', 1);
+		unlockCatbookImage('harvey', 2);
+		unlockCatbookImage('harvey', 3);
+		unlockCatbookImage('harvey', 4);
+		unlockCatbookImage('lalo', 1);
+		unlockCatbookImage('lalo', 2);
+		unlockCatbookImage('lalo', 3);
+		unlockCatbookImage('lalo', 4);
+		unlockCatbookImage('lalo', 5);
+	}
+
 	return (
 		<div>
 			<code>debug</code>
 			<br />
+			<Button onClick={() => unlockAll()}>all</Button>
 			<Button onClick={() => unlockCatbookImage('fearless', 1)}>
 				unlock fearless 1
 			</Button>
