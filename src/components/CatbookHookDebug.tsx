@@ -5,6 +5,7 @@ export default function CatbookHookDebug() {
 	const { clearCatbook, unlockCatbookImage } = useCatbook();
 
 	function unlockAll() {
+		clearCatbook();
 		unlockCatbookImage('fearless', 1);
 		unlockCatbookImage('harvey', 1);
 		unlockCatbookImage('harvey', 2);
