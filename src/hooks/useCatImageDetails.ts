@@ -112,7 +112,9 @@ export function useCatImageDetails() {
 		if (image.length > 0) {
 			return image[0];
 		} else {
-			console.warn(`No image data for (name=${name}, catImageId=${catImageId})`);
+			console.warn(
+				`No image data for (name=${name}, catImageId=${catImageId})`
+			);
 			return null;
 		}
 	}
