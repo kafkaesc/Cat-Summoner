@@ -17,13 +17,16 @@ export function useCatbook() {
 		ls.clear('lalo');
 	}
 
+	// I'm sorry
+	function catbookCanHas(name: string, catImageId: number): boolean {
+		const catData = ls.get(name) || [];
+		return !catData.find((cd: number) => cd === catImageId);
+	}
+
 	function unlockCatbookImage(name: string, catImageId: number) {
-		// TODO: Add the catImageId into data as catbookData[name]: [...prev, catImageId]
-		// Duplicate numbers should not be inserted into the array.
-		// Write the new array into localStorage.
-		// Unlocking cat images should be a one-way process except
-		// when clearing the entire catbook.
-		ls.add(name, catImageId, true);
+		if (catbookCanHas(name, catImageId)) {
+			ls.add(name, catImageId, true);
+		}
 	}
 
 	useEffect(() => {
