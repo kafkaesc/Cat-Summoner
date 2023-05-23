@@ -1,3 +1,10 @@
+export interface Cat {
+	age?: number;
+	id: number;
+	name?: string;
+	nickname?: string;
+}
+
 export interface CatImage {
 	alt: string;
 	height?: number;

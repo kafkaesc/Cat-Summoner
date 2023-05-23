@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CatImage } from '@/interfaces/CatImage';
+import { CatImage } from '@/interfaces/CatInterfaces';
 import { useCatbook } from '@/hooks/useCatbook';
 
 // TODO: use idLength to pad the src with zeros
