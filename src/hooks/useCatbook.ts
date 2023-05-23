@@ -17,13 +17,13 @@ export function useCatbook() {
 		ls.clear('lalo');
 	}
 
-	function unlockCatbookImage(name: string, imageId: number) {
-		// TODO: Add the imageId into data as catbookData[name]: [...prev, imageId]
+	function unlockCatbookImage(name: string, catImageId: number) {
+		// TODO: Add the catImageId into data as catbookData[name]: [...prev, catImageId]
 		// Duplicate numbers should not be inserted into the array.
 		// Write the new array into localStorage.
 		// Unlocking cat images should be a one-way process except
 		// when clearing the entire catbook.
-		ls.add(name, imageId, true);
+		ls.add(name, catImageId, true);
 	}
 
 	useEffect(() => {

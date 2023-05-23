@@ -19,8 +19,8 @@ export default function Catbook() {
 			<H1>Catbook</H1>
 			<H2>Fearless</H2>
 			{catbook.fearless ? (
-				catbook.fearless.map((imageId, index) => {
-					const image = getCatImage('fearless', imageId);
+				catbook.fearless.map((catImageId, index) => {
+					const image = getCatImage('fearless', catImageId);
 					return image && <Polaroid key={`fearless-${index}`} {...image} />;
 				})
 			) : (
@@ -28,8 +28,8 @@ export default function Catbook() {
 			)}
 			<H2>Harvey</H2>
 			{catbook.harvey ? (
-				catbook.harvey.map((imageId, index) => {
-					const image = getCatImage('harvey', imageId);
+				catbook.harvey.map((catImageId, index) => {
+					const image = getCatImage('harvey', catImageId);
 					return image && <Polaroid key={`harvey-${index}`} {...image} />;
 				})
 			) : (
@@ -37,8 +37,8 @@ export default function Catbook() {
 			)}
 			<H2>Lalo</H2>
 			{catbook.lalo ? (
-				catbook.lalo.map((imageId, index) => {
-					const image = getCatImage('lalo', imageId);
+				catbook.lalo.map((catImageId, index) => {
+					const image = getCatImage('lalo', catImageId);
 					return image && <Polaroid key={`lalo-${index}`} {...image} />;
 				})
 			) : (
