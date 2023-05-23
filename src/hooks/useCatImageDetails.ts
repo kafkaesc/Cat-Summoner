@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CatImage } from '@/interfaces/CatImage';
+import { useCatbook } from '@/hooks/useCatbook';
 
 // TODO: use idLength to pad the src with zeros
 const catImageFolder = '/assets/images/cats/';
@@ -70,6 +71,7 @@ const catImageData: Array<CatImage> = [
 
 export function useCatImageDetails() {
 	const [__imageDetails, __setImageDetails] = useState<CatImage | null>(null);
+	const { unlockCatbookImage } = useCatbook();
 
 	function getAllFor(name: string): Array<CatImage> {
 		if (
@@ -146,6 +148,7 @@ export function useCatImageDetails() {
 			width: 500,
 		};
 		__setImageDetails(imageDetails);
+		unlockCatbookImage(name, id);
 	}
 
 	return { getAllFor, getImage, imageDetails: __imageDetails, setCat };

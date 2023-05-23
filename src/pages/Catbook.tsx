@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Button from '@/elements/Button';
 import H1 from '@/elements/H1';
 import H2 from '@/elements/H2';
 import P from '@/elements/P';
@@ -8,7 +9,7 @@ import { useCatbook } from '@/hooks/useCatbook';
 import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 
 export default function Catbook() {
-	const { catbookData: catbook } = useCatbook();
+	const { catbookData: catbook, clearCatbook } = useCatbook();
 	const { getImage: getCatImage } = useCatImageDetails();
 
 	return (
@@ -18,32 +19,41 @@ export default function Catbook() {
 			</Head>
 			<H1>Catbook</H1>
 			<H2>Fearless</H2>
-			{catbook.fearless ? (
-				catbook.fearless.map((catImageId, index) => {
-					const image = getCatImage('fearless', catImageId);
-					return image && <Polaroid key={`fearless-${index}`} {...image} />;
-				})
-			) : (
-				<P>You have not unlocked any Fearless pictures.</P>
-			)}
+			<div>
+				{catbook.fearless ? (
+					catbook.fearless.map((catImageId, index) => {
+						const image = getCatImage('fearless', catImageId);
+						return image && <Polaroid key={`fearless-${index}`} {...image} />;
+					})
+				) : (
+					<P>You have not unlocked any Fearless pictures.</P>
+				)}
+			</div>
 			<H2>Harvey</H2>
-			{catbook.harvey ? (
-				catbook.harvey.map((catImageId, index) => {
-					const image = getCatImage('harvey', catImageId);
-					return image && <Polaroid key={`harvey-${index}`} {...image} />;
-				})
-			) : (
-				<P>You have not unlocked any Harvey pictures.</P>
-			)}
+			<div>
+				{catbook.harvey ? (
+					catbook.harvey.map((catImageId, index) => {
+						const image = getCatImage('harvey', catImageId);
+						return image && <Polaroid key={`harvey-${index}`} {...image} />;
+					})
+				) : (
+					<P>You have not unlocked any Harvey pictures.</P>
+				)}
+			</div>
 			<H2>Lalo</H2>
-			{catbook.lalo ? (
-				catbook.lalo.map((catImageId, index) => {
-					const image = getCatImage('lalo', catImageId);
-					return image && <Polaroid key={`lalo-${index}`} {...image} />;
-				})
-			) : (
-				<P>You have not unlocked any Lalo pictures.</P>
-			)}
+			<div>
+				{catbook.lalo ? (
+					catbook.lalo.map((catImageId, index) => {
+						const image = getCatImage('lalo', catImageId);
+						return image && <Polaroid key={`lalo-${index}`} {...image} />;
+					})
+				) : (
+					<P>You have not unlocked any Lalo pictures.</P>
+				)}
+			</div>
+			<Button className="block mx-auto" onClick={() => clearCatbook()}>
+				Clear Catbook Data
+			</Button>
 		</Layout>
 	);
 }

@@ -15,17 +15,18 @@ export function useCatbook() {
 		ls.clear('fearless');
 		ls.clear('harvey');
 		ls.clear('lalo');
+		setCatbookData({});
 	}
 
 	// I'm sorry
 	function catbookCanHas(name: string, catImageId: number): boolean {
-		const catData = ls.get(name) || [];
+		const catData = ls.get(name.toLocaleLowerCase()) || [];
 		return !catData.find((cd: number) => cd === catImageId);
 	}
 
 	function unlockCatbookImage(name: string, catImageId: number) {
-		if (catbookCanHas(name, catImageId)) {
-			ls.add(name, catImageId, true);
+		if (catbookCanHas(name.toLocaleLowerCase(), catImageId)) {
+			ls.add(name.toLocaleLowerCase(), catImageId, true);
 		}
 	}
 
