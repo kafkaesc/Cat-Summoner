@@ -1,17 +1,13 @@
 import Image from 'next/image';
 
-/* TODO:
-	Polaroid dimension ratio is 5:6
-	Display square image (cropped if necessary) with extra white space below, 
-	like a polaroid
-*/
-
 interface PolaroidProps {
 	alt: string;
 	src: string;
 	[props: string]: any;
 }
 
+// Display square image (cropped if necessary) with extra white space below,
+// like a polaroid. Polaroid dimensions are 5:6.
 export default function Polaroid({ alt, src, ...props }: PolaroidProps) {
 	return (
 		<div
