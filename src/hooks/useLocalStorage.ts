@@ -1,5 +1,5 @@
 export function useLocalStorage() {
-	function add(key: string, val: any, arrayFlag?: boolean) {
+	function add(key: string, val: any, arrayFlag?: boolean): void {
 		if (typeof val === 'undefined') {
 			val = null;
 		}
@@ -22,12 +22,12 @@ export function useLocalStorage() {
 	}
 
 	/* Clear all local storage */
-	function clearAll() {
+	function clearAll(): void {
 		localStorage.clear();
 	}
 
 	/* Delete a specific attribute from local storage */
-	function clear(attributeName: string) {
+	function clear(attributeName: string): void {
 		delete localStorage[attributeName];
 	}
 
@@ -38,7 +38,7 @@ export function useLocalStorage() {
 
 	/* Sets the value of key to val in localStorage.
 	 * Previous stored value(s) will be overwritten. */
-	function set(key: string, val: any) {
+	function set(key: string, val: any): void {
 		if (typeof val === 'undefined') {
 			val = null;
 		}
