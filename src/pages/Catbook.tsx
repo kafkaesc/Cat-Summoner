@@ -19,7 +19,7 @@ export default function Catbook() {
 			</Head>
 			<H1>Catbook</H1>
 			<H2>Fearless</H2>
-			<div>
+			<div className="md:mx-2">
 				{catbook.fearless ? (
 					catbook.fearless.map((catImageId, index) => {
 						const image = getCatImage('fearless', catImageId);
@@ -30,7 +30,7 @@ export default function Catbook() {
 				)}
 			</div>
 			<H2>Harvey</H2>
-			<div>
+			<div className="md:mx-2">
 				{catbook.harvey ? (
 					catbook.harvey.map((catImageId, index) => {
 						const image = getCatImage('harvey', catImageId);
@@ -41,7 +41,7 @@ export default function Catbook() {
 				)}
 			</div>
 			<H2>Lalo</H2>
-			<div>
+			<div className="md:mx-2">
 				{catbook.lalo ? (
 					catbook.lalo.map((catImageId, index) => {
 						const image = getCatImage('lalo', catImageId);
