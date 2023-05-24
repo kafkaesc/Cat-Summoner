@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { CatImage } from '@/interfaces/CatInterfaces';
 import { useCatbook } from '@/hooks/useCatbook';
 
-// TODO: use idLength to pad the src with zeros
 const catImageFolder = '/assets/images/cats/';
-const idLength = 2;
+const catImageIdLength = 2;
 
 const catImageData: Array<CatImage> = [
 	{
@@ -73,6 +72,14 @@ export function useCatImageDetails() {
 	const [__imageDetails, __setImageDetails] = useState<CatImage | null>(null);
 	const { unlockCatbookImage } = useCatbook();
 
+	function formatCatImageIdForFilename(catImageId: number): string {
+		let catImageIdString = '' + catImageId;
+		while (catImageIdString.length < catImageIdLength) {
+			catImageIdString = '0' + catImageIdString;
+		}
+		return catImageIdString;
+	}
+
 	function getAllFor(name: string): Array<CatImage> {
 		if (
 			name.toLocaleLowerCase() === 'fearless' ||
@@ -136,9 +143,9 @@ export function useCatImageDetails() {
 
 	function setCat(name: string, catImageId?: number | null): void {
 		const id: number = catImageId ? catImageId : randomizeId(name);
-		const idString: string = '0' + id;
+		const idString: string = formatCatImageIdForFilename(id);
 		const alt: string = getAltText(name, id);
-		const src: string = `/assets/images/cats/${name.toLocaleLowerCase()}-${idString}.jpg`;
+		const src: string = `${catImageFolder}${name.toLocaleLowerCase()}-${idString}.jpg`;
 		const imageDetails: CatImage = {
 			alt: alt,
 			height: 500,
