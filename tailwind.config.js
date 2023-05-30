@@ -28,7 +28,7 @@ module.exports = {
 		},
 		extend: {
 			keyframes: {
-				'my-spin': {
+				spin: {
 					from: { transform: 'rotate(0deg)' },
 					to: { transform: 'rotate(360deg)' },
 				},
@@ -38,9 +38,11 @@ module.exports = {
 				},
 			},
 			animation: {
-				'spin-2': 'my-spin 2s linear infinite',
-				'spin-3': 'my-spin 3s linear infinite',
-				'spin-4': 'my-spin 3s linear infinite',
+				spin: 'spin 1s linear infinite',
+				'spin-2': 'spin 2s linear infinite',
+				'spin-3': 'spin 3s linear infinite',
+				'spin-4': 'spin 3s linear infinite',
+				wiggle: 'wiggle 1s ease-in-out infinite',
 				'wiggle-2': 'wiggle 2s ease-in-out infinite',
 				'wiggle-3': 'wiggle 3s ease-in-out infinite',
 				'wiggle-4': 'wiggle 3s ease-in-out infinite',
