@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { CatImageDetails } from '@/interfaces/CatInterfaces';
 import { useCatbook } from '@/hooks/useCatbook';
 
@@ -69,6 +69,7 @@ const catImageData: Array<CatImageDetails> = [
 ];
 
 export function useCatImageDetails() {
+	const __activeTimeout = useRef<NodeJS.Timeout | null>(null);
 	const [__imageDetails, __setImageDetails] = useState<CatImageDetails | null>(
 		null
 	);
@@ -145,6 +146,7 @@ export function useCatImageDetails() {
 	}
 
 	function setCat(name: string, catImageId?: number | null): void {
+		// Construct the details for the new cat image
 		const id: number = catImageId ? catImageId : randomizeId(name);
 		const idString: string = formatCatImageIdForFilename(id);
 		const alt: string = getAltText(name, id);
@@ -157,8 +159,13 @@ export function useCatImageDetails() {
 			src: src,
 			width: 500,
 		};
+		// Set that the image is loading and set a timeout to load the cat image 
+		// details. If a previous cat image is set to load, clear it
 		__setIsLoading(true);
-		const timer = setTimeout(() => {
+		if (__activeTimeout.current) {
+			clearTimeout(__activeTimeout.current);
+		}
+		__activeTimeout.current = setTimeout(() => {
 			__setImageDetails(imageDetails);
 			unlockCatbookImage(name, id);
 			__setIsLoading(false);
