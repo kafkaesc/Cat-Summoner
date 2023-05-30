@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { CatImage } from '@/interfaces/CatInterfaces';
+import { CatImageDetails } from '@/interfaces/CatInterfaces';
 import { useCatbook } from '@/hooks/useCatbook';
 
 const catImageFolder = '/assets/images/cats/';
 const catImageIdLength = 2;
 
-const catImageData: Array<CatImage> = [
+const catImageData: Array<CatImageDetails> = [
 	{
 		alt: 'A black cat sits on a table with their two front legs covering a stack of cards. The logo is visible on the cards, revealing that the cat is interrupting a game of Exploding Kittens. The cat stares up into the camera with a deadpan expression, unconcerned with their interruption of the game.',
 		catImageId: 1,
@@ -69,7 +69,10 @@ const catImageData: Array<CatImage> = [
 ];
 
 export function useCatImageDetails() {
-	const [__imageDetails, __setImageDetails] = useState<CatImage | null>(null);
+	const [__imageDetails, __setImageDetails] = useState<CatImageDetails | null>(
+		null
+	);
+	const [__isLoading, __setIsLoading] = useState<boolean>(false);
 	const { unlockCatbookImage } = useCatbook();
 
 	function formatCatImageIdForFilename(catImageId: number): string {
@@ -80,7 +83,7 @@ export function useCatImageDetails() {
 		return catImageIdString;
 	}
 
-	function getAllFor(name: string): Array<CatImage> {
+	function getAllFor(name: string): Array<CatImageDetails> {
 		if (
 			name.toLocaleLowerCase() === 'fearless' ||
 			name.toLocaleLowerCase() === 'harvey' ||
@@ -112,7 +115,7 @@ export function useCatImageDetails() {
 		}
 	}
 
-	function getImage(name: string, catImageId: number): CatImage | null {
+	function getImage(name: string, catImageId: number): CatImageDetails | null {
 		const image = catImageData.filter(
 			(cid) =>
 				catImageId === cid.catImageId &&
@@ -146,7 +149,7 @@ export function useCatImageDetails() {
 		const idString: string = formatCatImageIdForFilename(id);
 		const alt: string = getAltText(name, id);
 		const src: string = `${catImageFolder}${name.toLocaleLowerCase()}-${idString}.jpg`;
-		const imageDetails: CatImage = {
+		const imageDetails: CatImageDetails = {
 			alt: alt,
 			height: 500,
 			catImageId: catImageId ? catImageId : -1,
@@ -154,9 +157,19 @@ export function useCatImageDetails() {
 			src: src,
 			width: 500,
 		};
-		__setImageDetails(imageDetails);
-		unlockCatbookImage(name, id);
+		__setIsLoading(true);
+		const timer = setTimeout(() => {
+			__setImageDetails(imageDetails);
+			unlockCatbookImage(name, id);
+			__setIsLoading(false);
+		}, 3000);
 	}
 
-	return { getAllFor, getImage, imageDetails: __imageDetails, setCat };
+	return {
+		getAllFor,
+		getImage,
+		imageDetails: __imageDetails,
+		isLoading: __isLoading,
+		setCat,
+	};
 }

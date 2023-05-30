@@ -6,7 +6,11 @@ import Layout from '@/layout/Layout';
 import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 
 export default function Home() {
-	const { imageDetails: catImage, setCat } = useCatImageDetails();
+	const {
+		imageDetails: catImage,
+		isLoading: catImageIsLoading,
+		setCat,
+	} = useCatImageDetails();
 
 	function loadCat(name: string) {
 		setCat(name);
@@ -31,7 +35,16 @@ export default function Home() {
 				<Button buttonStyle="secondary" onClick={() => loadCat('Lalo')}>
 					Lalo
 				</Button>
-				{catImage && (
+				{catImageIsLoading && (
+					<Image
+						alt="Loading"
+						className="animate-spin-3"
+						height="500"
+						width="500"
+						src="/assets/images/loading.png"
+					/>
+				)}
+				{!catImageIsLoading && catImage && (
 					<Image
 						alt={catImage.alt}
 						height={catImage.height}

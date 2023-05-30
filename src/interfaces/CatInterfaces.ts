@@ -5,7 +5,7 @@ export interface Cat {
 	nickname?: string;
 }
 
-export interface CatImage {
+export interface CatImageDetails {
 	alt: string;
 	height?: number;
 	catImageId: number;
