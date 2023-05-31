@@ -76,6 +76,23 @@ export function useCatImageDetails() {
 	const [__isLoading, __setIsLoading] = useState<boolean>(false);
 	const { unlockCatbookImage } = useCatbook();
 
+	function createImageDetails(
+		name: string,
+		catImageId: number
+	): CatImageDetails {
+		const idString: string = formatCatImageIdForFilename(catImageId);
+		const alt: string = getAltText(name, catImageId);
+		const src: string = `${catImageFolder}${name.toLocaleLowerCase()}-${idString}.jpg`;
+		return {
+			alt: alt,
+			height: 500,
+			catImageId: catImageId ? catImageId : -1,
+			name: name,
+			src: src,
+			width: 500,
+		};
+	}
+
 	function formatCatImageIdForFilename(catImageId: number): string {
 		let catImageIdString = '' + catImageId;
 		while (catImageIdString.length < catImageIdLength) {
@@ -101,7 +118,7 @@ export function useCatImageDetails() {
 		}
 	}
 
-	// Return alt tet for the image associated with the name and image ID.
+	// Return alt text for the image associated with the name and image ID.
 	function getAltText(name: string, catImageId: number): string {
 		const altText = catImageData.filter(
 			(cid) =>
@@ -146,21 +163,19 @@ export function useCatImageDetails() {
 	}
 
 	function setCat(name: string, catImageId?: number | null): void {
-		// Construct the details for the new cat image
+		// Use the specific catImageId if provided, otherwise generate one randomly
 		const id: number = catImageId ? catImageId : randomizeId(name);
-		const idString: string = formatCatImageIdForFilename(id);
-		const alt: string = getAltText(name, id);
-		const src: string = `${catImageFolder}${name.toLocaleLowerCase()}-${idString}.jpg`;
-		const imageDetails: CatImageDetails = {
-			alt: alt,
-			height: 500,
-			catImageId: catImageId ? catImageId : -1,
-			name: name,
-			src: src,
-			width: 500,
-		};
-		// Set that the image is loading and set a timeout to load the cat image 
-		// details. If a previous cat image is set to load, clear it
+		const imageDetails: CatImageDetails = createImageDetails(name, id);
+		startLoadingCatImage(name, id, imageDetails);
+	}
+
+	// Set that the image is loading and set a timeout to load the cat image
+	// details. If a previous cat image is set to load, clear it
+	function startLoadingCatImage(
+		name: string,
+		id: number,
+		imageDetails: CatImageDetails
+	): void {
 		__setIsLoading(true);
 		if (__activeTimeout.current) {
 			clearTimeout(__activeTimeout.current);
