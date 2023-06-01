@@ -14,7 +14,17 @@ export default function Polaroid({ alt, src, ...props }: PolaroidProps) {
 			className="inline-block p-2 mx-1 border border-cs-black"
 			style={{ aspectRatio: '5/6' }}
 		>
-			<Image alt={alt} height={150} src={src} width={150} {...props} />
+			{props && props.className ? (
+				<Image
+					alt={alt}
+					height={150}
+					src={src}
+					width={150}
+					className={props.className}
+				/>
+			) : (
+				<Image alt={alt} height={150} src={src} width={150} />
+			)}
 		</div>
 	);
 }
