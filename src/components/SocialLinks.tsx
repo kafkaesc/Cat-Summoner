@@ -9,7 +9,7 @@ export default function SocialLinks() {
 		<ul className="text-center">
 			<li className="inline-block mx-3">
 				<a href="https://github.com/kafkaesc" rel="noreferrer" target="_blank">
-					<Image alt="GitHub Logo" height={32} src={GitHubLogo} />
+					<Image alt="GitHub Logo" height={24} src={GitHubLogo} />
 				</a>
 			</li>
 			<li className="inline-block mx-3">
@@ -18,7 +18,7 @@ export default function SocialLinks() {
 					rel="noreferrer"
 					target="_blank"
 				>
-					<Image alt="Instagram" height={32} src={InstagramLogo} />
+					<Image alt="Instagram" height={24} src={InstagramLogo} />
 				</a>
 			</li>
 			<li className="inline-block mx-3">
@@ -27,7 +27,7 @@ export default function SocialLinks() {
 					rel="noreferrer"
 					target="_blank"
 				>
-					<Image alt="Twitter Logo" height={32} src={TwitterLogo} />
+					<Image alt="Twitter Logo" height={24} src={TwitterLogo} />
 				</a>
 			</li>
 		</ul>
