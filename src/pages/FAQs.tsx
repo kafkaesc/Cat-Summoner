@@ -11,7 +11,7 @@ export default function Faqs() {
 			</Head>
 			<H1>FAQs</H1>
 			<P>
-				{`The edge of the whirl was represented by a broad belt of gleaming spray; but no particle of this slipped into the mouth of the terrific funnel, whose interior, as far as the eye could fathom it, was a smooth, shining, and jet-black wall of water, inclined to the horizon at an angle of some forty-five degrees, speeding dizzily round and round with a swaying and sweltering motion, and sending forth to the winds an appalling voice, half shriek, half roar, such as not even the mighty cataract of Niagara ever lifts up in its agony to Heaven.`}
+				{`The box in question was, as I say, oblong. It was about six feet in length by two and a half in breadth; I observed it attentively, and like to be precise. Now this shape was peculiar; and no sooner had I seen it, than I took credit to myself for the accuracy of my guessing. I had reached the conclusion, it will be remembered, that the extra baggage of my friend, the artist, would prove to be pictures, or at least a picture; for I knew he had been for several weeks in conference with Nicolino:—and now here was a box, which, from its shape, COULD possibly contain nothing in the world but a copy of Leonardo's "Last Supper;" and a copy of this very "Last Supper," done by Rubini the younger, at Florence, I had known, for some time, to be in the possession of Nicolino.`}
 			</P>
 		</Layout>
 	);
