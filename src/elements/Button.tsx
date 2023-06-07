@@ -31,7 +31,7 @@ const DangerButton = ({
 		) : (
 			<button
 				{...props}
-				className="px-4 py-2 border-2 cursor-not-allowed border-cs-danger text-cs-white"
+				className="px-4 py-2 border-2 cursor-not-allowed border-cs-danger text-cs-white bg-cs-danger"
 				disabled={true}
 			>
 				{children}
@@ -113,7 +113,7 @@ const PrimaryButton = ({
 		) : (
 			<button
 				{...props}
-				className="px-4 py-2 border-2 cursor-not-allowed border-cs-primary text-cs-white"
+				className="px-4 py-2 border-2 cursor-not-allowed border-cs-primary text-cs-white bg-cs-primary"
 				disabled={true}
 			>
 				{children}
@@ -146,7 +146,7 @@ const SecondaryButton = ({
 		className ? (
 			<button
 				{...props}
-				className={`px-4 py-2 border-2 cursor-not-allowed border-cs-secondary text-cs-white bg-cs-secondary ${className}`}
+				className={`px-4 py-2 border-2 cursor-not-allowed border-cs-secondary bg-cs-secondary text-cs-white ${className}`}
 				disabled={true}
 			>
 				{children}
@@ -154,7 +154,7 @@ const SecondaryButton = ({
 		) : (
 			<button
 				{...props}
-				className="px-4 py-2 border-2 cursor-not-allowed border-cs-secondary text-cs-white"
+				className="px-4 py-2 border-2 cursor-not-allowed border-cs-secondary bg-cs-secondary text-cs-white"
 				disabled={true}
 			>
 				{children}
@@ -187,7 +187,7 @@ const WarningButton = ({
 		className ? (
 			<button
 				{...props}
-				className={`px-4 py-2 border-2 cursor-not-allowed border-cs-warning text-cs-black bg-cs-primary ${className}`}
+				className={`px-4 py-2 border-2 cursor-not-allowed border-cs-warning text-cs-black bg-cs-warning ${className}`}
 				disabled={true}
 			>
 				{children}
@@ -195,7 +195,7 @@ const WarningButton = ({
 		) : (
 			<button
 				{...props}
-				className="px-4 py-2 border-2 cursor-not-allowed border-cs-warning text-cs-black"
+				className="px-4 py-2 border-2 cursor-not-allowed border-cs-warning text-cs-black bg-cs-warning"
 				disabled={true}
 			>
 				{children}
