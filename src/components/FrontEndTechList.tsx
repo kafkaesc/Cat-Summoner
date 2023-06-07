@@ -1,9 +1,10 @@
 import Image from 'next/image';
 
-import ReactLogo from 'public/assets/images/tech/react.svg';
 import NextJsLogo from 'public/assets/images/tech/next.svg';
+import ReactLogo from 'public/assets/images/tech/react.svg';
 import TypeScriptLogo from 'public/assets/images/tech/typescript.svg';
 import TailwindLogo from 'public/assets/images/tech/tailwind.svg';
+import JestLogo from 'public/assets/images/tech/jest.svg';
 
 const techLinks = [
 	{
@@ -29,6 +30,12 @@ const techLinks = [
 		name: 'Tailwind',
 		src: TailwindLogo,
 		url: 'https://tailwindcss.com/',
+	},
+	{
+		alt: 'Jest Logo',
+		name: 'Jest',
+		src: JestLogo,
+		url: 'https://jestjs.io/',
 	},
 ];
 

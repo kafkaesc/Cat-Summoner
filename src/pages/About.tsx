@@ -38,7 +38,14 @@ export default function About() {
 				<A href="https://tailwindcss.com/" rel="noreferrer" target="_blank">
 					Tailwind
 				</A>{' '}
-				is utilized for the site&apos;s styles.
+				is utilized for the site&apos;s styles. The site is tested with{' '}
+				<A href="https://testing-library.com/" rel="noreferrer" target="_blank">
+					React Testing Library
+				</A>{' '}
+				and{' '}
+				<A href="https://jestjs.io/" rel="noreferrer" target="_blank">
+					Jest
+				</A>
 			</P>
 			<FrontEndTechList />
 			<H2>The Cats</H2>
