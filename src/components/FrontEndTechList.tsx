@@ -44,7 +44,10 @@ export default function FrontEndTechList() {
 		<ul className="text-center">
 			{techLinks.map((te) => {
 				return (
-					<li className="inline-block p-3 mx-3" key={`${te.name}-Logo`}>
+					<li
+						className="inline-block p-3 mx-3 hover:animate-float-up-750ms"
+						key={`${te.name}-Logo`}
+					>
 						<a href={te.url} rel="noreferrer" target="_blank">
 							<Image alt={te.alt} height={48} src={te.src} />
 						</a>

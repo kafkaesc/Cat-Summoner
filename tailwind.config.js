@@ -28,6 +28,10 @@ module.exports = {
 		},
 		extend: {
 			keyframes: {
+				'float-up': {
+					from: { transform: 'translateY(0)' },
+					to: { transform: 'translateY(-0.5em)' },
+				},
 				spin: {
 					from: { transform: 'rotate(0deg)' },
 					to: { transform: 'rotate(360deg)' },
@@ -38,6 +42,12 @@ module.exports = {
 				},
 			},
 			animation: {
+				'float-up': 'float-up 1s ease-in-out forwards',
+				'float-up-500ms': 'float-up 500ms ease-in-out forwards',
+				'float-up-750ms': 'float-up 750ms ease-in-out forwards',
+				'float-up-2': 'float-up 2s ease-in-out forwards',
+				'float-up-3': 'float-up 3s ease-in-out forwards',
+				'float-up-4': 'float-up 4s ease-in-out forwards',
 				spin: 'spin 1s linear infinite',
 				'spin-2': 'spin 2s linear infinite',
 				'spin-3': 'spin 3s linear infinite',
