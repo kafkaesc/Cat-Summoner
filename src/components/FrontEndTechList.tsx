@@ -42,16 +42,20 @@ const techLinks = [
 export default function FrontEndTechList() {
 	return (
 		<ul className="text-center">
-			{techLinks.map((te) => {
+			{techLinks.map((te, index) => {
+				console.log('index: ', index);
 				return (
-					<li
-						className="inline-block p-3 mx-3 hover:animate-float-up-750ms"
-						key={`${te.name}-Logo`}
-					>
-						<a href={te.url} rel="noreferrer" target="_blank">
-							<Image alt={te.alt} height={48} src={te.src} />
-						</a>
-					</li>
+					<>
+						<li
+							className="inline-block p-3 mx-3 hover:animate-float-up-750ms"
+							key={`${te.name}-Logo`}
+						>
+							<a href={te.url} rel="noreferrer" target="_blank">
+								<Image alt={te.alt} height={48} src={te.src} />
+							</a>
+						</li>
+						{index === 0 && <br className="md:hidden" />}
+					</>
 				);
 			})}
 		</ul>
