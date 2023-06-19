@@ -94,7 +94,7 @@ export function useCatImageDetails() {
 		//const idString: string = formatCatImageIdForFilename(catImageId);
 		const alt: string = getAltText(name, catImageId);
 		//const srcOld: string = `${catImageFolder}${name.toLocaleLowerCase()}-${idString}.jpg`;
-		const src: any = getImage(name.toLocaleLowerCase(), catImageId);
+		const src: any = getImage(name.toLocaleLowerCase(), catImageId)?.src;
 		return {
 			alt: alt,
 			height: 500,
