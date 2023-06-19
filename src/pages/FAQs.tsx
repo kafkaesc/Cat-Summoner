@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import H1 from '@/elements/H1';
+import H2 from '@/elements/H2';
 import P from '@/elements/P';
 import Layout from '@/layout/Layout';
 
@@ -9,9 +10,16 @@ export default function Faqs() {
 			<Head>
 				<title>Frequently Asked Questions 🐱 Cat Summoner</title>
 			</Head>
-			<H1>FAQs</H1>
+			<H1 className="mb-0">FAQs</H1>
+			<span className="block mb-2 font-serif text-lg italic text-center">
+				Frequently Asked Questions
+			</span>
+			<H2>What is this site?</H2>
 			<P>
-				{`The box in question was, as I say, oblong. It was about six feet in length by two and a half in breadth; I observed it attentively, and like to be precise. Now this shape was peculiar; and no sooner had I seen it, than I took credit to myself for the accuracy of my guessing. I had reached the conclusion, it will be remembered, that the extra baggage of my friend, the artist, would prove to be pictures, or at least a picture; for I knew he had been for several weeks in conference with Nicolino:—and now here was a box, which, from its shape, COULD possibly contain nothing in the world but a copy of Leonardo's "Last Supper;" and a copy of this very "Last Supper," done by Rubini the younger, at Florence, I had known, for some time, to be in the possession of Nicolino.`}
+				{`Cat Summoner is an interactive activity where you can "summon" cats 
+				by calling their name. After 3 seconds the cat will arrive, 
+				represented by a randomly selected picture of them. When you encounter 
+				a new picture it will be added to your Catbook collection.`}
 			</P>
 		</Layout>
 	);

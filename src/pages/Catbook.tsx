@@ -17,7 +17,7 @@ export default function Catbook() {
 			<Head>
 				<title>Catbook 🐱 Cat Summoner</title>
 			</Head>
-			<H1>Catbook</H1>
+			<H1 className="mb-2">Catbook</H1>
 			<H2>Fearless</H2>
 			<div className="md:mx-2">
 				{catbook.fearless ? (

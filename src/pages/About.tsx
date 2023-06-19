@@ -13,7 +13,7 @@ export default function About() {
 			<Head>
 				<title>About 🐱 Cat Summoner</title>
 			</Head>
-			<H1>About</H1>
+			<H1 className="mb-0">About</H1>
 			<P className="text-center">Built by Jared Hettinger</P>
 			<SocialLinks />
 			<H2>The Site</H2>
@@ -34,11 +34,11 @@ export default function About() {
 				>
 					TypeScript
 				</A>
-				.{' '}
+				and{' '}
 				<A href="https://tailwindcss.com/" rel="noreferrer" target="_blank">
 					Tailwind
-				</A>{' '}
-				is utilized for the site&apos;s styles. The site is tested with{' '}
+				</A>
+				. The code is tested with{' '}
 				<A href="https://testing-library.com/" rel="noreferrer" target="_blank">
 					React Testing Library
 				</A>{' '}
@@ -46,15 +46,24 @@ export default function About() {
 				<A href="https://jestjs.io/" rel="noreferrer" target="_blank">
 					Jest
 				</A>
+				. The{' '}
+				<A
+					href="https://github.com/kafkaesc/Cat-Summoner"
+					rel="noreferrer"
+					target="_blank"
+				>
+					full code for this project
+				</A>{' '}
+				is available on GitHub.
 			</P>
 			<FrontEndTechList />
-			<H2>The Cats</H2>
+			{/*<H2>The Cats</H2>
 			<P>
 				{`Pluto — this was the cat's name — was my favorite pet
 				and playmate. I alone fed him, and he attended me wherever I went about
 				the house. It was even with difficulty that I could prevent him from
 				following me through the streets.`}
-			</P>
+	    </P>*/}
 		</Layout>
 	);
 }

@@ -25,7 +25,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Layout>
-				<H1>Cat Summoner</H1>
+				<H1 className="mb-2">Cat Summoner</H1>
 				<Button buttonStyle="secondary" onClick={() => loadCat('Fearless')}>
 					Fearless
 				</Button>
