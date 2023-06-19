@@ -59,7 +59,7 @@ const DefaultButton = ({
 	className,
 	disabled,
 	...props
-}: ButtonProps) => {
+}: ButtonStyleProps) => {
 	return disabled ? (
 		className ? (
 			<button
@@ -100,7 +100,7 @@ const PrimaryButton = ({
 	className,
 	disabled,
 	...props
-}: ButtonProps) => {
+}: ButtonStyleProps) => {
 	return disabled ? (
 		className ? (
 			<button
@@ -141,7 +141,7 @@ const SecondaryButton = ({
 	className,
 	disabled,
 	...props
-}: ButtonProps) => {
+}: ButtonStyleProps) => {
 	return disabled ? (
 		className ? (
 			<button
@@ -177,12 +177,53 @@ const SecondaryButton = ({
 	);
 };
 
+const TextButton = ({
+	children,
+	className,
+	disabled,
+	...props
+}: ButtonStyleProps) => {
+	return disabled ? (
+		className ? (
+			<button
+				{...props}
+				className={`cursor-not-allowed text-link-hover ${className}`}
+				disabled={true}
+			>
+				{children}
+			</button>
+		) : (
+			<button
+				{...props}
+				className="cursor-not-allowed text-link-hover"
+				disabled={true}
+			>
+				{children}
+			</button>
+		)
+	) : className ? (
+		<button
+			{...props}
+			className={`text-link hover:text-link-hover hover:underline ${className}`}
+		>
+			{children}
+		</button>
+	) : (
+		<button
+			{...props}
+			className="text-link hover:text-link-hover hover:underline"
+		>
+			{children}
+		</button>
+	);
+};
+
 const WarningButton = ({
 	children,
 	className,
 	disabled,
 	...props
-}: ButtonProps) => {
+}: ButtonStyleProps) => {
 	return disabled ? (
 		className ? (
 			<button
@@ -241,6 +282,10 @@ export default function Button({
 		<SecondaryButton className={className} disabled={disabled} {...props}>
 			{children}
 		</SecondaryButton>
+	) : buttonStyle === 'text' ? (
+		<TextButton className={className} disabled={disabled} {...props}>
+			{children}
+		</TextButton>
 	) : buttonStyle === 'warning' ? (
 		<WarningButton className={className} disabled={disabled} {...props}>
 			{children}
