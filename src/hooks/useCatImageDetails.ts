@@ -91,9 +91,10 @@ export function useCatImageDetails() {
 		name: string,
 		catImageId: number
 	): CatImageDetails {
-		const idString: string = formatCatImageIdForFilename(catImageId);
+		//const idString: string = formatCatImageIdForFilename(catImageId);
 		const alt: string = getAltText(name, catImageId);
-		const src: string = `${catImageFolder}${name.toLocaleLowerCase()}-${idString}.jpg`;
+		//const srcOld: string = `${catImageFolder}${name.toLocaleLowerCase()}-${idString}.jpg`;
+		const src: any = getImage(name.toLocaleLowerCase(), catImageId);
 		return {
 			alt: alt,
 			height: 500,
