@@ -51,9 +51,13 @@ export default function Catbook() {
 					<P>You have not unlocked any Lalo pictures.</P>
 				)}
 			</div>
-			<Button className="block mx-auto" onClick={() => clearCatbook()}>
-				Clear Catbook Data
-			</Button>
+			<P className="text-center">
+				Want to start over?{' '}
+				<Button buttonStyle="text" onClick={() => clearCatbook()}>
+					Click here to reset your Catbook
+				</Button>
+				.
+			</P>
 		</Layout>
 	);
 }
