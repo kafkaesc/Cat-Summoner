@@ -10,6 +10,6 @@ export interface CatImageDetails {
 	height?: number;
 	catImageId: number;
 	name: string;
-	src: string;
+	src: any;
 	width?: number;
 }
