@@ -5,6 +5,8 @@ import H1 from '@/elements/H1';
 import Layout from '@/layout/Layout';
 import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 
+import loading from 'public/assets/images/loading.png';
+
 export default function Home() {
 	const {
 		imageDetails: catImage,
@@ -41,7 +43,7 @@ export default function Home() {
 						className="animate-spin-3"
 						height="500"
 						width="500"
-						src="/assets/images/loading.png"
+						src={loading}
 					/>
 				)}
 				{!catImageIsLoading && catImage && (
