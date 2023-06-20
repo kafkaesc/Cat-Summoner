@@ -1,8 +1,12 @@
-# Cat Summoner
+# Cat Summoner 🐱
 
 Built by Jared Hettinger
 
 Work in progress. Cat Summoner is a test project for summoning cats.
+
+A working version of this site can be viewed at https://kafkaesc.github.io/Cat-Summoner
+
+The full code for this project can be viewed at https://github.com/kafkaesc/Cat-Summoner
 
 ## Run
 
