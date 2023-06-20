@@ -4,12 +4,13 @@ import H1 from '@/elements/H1';
 import H2 from '@/elements/H2';
 import P from '@/elements/P';
 import Layout from '@/layout/Layout';
+import EmptyCatbook from '@/components/EmptyCatbook';
 import Polaroid from '@/components/Polaroid';
 import { useCatbook } from '@/hooks/useCatbook';
 import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 
 export default function Catbook() {
-	const { catbookData: catbook, clearCatbook } = useCatbook();
+	const { catbookData: catbook, clearCatbook, isEmpty } = useCatbook();
 	const { getImage: getCatImage } = useCatImageDetails();
 
 	return (
@@ -18,6 +19,11 @@ export default function Catbook() {
 				<title>Catbook 🐱 Cat Summoner</title>
 			</Head>
 			<H1 className="mb-2">Catbook</H1>
+			{/* TODO: Display the EmptyCatbook component using 
+			the isEmpty function from the useCatbook hook*/}
+			{/*<EmptyCatbook />*/}
+			{/* TODO: Only display the following Catbook info if 
+			the catbook has been somewhat populated */}
 			<H2>Fearless</H2>
 			<div className="md:mx-2">
 				{catbook.fearless ? (

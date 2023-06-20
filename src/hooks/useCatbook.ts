@@ -24,6 +24,12 @@ export function useCatbook() {
 		return !catData.find((cd: number) => cd === catImageId);
 	}
 
+	// TODO: Return true if all cats are empty in catbookData
+	function isEmpty() {
+		console.warn('useCatbook isEmpty not implemented');
+		return false;
+	}
+
 	function unlockCatbookImage(name: string, catImageId: number) {
 		if (catbookCanHas(name.toLocaleLowerCase(), catImageId)) {
 			ls.add(name.toLocaleLowerCase(), catImageId, true);
@@ -40,5 +46,5 @@ export function useCatbook() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	return { catbookData, clearCatbook, unlockCatbookImage };
+	return { catbookData, clearCatbook, isEmpty, unlockCatbookImage };
 }
