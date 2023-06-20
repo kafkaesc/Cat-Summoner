@@ -24,10 +24,21 @@ export function useCatbook() {
 		return !catData.find((cd: number) => cd === catImageId);
 	}
 
-	// TODO: Return true if all cats are empty in catbookData
 	function isEmpty() {
-		console.warn('useCatbook isEmpty not implemented');
-		return false;
+		if (!catbookData.fearless && !catbookData.harvey && !catbookData.lalo) {
+			return true;
+		} else if (
+			catbookData.fearless &&
+			catbookData.fearless.length === 0 &&
+			catbookData.harvey &&
+			catbookData.harvey.length === 0 &&
+			catbookData.lalo &&
+			catbookData.lalo.length === 0
+		) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	function unlockCatbookImage(name: string, catImageId: number) {
