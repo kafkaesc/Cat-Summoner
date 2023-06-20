@@ -24,6 +24,23 @@ export function useCatbook() {
 		return !catData.find((cd: number) => cd === catImageId);
 	}
 
+	function isEmpty() {
+		if (!catbookData.fearless && !catbookData.harvey && !catbookData.lalo) {
+			return true;
+		} else if (
+			catbookData.fearless &&
+			catbookData.fearless.length === 0 &&
+			catbookData.harvey &&
+			catbookData.harvey.length === 0 &&
+			catbookData.lalo &&
+			catbookData.lalo.length === 0
+		) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	function unlockCatbookImage(name: string, catImageId: number) {
 		if (catbookCanHas(name.toLocaleLowerCase(), catImageId)) {
 			ls.add(name.toLocaleLowerCase(), catImageId, true);
@@ -40,5 +57,5 @@ export function useCatbook() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	return { catbookData, clearCatbook, unlockCatbookImage };
+	return { catbookData, clearCatbook, isEmpty, unlockCatbookImage };
 }
