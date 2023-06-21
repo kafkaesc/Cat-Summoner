@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 
 interface CatbookData {
+	fearless?: Array<number>;
 	harvey?: Array<number>;
 	lalo?: Array<number>;
-	fearless?: Array<number>;
+	zelda?: Array<number>;
 }
 
 export function useCatbook() {
@@ -15,6 +16,7 @@ export function useCatbook() {
 		ls.clear('fearless');
 		ls.clear('harvey');
 		ls.clear('lalo');
+		ls.clear('zelda');
 		setCatbookData({});
 	}
 
@@ -25,15 +27,15 @@ export function useCatbook() {
 	}
 
 	function isEmpty() {
-		if (!catbookData.fearless && !catbookData.harvey && !catbookData.lalo) {
-			return true;
-		} else if (
-			catbookData.fearless &&
-			catbookData.fearless.length === 0 &&
-			catbookData.harvey &&
-			catbookData.harvey.length === 0 &&
-			catbookData.lalo &&
-			catbookData.lalo.length === 0
+		if (
+			(!catbookData.fearless ||
+				(catbookData.fearless && catbookData.fearless.length === 0)) &&
+			(!catbookData.harvey ||
+				(catbookData.harvey && catbookData.harvey.length === 0)) &&
+			(!catbookData.lalo ||
+				(catbookData.lalo && catbookData.lalo.length === 0)) &&
+			(!catbookData.zelda ||
+				(catbookData.zelda && catbookData.zelda.length === 0))
 		) {
 			return true;
 		} else {
@@ -52,6 +54,7 @@ export function useCatbook() {
 			fearless: ls.get('fearless'),
 			harvey: ls.get('harvey'),
 			lalo: ls.get('lalo'),
+			zelda: ls.get('zelda'),
 		};
 		setCatbookData(localCatbookData);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
