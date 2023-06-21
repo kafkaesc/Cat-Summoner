@@ -18,7 +18,6 @@ import zelda03 from 'public/assets/images/cats/zelda-03.jpg';
 import zelda04 from 'public/assets/images/cats/zelda-04.jpg';
 import zelda05 from 'public/assets/images/cats/zelda-05.jpg';
 
-
 const catImageData: Array<CatImageDetails> = [
 	{
 		alt: 'A black cat sits on a table with their two front legs covering a stack of cards. The logo is visible on the cards, revealing that the cat is interrupting a game of Exploding Kittens. The cat stares up into the camera with a deadpan expression, unconcerned with their interruption of the game.',
@@ -81,31 +80,31 @@ const catImageData: Array<CatImageDetails> = [
 		src: lalo05,
 	},
 	{
-		alt: 'TODO: Allan please add the alt text for this image.',
+		alt: 'A tortoiseshell cat sits on a small rug of alternating gray and turquoise lines and next to a door with a full length window looking outside. The cat is looking back toward the camera expectantly.',
 		catImageId: 1,
 		name: 'zelda',
 		src: zelda01,
 	},
 	{
-		alt: 'TODO: Allan please add the alt text for this image.',
+		alt: 'A tortoiseshell cat is laying on their back on a wood floor. The soft, fluffy hair on their belly is visible as they look upward.',
 		catImageId: 2,
 		name: 'zelda',
 		src: zelda02,
 	},
 	{
-		alt: 'TODO: Allan please add the alt text for this image.',
+		alt: "A close-up side profile of a tortoiseshell cat. The cat is backlit by a tv running in a blurry background, which contrasts strongly with the cat's sharply defined face.",
 		catImageId: 3,
 		name: 'zelda',
 		src: zelda03,
 	},
 	{
-		alt: 'TODO: Allan please add the alt text for this image.',
+		alt: 'A tortoiseshell cat lies near the edge of a leather couch. Their paws point outward from the front of their body as they stare at something outside of frame.',
 		catImageId: 4,
 		name: 'zelda',
 		src: zelda04,
 	},
 	{
-		alt: 'TODO: Allan please add the alt text for this image.',
+		alt: 'A tortoiseshell cat is peeking out of a paper shopping bag that is laying on the floor.',
 		catImageId: 5,
 		name: 'zelda',
 		src: zelda05,
