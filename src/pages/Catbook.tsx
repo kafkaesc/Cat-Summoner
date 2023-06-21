@@ -71,6 +71,21 @@ export default function Catbook() {
 							</P>
 						)}
 					</div>
+					<H2>Zelda</H2>
+					<div className="md:mx-2">
+						{catbook.zelda ? (
+							catbook.zelda?.map((catImageId, index) => {
+								const image = getCatImage('zelda', catImageId);
+								return image && <Polaroid key={`zelda-${index}`} {...image} />;
+							})
+						) : (
+							<P>
+								You have not unlocked any Zelda pictures. You can visit the{' '}
+								<Link href="/">Cat Summoner homepage</Link> to call them a few
+								times, then check back here.
+							</P>
+						)}
+					</div>
 					<P className="text-center">
 						Want to start over?{' '}
 						<Button buttonStyle="text" onClick={() => clearCatbook()}>
