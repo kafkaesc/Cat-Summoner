@@ -12,9 +12,12 @@ import lalo02 from 'public/assets/images/cats/lalo-02.jpg';
 import lalo03 from 'public/assets/images/cats/lalo-03.jpg';
 import lalo04 from 'public/assets/images/cats/lalo-04.jpg';
 import lalo05 from 'public/assets/images/cats/lalo-05.jpg';
+import zelda01 from 'public/assets/images/cats/zelda-01.jpg';
+import zelda02 from 'public/assets/images/cats/zelda-02.jpg';
+import zelda03 from 'public/assets/images/cats/zelda-03.jpg';
+import zelda04 from 'public/assets/images/cats/zelda-04.jpg';
+import zelda05 from 'public/assets/images/cats/zelda-05.jpg';
 
-const catImageFolder = '/assets/images/cats/';
-const catImageIdLength = 2;
 
 const catImageData: Array<CatImageDetails> = [
 	{
@@ -77,6 +80,36 @@ const catImageData: Array<CatImageDetails> = [
 		name: 'lalo',
 		src: lalo05,
 	},
+	{
+		alt: 'TODO: Allan please add the alt text for this image.',
+		catImageId: 1,
+		name: 'zelda',
+		src: zelda01,
+	},
+	{
+		alt: 'TODO: Allan please add the alt text for this image.',
+		catImageId: 2,
+		name: 'zelda',
+		src: zelda02,
+	},
+	{
+		alt: 'TODO: Allan please add the alt text for this image.',
+		catImageId: 3,
+		name: 'zelda',
+		src: zelda03,
+	},
+	{
+		alt: 'TODO: Allan please add the alt text for this image.',
+		catImageId: 4,
+		name: 'zelda',
+		src: zelda04,
+	},
+	{
+		alt: 'TODO: Allan please add the alt text for this image.',
+		catImageId: 5,
+		name: 'zelda',
+		src: zelda05,
+	},
 ];
 
 export function useCatImageDetails() {
@@ -91,9 +124,7 @@ export function useCatImageDetails() {
 		name: string,
 		catImageId: number
 	): CatImageDetails {
-		//const idString: string = formatCatImageIdForFilename(catImageId);
 		const alt: string = getAltText(name, catImageId);
-		//const srcOld: string = `${catImageFolder}${name.toLocaleLowerCase()}-${idString}.jpg`;
 		const src: any = getImage(name.toLocaleLowerCase(), catImageId)?.src;
 		return {
 			alt: alt,
@@ -105,19 +136,12 @@ export function useCatImageDetails() {
 		};
 	}
 
-	function formatCatImageIdForFilename(catImageId: number): string {
-		let catImageIdString = '' + catImageId;
-		while (catImageIdString.length < catImageIdLength) {
-			catImageIdString = '0' + catImageIdString;
-		}
-		return catImageIdString;
-	}
-
 	function getAllFor(name: string): Array<CatImageDetails> {
 		if (
 			name.toLocaleLowerCase() === 'fearless' ||
 			name.toLocaleLowerCase() === 'harvey' ||
-			name.toLocaleLowerCase() === 'lalo'
+			name.toLocaleLowerCase() === 'lalo' ||
+			name.toLocaleLowerCase() === 'zelda'
 		) {
 			return catImageData.filter(
 				(cid) => cid.name.toLocaleLowerCase() === name.toLocaleLowerCase()
@@ -169,6 +193,9 @@ export function useCatImageDetails() {
 			return Math.floor(Math.random() * (5 - 1) + 1);
 		}
 		if (name.toLocaleLowerCase() === 'lalo') {
+			return Math.floor(Math.random() * (6 - 1) + 1);
+		}
+		if (name.toLocaleLowerCase() === 'zelda') {
 			return Math.floor(Math.random() * (6 - 1) + 1);
 		}
 		return 1;
