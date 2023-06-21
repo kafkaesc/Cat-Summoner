@@ -7,6 +7,8 @@ import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 
 import loading from 'public/assets/images/loading.png';
 
+const cats = ['Fearless', 'Harvey', 'Lalo', 'Zelda'];
+
 export default function Home() {
 	const {
 		imageDetails: catImage,
@@ -28,15 +30,15 @@ export default function Home() {
 			</Head>
 			<Layout>
 				<H1 className="mb-2">Cat Summoner</H1>
-				<Button buttonStyle="secondary" onClick={() => loadCat('Fearless')}>
-					Fearless
-				</Button>
-				<Button buttonStyle="secondary" onClick={() => loadCat('Harvey')}>
-					Harvey
-				</Button>
-				<Button buttonStyle="secondary" onClick={() => loadCat('Lalo')}>
-					Lalo
-				</Button>
+				{cats.map((cat) => (
+					<Button
+						buttonStyle="secondary"
+						key={cat}
+						onClick={() => loadCat(cat)}
+					>
+						{cat}
+					</Button>
+				))}
 				{catImageIsLoading && (
 					<Image
 						alt="Loading"
