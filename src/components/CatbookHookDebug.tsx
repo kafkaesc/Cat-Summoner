@@ -16,6 +16,11 @@ export default function CatbookHookDebug() {
 		unlockCatbookImage('lalo', 3);
 		unlockCatbookImage('lalo', 4);
 		unlockCatbookImage('lalo', 5);
+		unlockCatbookImage('zelda', 1);
+		unlockCatbookImage('zelda', 2);
+		unlockCatbookImage('zelda', 3);
+		unlockCatbookImage('zelda', 4);
+		unlockCatbookImage('zelda', 5);
 	}
 
 	return (
