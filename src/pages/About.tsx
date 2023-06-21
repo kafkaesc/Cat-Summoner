@@ -33,7 +33,7 @@ export default function About() {
 					target="_blank"
 				>
 					TypeScript
-				</A>
+				</A>{' '}
 				and{' '}
 				<A href="https://tailwindcss.com/" rel="noreferrer" target="_blank">
 					Tailwind
