@@ -34,10 +34,25 @@ export function useCatImageFile() {
 		else if (name === 'zelda' && catImageId === 4) return zelda04;
 		else if (name === 'zelda' && catImageId === 5) return zelda05;
 		else {
-			console.warn(`No matching image for args: (${name}, ${catImageId})`);
+			console.warn(`No matching image for args: ${name}, ${catImageId}`);
 			return null;
 		}
 	}
 
-	return { getImage };
+	function getImagesFor(name: string) {
+		name = name.toLocaleLowerCase();
+		if (name === 'fearless') return { 1: fearless01 };
+		else if (name === 'harvey')
+			return { 1: harvey01, 2: harvey02, 3: harvey03, 4: harvey04 };
+		else if (name === 'lalo')
+			return { 1: lalo01, 2: lalo02, 3: lalo03, 4: lalo04, 5: lalo05 };
+		else if (name === 'zelda')
+			return { 1: zelda01, 2: zelda02, 3: zelda03, 4: zelda04, 5: zelda05 };
+		else {
+			console.warn(`No matching images for arg: ${name}`);
+			return {};
+		}
+	}
+
+	return { getImage, getImagesFor };
 }
