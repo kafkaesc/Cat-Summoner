@@ -2,10 +2,10 @@ import Head from 'next/head';
 import Button from '@/elements/Button';
 import H1 from '@/elements/H1';
 import H2 from '@/elements/H2';
-import Link from '@/elements/Link';
 import P from '@/elements/P';
 import Layout from '@/layout/Layout';
 import EmptyCatbook from '@/components/EmptyCatbook';
+import EmptyCatbookRow from '@/components/EmptyCatbookRow';
 import Polaroid from '@/components/Polaroid';
 import { useCatbook } from '@/hooks/useCatbook';
 import { useCatImageDetails } from '@/hooks/useCatImageDetails';
@@ -34,11 +34,7 @@ export default function Catbook() {
 								);
 							})
 						) : (
-							<P>
-								You have not unlocked any Fearless pictures. You can visit the{' '}
-								<Link href="/">Cat Summoner homepage</Link> to call them a few
-								times, then check back here.
-							</P>
+							<EmptyCatbookRow name="Fearless" />
 						)}
 					</div>
 					<H2>Harvey</H2>
@@ -49,11 +45,7 @@ export default function Catbook() {
 								return image && <Polaroid key={`harvey-${index}`} {...image} />;
 							})
 						) : (
-							<P>
-								You have not unlocked any Harvey pictures. You can visit the{' '}
-								<Link href="/">Cat Summoner homepage</Link> to call them a few
-								times, then check back here.
-							</P>
+							<EmptyCatbookRow name="Harvey" />
 						)}
 					</div>
 					<H2>Lalo</H2>
@@ -64,11 +56,7 @@ export default function Catbook() {
 								return image && <Polaroid key={`lalo-${index}`} {...image} />;
 							})
 						) : (
-							<P>
-								You have not unlocked any Lalo pictures. You can visit the{' '}
-								<Link href="/">Cat Summoner homepage</Link> to call them a few
-								times, then check back here.
-							</P>
+							<EmptyCatbookRow name="Lalo" />
 						)}
 					</div>
 					<H2>Zelda</H2>
@@ -79,11 +67,7 @@ export default function Catbook() {
 								return image && <Polaroid key={`zelda-${index}`} {...image} />;
 							})
 						) : (
-							<P>
-								You have not unlocked any Zelda pictures. You can visit the{' '}
-								<Link href="/">Cat Summoner homepage</Link> to call them a few
-								times, then check back here.
-							</P>
+							<EmptyCatbookRow name="Zelda" />
 						)}
 					</div>
 					<P className="text-center">
