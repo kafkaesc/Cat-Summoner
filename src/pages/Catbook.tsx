@@ -12,7 +12,7 @@ import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 
 export default function Catbook() {
 	const { catbookData: catbook, clearCatbook, isEmpty } = useCatbook();
-	const { getImage: getCatImage } = useCatImageDetails();
+	const { getImageDetails: getCatImage } = useCatImageDetails();
 
 	return (
 		<Layout>

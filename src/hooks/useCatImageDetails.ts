@@ -1,141 +1,117 @@
-import { useRef, useState } from 'react';
 import { CatImageDetails } from '@/interfaces/CatInterfaces';
-import { useCatbook } from '@/hooks/useCatbook';
-
-import fearless01 from 'public/assets/images/cats/fearless-01.jpg';
-import harvey01 from 'public/assets/images/cats/harvey-01.jpg';
-import harvey02 from 'public/assets/images/cats/harvey-02.jpg';
-import harvey03 from 'public/assets/images/cats/harvey-03.jpg';
-import harvey04 from 'public/assets/images/cats/harvey-04.jpg';
-import lalo01 from 'public/assets/images/cats/lalo-01.jpg';
-import lalo02 from 'public/assets/images/cats/lalo-02.jpg';
-import lalo03 from 'public/assets/images/cats/lalo-03.jpg';
-import lalo04 from 'public/assets/images/cats/lalo-04.jpg';
-import lalo05 from 'public/assets/images/cats/lalo-05.jpg';
-import zelda01 from 'public/assets/images/cats/zelda-01.jpg';
-import zelda02 from 'public/assets/images/cats/zelda-02.jpg';
-import zelda03 from 'public/assets/images/cats/zelda-03.jpg';
-import zelda04 from 'public/assets/images/cats/zelda-04.jpg';
-import zelda05 from 'public/assets/images/cats/zelda-05.jpg';
 
 const catImageData: Array<CatImageDetails> = [
 	{
 		alt: 'A black cat sits on a table with their two front legs covering a stack of cards. The logo is visible on the cards, revealing that the cat is interrupting a game of Exploding Kittens. The cat stares up into the camera with a deadpan expression, unconcerned with their interruption of the game.',
 		catImageId: 1,
 		name: 'fearless',
-		src: fearless01,
+		src: require('public/assets/images/cats/fearless-01.jpg'),
 	},
 	{
 		alt: 'An orange cat sits on a gray bed sheet. They are sitting back, with their front legs facing forward and their back legs facing toward the camera. Their tail is wrapped around their back legs. Their ears are perked up and their eyes are squeezed near-shut in a pleasant expression.',
 		catImageId: 1,
 		name: 'harvey',
-		src: harvey01,
+		src: require('public/assets/images/cats/harvey-01.jpg'),
 	},
 	{
 		alt: 'An orange cat sits on the hood of an electric-blue car. They lean slightly toward the camera with a curious look on their face.',
 		catImageId: 2,
 		name: 'harvey',
-		src: harvey02,
+		src: require('public/assets/images/cats/harvey-02.jpg'),
 	},
 	{
 		alt: 'TODO: Allan please add the alt text for this image.',
 		catImageId: 3,
 		name: 'harvey',
-		src: harvey03,
+		src: require('public/assets/images/cats/harvey-03.jpg'),
 	},
 	{
 		alt: 'A close-up head shot of an orange cat. Their face resembles a human face expressing irritation and annoyance.',
 		catImageId: 4,
 		name: 'harvey',
-		src: harvey04,
+		src: require('public/assets/images/cats/harvey-04.jpg'),
 	},
 	{
 		alt: 'A mostly white cat with black spots around their eyes and on their back faces the camera. The cat is walking forward with their front right paw tucked under their body. Their black tail is held up with a hook at the top. Their eyes look into the camera with curiosity.',
 		catImageId: 1,
 		name: 'lalo',
-		src: lalo01,
+		src: require('public/assets/images/cats/lalo-01.jpg'),
 	},
 	{
 		alt: 'A cat sits at the edge of a porch beneath a black night sky. Their fur is mostly white with some black spots down the back. The cat has their back to the camera, but their head is turned to face backward, making them seem peaceful and contemplative.',
 		catImageId: 2,
 		name: 'lalo',
-		src: lalo02,
+		src: require('public/assets/images/cats/lalo-02.jpg'),
 	},
 	{
 		alt: 'A mostly white cat with black spots around their eyes lies inside of a cylindrical wicker enclosed bed. Their head peeks out of the circular hole on its front. Inside the enclosure the cat can be seen holding onto a stuffed chile pepper toy.',
 		catImageId: 3,
 		name: 'lalo',
-		src: lalo03,
+		src: require('public/assets/images/cats/lalo-03.jpg'),
 	},
 	{
 		alt: 'A mostly white cat with black spots around their eyes and on their back sits on the edge of a blue porch that stretches off into the background. Their body is perpendicular to the camera with their tail wrapping forward, creating a classic cat silhouette.',
 		catImageId: 4,
 		name: 'lalo',
-		src: lalo04,
+		src: require('public/assets/images/cats/lalo-04.jpg'),
 	},
 	{
 		alt: 'A mostly white cat with black spots around their eyes and on their back stands atop a roof. They are perched above the camera and face downward with their mouth open mid-meow. Behind them arcs a rainbow.',
 		catImageId: 5,
 		name: 'lalo',
-		src: lalo05,
+		src: require('public/assets/images/cats/lalo-05.jpg'),
 	},
 	{
 		alt: 'A tortoiseshell cat sits on a small rug of alternating gray and turquoise lines and next to a door with a full length window looking outside. The cat is looking back toward the camera expectantly.',
 		catImageId: 1,
 		name: 'zelda',
-		src: zelda01,
+		src: require('public/assets/images/cats/zelda-01.jpg'),
 	},
 	{
 		alt: 'A tortoiseshell cat is laying on their back on a wood floor. The soft, fluffy hair on their belly is visible as they look upward.',
 		catImageId: 2,
 		name: 'zelda',
-		src: zelda02,
+		src: require('public/assets/images/cats/zelda-02.jpg'),
 	},
 	{
 		alt: "A close-up side profile of a tortoiseshell cat. The cat is backlit by a tv running in a blurry background, which contrasts strongly with the cat's sharply defined face.",
 		catImageId: 3,
 		name: 'zelda',
-		src: zelda03,
+		src: require('public/assets/images/cats/zelda-03.jpg'),
 	},
 	{
 		alt: 'A tortoiseshell cat lies near the edge of a leather couch. Their paws point outward from the front of their body as they stare at something outside of frame.',
 		catImageId: 4,
 		name: 'zelda',
-		src: zelda04,
+		src: require('public/assets/images/cats/zelda-04.jpg'),
 	},
 	{
 		alt: 'A tortoiseshell cat is peeking out of a paper shopping bag that is laying on the floor.',
 		catImageId: 5,
 		name: 'zelda',
-		src: zelda05,
+		src: require('public/assets/images/cats/zelda-05.jpg'),
 	},
 ];
 
 export function useCatImageDetails() {
-	const __activeTimeout = useRef<NodeJS.Timeout | null>(null);
-	const [__imageDetails, __setImageDetails] = useState<CatImageDetails | null>(
-		null
-	);
-	const [__isLoading, __setIsLoading] = useState<boolean>(false);
-	const { unlockCatbookImage } = useCatbook();
-
-	function createImageDetails(
+	function getImageDetails(
 		name: string,
 		catImageId: number
-	): CatImageDetails {
-		const alt: string = getAltText(name, catImageId);
-		const src: any = getImage(name.toLocaleLowerCase(), catImageId)?.src;
-		return {
-			alt: alt,
-			height: 500,
-			catImageId: catImageId ? catImageId : -1,
-			name: name,
-			src: src,
-			width: 500,
-		};
+	): CatImageDetails | null {
+		const images = catImageData.filter(
+			(cid) =>
+				catImageId === cid.catImageId &&
+				name.toLocaleLowerCase() === cid.name.toLocaleLowerCase()
+		);
+		if (images.length > 0) {
+			return images[0];
+		} else {
+			console.warn(`No image data for args: ${name}, ${catImageId})`);
+			return null;
+		}
 	}
 
-	function getAllFor(name: string): Array<CatImageDetails> {
+	function getImageDetailsFor(name: string): Array<CatImageDetails> {
 		if (
 			name.toLocaleLowerCase() === 'fearless' ||
 			name.toLocaleLowerCase() === 'harvey' ||
@@ -143,93 +119,12 @@ export function useCatImageDetails() {
 			name.toLocaleLowerCase() === 'zelda'
 		) {
 			return catImageData.filter(
-				(cid) => cid.name.toLocaleLowerCase() === name.toLocaleLowerCase()
+				(cid) => name.toLocaleLowerCase() === cid.name.toLocaleLowerCase()
 			);
 		} else {
-			console.warn(
-				`Invalid name ${name} argument for getAllFor from useCatImageDetails`
-			);
 			return [];
 		}
 	}
 
-	// Return alt text for the image associated with the name and image ID.
-	function getAltText(name: string, catImageId: number): string {
-		const altText = catImageData.filter(
-			(cid) =>
-				catImageId === cid.catImageId &&
-				cid.name.toLocaleLowerCase() === name.toLocaleLowerCase()
-		);
-		if (altText.length > 0) {
-			return altText[0].alt;
-		} else {
-			console.warn(`No altText for (name=${name}, catImageId=${catImageId})`);
-			return '';
-		}
-	}
-
-	function getImage(name: string, catImageId: number): CatImageDetails | null {
-		const image = catImageData.filter(
-			(cid) =>
-				catImageId === cid.catImageId &&
-				name.toLocaleLowerCase() === cid.name.toLocaleLowerCase()
-		);
-		if (image.length > 0) {
-			return image[0];
-		} else {
-			console.warn(
-				`No image data for (name=${name}, catImageId=${catImageId})`
-			);
-			return null;
-		}
-	}
-
-	function randomizeId(name: string): number {
-		if (name.toLocaleLowerCase() === 'fearless') {
-			return 1;
-		}
-		if (name.toLocaleLowerCase() === 'harvey') {
-			return Math.floor(Math.random() * (5 - 1) + 1);
-		}
-		if (name.toLocaleLowerCase() === 'lalo') {
-			return Math.floor(Math.random() * (6 - 1) + 1);
-		}
-		if (name.toLocaleLowerCase() === 'zelda') {
-			return Math.floor(Math.random() * (6 - 1) + 1);
-		}
-		return 1;
-	}
-
-	function setCat(name: string, catImageId?: number | null): void {
-		// Use the specific catImageId if provided, otherwise generate one randomly
-		const id: number = catImageId ? catImageId : randomizeId(name);
-		const imageDetails: CatImageDetails = createImageDetails(name, id);
-		startLoadingCatImage(name, id, imageDetails);
-	}
-
-	// Set that the image is loading and set a timeout to load the cat image
-	// details. If a previous cat image is set to load, clear it
-	function startLoadingCatImage(
-		name: string,
-		id: number,
-		imageDetails: CatImageDetails
-	): void {
-		__setIsLoading(true);
-		if (__activeTimeout.current) {
-			clearTimeout(__activeTimeout.current);
-		}
-		__activeTimeout.current = setTimeout(() => {
-			__setImageDetails(imageDetails);
-			unlockCatbookImage(name, id);
-			__setIsLoading(false);
-		}, 3000);
-	}
-
-	return {
-		getAllFor,
-		getImage,
-		imageDetails: __imageDetails,
-		isLoading: __isLoading,
-		setCat,
-	};
+	return { getImageDetails, getImageDetailsFor };
 }
