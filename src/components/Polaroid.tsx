@@ -1,8 +1,8 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 interface PolaroidProps {
 	alt: string;
-	src: string;
+	src: StaticImageData;
 	[props: string]: any;
 }
 

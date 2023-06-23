@@ -3,22 +3,14 @@ import Image from 'next/image';
 import Button from '@/elements/Button';
 import H1 from '@/elements/H1';
 import Layout from '@/layout/Layout';
-import { useCatImageDetails } from '@/hooks/useCatImageDetails';
+import { useCatSummon } from '@/hooks/useCatSummon';
 
 import loading from 'public/assets/images/loading.png';
 
 const cats = ['Fearless', 'Harvey', 'Lalo', 'Zelda'];
 
 export default function Home() {
-	const {
-		imageDetails: catImage,
-		isLoading: catImageIsLoading,
-		setCat,
-	} = useCatImageDetails();
-
-	function loadCat(name: string) {
-		setCat(name);
-	}
+	const { isLoading: catIsLoading, summonedCat, summonCat } = useCatSummon();
 
 	return (
 		<>
@@ -34,12 +26,12 @@ export default function Home() {
 					<Button
 						buttonStyle="secondary"
 						key={cat}
-						onClick={() => loadCat(cat)}
+						onClick={() => summonCat(cat)}
 					>
 						{cat}
 					</Button>
 				))}
-				{catImageIsLoading && (
+				{catIsLoading && (
 					<Image
 						alt="Loading"
 						className="animate-spin-3"
@@ -48,12 +40,12 @@ export default function Home() {
 						src={loading}
 					/>
 				)}
-				{!catImageIsLoading && catImage && (
+				{!catIsLoading && summonedCat && (
 					<Image
-						alt={catImage.alt}
-						height={catImage.height}
-						width={catImage.width}
-						src={catImage.src}
+						alt={summonedCat.alt}
+						height={500}
+						width={500}
+						src={summonedCat.src}
 					/>
 				)}
 			</Layout>
