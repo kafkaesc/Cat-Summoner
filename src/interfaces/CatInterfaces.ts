@@ -9,8 +9,9 @@ export interface Cat {
 
 export interface CatImageDetails {
 	alt: string;
-	height?: number;
+	catId: number;
 	catImageId: number;
+	height?: number;
 	name: string;
 	src: StaticImageData;
 	width?: number;
