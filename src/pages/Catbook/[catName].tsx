@@ -1,26 +1,24 @@
 import { useRouter } from 'next/router';
 import CatbookCat from '@/components/CatbookCat';
 import CatbookCatError from '@/components/CatbookCatError';
+import { useCats } from '@/hooks/useCats';
 
 export default function CatPage() {
 	const router = useRouter();
+	const catNames = useCats().getCatNames();
 	const catName = router.query.catName;
 
-	function invalidCatName(name: any): boolean {
-		if (!name || typeof name !== 'string') {
-			return true;
-		}
-		if (
-			catName !== 'Fearless' &&
-			catName !== 'Harvey' &&
-			catName !== 'Lalo' &&
-			catName !== 'Zelda'
-		) {
-			return true;
-		} else {
-			return false;
-		}
+	function invalidCatName(catName: any): boolean {
+		if (!catName || typeof catName !== 'string') return true;
+
+		catName = catName.toLowerCase();
+
+		if (catNames.find((cn) => cn.toLowerCase() === catName)) return false;
+		else return true;
 	}
+
+	// Check here to prevent a flicker before CatbookCat loads
+	if (typeof catName === 'undefined' || !catNames) return <></>;
 
 	if (invalidCatName(catName)) return <CatbookCatError />;
 
