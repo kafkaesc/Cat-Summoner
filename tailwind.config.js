@@ -23,6 +23,8 @@ module.exports = {
 			'gray-light': '#eee',
 			link: '#00f',
 			'link-hover': '#00c',
+			'link-dark-bg': '#5db43b',
+			'link-dark-bg-hover': '#53a135',
 			red: '#f00',
 			white: '#fff',
 		},
