@@ -3,14 +3,16 @@ import { StaticImageData } from 'next/image';
 export interface Cat {
 	age?: number;
 	id: number;
-	name?: string;
+	name: string;
 	nickname?: string;
+	subheadline?: string;
 }
 
 export interface CatImageDetails {
 	alt: string;
-	height?: number;
+	catId: number;
 	catImageId: number;
+	height?: number;
 	name: string;
 	src: StaticImageData;
 	width?: number;
