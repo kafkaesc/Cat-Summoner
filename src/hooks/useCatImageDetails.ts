@@ -106,6 +106,13 @@ const catImageData: Array<CatImageDetails> = [
 		name: 'zelda',
 		src: require('public/assets/images/cats/zelda-05.jpg'),
 	},
+	{
+		alt: 'TODO: Allan please add the alt text for this image.',
+		catId: 905,
+		catImageId: 1,
+		name: 'special',
+		src: require('public/assets/images/cats/special-01.jpg'),
+	},
 ];
 
 export function useCatImageDetails() {
@@ -141,5 +148,14 @@ export function useCatImageDetails() {
 		}
 	}
 
-	return { getImageDetails, getImageDetailsFor };
+	function getSpecialImage(arg: string): CatImageDetails | null {
+		if (arg === '404') {
+			return catImageData.filter(
+				(cid) => cid.catImageId === 1 && cid.name === 'special'
+			)[0];
+		}
+		return null;
+	}
+
+	return { getImageDetails, getImageDetailsFor, getSpecialImage };
 }
