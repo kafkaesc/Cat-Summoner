@@ -27,16 +27,13 @@ export function useCatbookHighlightAndImages() {
 		// highlight image, assign all remaining images to the images attribute.
 		catbookList = shuffle(catbookList);
 		const highlight = getImageDetails(name, catbookList[0]);
-		catbookList.shift();
 		let images: CatImageDetails[] = [];
-		catbookList.map((catImageId) => {
-			const img = getImageDetails(name, catImageId);
-			if (img) images.push(img);
+		catbookList.map((catImageId, index) => {
+			if (index != 0) {
+				const img = getImageDetails(name, catImageId);
+				if (img) images.push(img);
+			}
 		});
-
-		/*console.log('name: ', name);
-		console.log('highlight: ', highlight);
-		console.log('images: ', images);*/
 
 		return {
 			highlight: highlight,
