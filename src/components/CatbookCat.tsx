@@ -21,6 +21,7 @@ export default function CatbookCat({ catName }: CatbookCatProps) {
 
 	if (!cat) return <CatbookCatError />;
 
+	// I won't be apologizing for this variable name
 	const hai = getHighlightAndImages(catName);
 
 	return (
@@ -35,8 +36,8 @@ export default function CatbookCat({ catName }: CatbookCatProps) {
 							alt={hai.highlight.alt}
 							className="inline-block"
 							height={500}
-							width={500}
 							src={hai.highlight.src}
+							width={500}
 						/>
 					)}
 				</CatbookCatLeft>
@@ -46,9 +47,24 @@ export default function CatbookCat({ catName }: CatbookCatProps) {
 					{cat.about && <P>{cat.about}</P>}
 				</CatbookCatRight>
 			</div>
-			<div className="border pt-1.5 full-width">
-				<H2>Pics</H2>
-			</div>
+			{hai && hai.images && (
+				<div className="pt-1.5 full-width">
+					<H2>More Pictures</H2>
+					{hai.images.map((image, index) => {
+						return (
+							<div className="inline-block m-0.5" key={`${catName}-${index}`}>
+								<Image
+									alt={image.alt}
+									className="inline-block"
+									height={150}
+									src={image.src}
+									width={150}
+								/>
+							</div>
+						);
+					})}
+				</div>
+			)}
 		</Layout>
 	);
 }
