@@ -1,6 +1,7 @@
 import { StaticImageData } from 'next/image';
 
 export interface Cat {
+	about?: string;
 	age?: number;
 	id: number;
 	name: string;

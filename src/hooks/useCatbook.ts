@@ -9,7 +9,7 @@ interface CatbookData {
 }
 
 export function useCatbook() {
-	const [catbookData, setCatbookData] = useState<CatbookData>({});
+	const [__catbookData, __setCatbookData] = useState<CatbookData>({});
 	const ls = useLocalStorage();
 
 	function clearCatbook() {
@@ -17,7 +17,7 @@ export function useCatbook() {
 		ls.clear('harvey');
 		ls.clear('lalo');
 		ls.clear('zelda');
-		setCatbookData({});
+		__setCatbookData({});
 	}
 
 	// I'm sorry
@@ -26,16 +26,23 @@ export function useCatbook() {
 		return !catData.find((cd: number) => cd === catImageId);
 	}
 
+	function getCatbookDataFor(name: string) {
+		if (name.toLowerCase() === 'fearless') return __catbookData.fearless;
+		if (name.toLowerCase() === 'harvey') return __catbookData.harvey;
+		if (name.toLowerCase() === 'lalo') return __catbookData.lalo;
+		if (name.toLowerCase() === 'zelda') return __catbookData.zelda;
+	}
+
 	function isEmpty() {
 		if (
-			(!catbookData.fearless ||
-				(catbookData.fearless && catbookData.fearless.length === 0)) &&
-			(!catbookData.harvey ||
-				(catbookData.harvey && catbookData.harvey.length === 0)) &&
-			(!catbookData.lalo ||
-				(catbookData.lalo && catbookData.lalo.length === 0)) &&
-			(!catbookData.zelda ||
-				(catbookData.zelda && catbookData.zelda.length === 0))
+			(!__catbookData.fearless ||
+				(__catbookData.fearless && __catbookData.fearless.length === 0)) &&
+			(!__catbookData.harvey ||
+				(__catbookData.harvey && __catbookData.harvey.length === 0)) &&
+			(!__catbookData.lalo ||
+				(__catbookData.lalo && __catbookData.lalo.length === 0)) &&
+			(!__catbookData.zelda ||
+				(__catbookData.zelda && __catbookData.zelda.length === 0))
 		) {
 			return true;
 		} else {
@@ -56,9 +63,15 @@ export function useCatbook() {
 			lalo: ls.get('lalo'),
 			zelda: ls.get('zelda'),
 		};
-		setCatbookData(localCatbookData);
+		__setCatbookData(localCatbookData);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	return { catbookData, clearCatbook, isEmpty, unlockCatbookImage };
+	return {
+		catbookData: __catbookData,
+		clearCatbook,
+		getCatbookDataFor,
+		isEmpty,
+		unlockCatbookImage,
+	};
 }

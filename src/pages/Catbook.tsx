@@ -4,6 +4,7 @@ import H1 from '@/elements/H1';
 import H2 from '@/elements/H2';
 import P from '@/elements/P';
 import Layout from '@/layout/Layout';
+import ConditionalLink from '@/components/ConditionalLink';
 import EmptyCatbook from '@/components/EmptyCatbook';
 import EmptyCatbookRow from '@/components/EmptyCatbookRow';
 import Polaroid from '@/components/Polaroid';
@@ -24,7 +25,14 @@ export default function Catbook() {
 				<EmptyCatbook />
 			) : (
 				<>
-					<H2>Fearless</H2>
+					<H2>
+						<ConditionalLink
+							condition={!!(catbook.fearless && catbook.fearless.length > 0)}
+							link={`/Catbook/Fearless`}
+						>
+							Fearless
+						</ConditionalLink>
+					</H2>
 					<div className="text-center md:text-left">
 						{catbook.fearless ? (
 							catbook.fearless.map((catImageId, index) => {
@@ -37,7 +45,14 @@ export default function Catbook() {
 							<EmptyCatbookRow name="Fearless" />
 						)}
 					</div>
-					<H2>Harvey</H2>
+					<H2>
+						<ConditionalLink
+							condition={!!(catbook.harvey && catbook.harvey.length > 0)}
+							link={`/Catbook/Harvey`}
+						>
+							Harvey
+						</ConditionalLink>
+					</H2>
 					<div className="text-center md:text-left">
 						{catbook.harvey ? (
 							catbook.harvey.map((catImageId, index) => {
@@ -48,7 +63,14 @@ export default function Catbook() {
 							<EmptyCatbookRow name="Harvey" />
 						)}
 					</div>
-					<H2>Lalo</H2>
+					<H2>
+						<ConditionalLink
+							condition={!!(catbook.lalo && catbook.lalo.length > 0)}
+							link={`/Catbook/Lalo`}
+						>
+							Lalo
+						</ConditionalLink>
+					</H2>
 					<div className="text-center md:text-left">
 						{catbook.lalo ? (
 							catbook.lalo.map((catImageId, index) => {
@@ -59,7 +81,14 @@ export default function Catbook() {
 							<EmptyCatbookRow name="Lalo" />
 						)}
 					</div>
-					<H2>Zelda</H2>
+					<H2>
+						<ConditionalLink
+							condition={!!(catbook.zelda && catbook.zelda.length > 0)}
+							link={`/Catbook/Zelda`}
+						>
+							Zelda
+						</ConditionalLink>
+					</H2>
 					<div className="text-center md:text-left">
 						{catbook.zelda ? (
 							catbook.zelda?.map((catImageId, index) => {
