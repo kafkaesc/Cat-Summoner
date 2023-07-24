@@ -6,8 +6,6 @@ const nextConfig = {
 		// /Next-React-Components
 		return {
 			'/': { page: '/' },
-			'/ap-grid-layout': { page: '/ap-grid-layout' },
-			'/ap-highlight': { page: '/ap-highlight' },
 		};
 	},
 	assetPrefix: !debug ? 'https://kafkaesc.github.io/Cat-Summoner/' : '',
