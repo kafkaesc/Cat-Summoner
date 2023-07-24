@@ -6,6 +6,8 @@ const nextConfig = {
 		// /Next-React-Components
 		return {
 			'/': { page: '/' },
+			'/About': { page: '/About' },
+			'/FAQs': { page: '/FAQs' },
 		};
 	},
 	assetPrefix: !debug ? 'https://kafkaesc.github.io/Cat-Summoner/' : '',
