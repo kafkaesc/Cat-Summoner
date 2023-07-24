@@ -81,8 +81,6 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./out
-      - name: Add .nojekyll
-        run: touch ./out/.nojekyll
 
   # Deployment job
   deploy:
