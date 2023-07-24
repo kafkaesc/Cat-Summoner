@@ -2,6 +2,7 @@ const debug = process.env.NODE_ENV !== 'production';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	/*
 	exportPathMap: function () {
 		// /Next-React-Components
 		return {
@@ -14,6 +15,7 @@ const nextConfig = {
 		};
 	},
 	assetPrefix: !debug ? 'https://kafkaesc.github.io/Cat-Summoner/' : '',
+	*/
 	reactStrictMode: true,
 };
 
