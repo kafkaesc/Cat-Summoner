@@ -6,7 +6,9 @@ const nextConfig = {
 		// /Next-React-Components
 		return {
 			'/': { page: '/' },
+			'/404': { page: '/404' },
 			'/About': { page: '/About' },
+			'/Catbook': { page: '/Catbook' },
 			'/FAQs': { page: '/FAQs' },
 		};
 	},
