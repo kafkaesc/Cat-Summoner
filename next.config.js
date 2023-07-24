@@ -9,6 +9,7 @@ const nextConfig = {
 			'/404': { page: '/404' },
 			'/About': { page: '/About' },
 			'/Catbook': { page: '/Catbook' },
+			'/Catbook/Lalo': { page: '/Catbook/Lalo' },
 			'/FAQs': { page: '/FAQs' },
 		};
 	},
