@@ -24,6 +24,8 @@ export default function CatbookCat({ catName }: CatbookCatProps) {
 	// I won't be apologizing for this variable name
 	const hai = getHighlightAndImages(catName);
 
+	if (hai === null) return <CatbookCatError />;
+
 	return (
 		<Layout>
 			<Head>
