@@ -23,7 +23,7 @@ const catImageData: Array<CatImageDetails> = [
 		src: require('public/assets/images/cats/harvey-02.jpg'),
 	},
 	{
-		alt: 'TODO: Allan please add the alt text for this image.',
+		alt: 'An orange cat is sitting next to a small Christmas tree with a single ornament. The small tree leans over toward the cat with the weight of its single ornament. The cat is leaning away from the ornament with an expression of slight befuddlement.',
 		catId: 902,
 		catImageId: 3,
 		name: 'harvey',
@@ -35,6 +35,13 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 4,
 		name: 'harvey',
 		src: require('public/assets/images/cats/harvey-04.jpg'),
+	},
+	{
+		alt: 'An orange cat sits atop a blue suitcase. He is sitting like a loaf, a.k.a, sitting with his back paws flat and his front paws tucked under his chest. His stern expression looks toward the camera.',
+		catId: 902,
+		catImageId: 5,
+		name: 'harvey',
+		src: require('public/assets/images/cats/harvey-05.jpg'),
 	},
 	{
 		alt: 'A mostly white cat with black spots around their eyes and on their back faces the camera. The cat is walking forward with their front right paw tucked under their body. Their black tail is held up with a hook at the top. Their eyes look into the camera with curiosity.',
