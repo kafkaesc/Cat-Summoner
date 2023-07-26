@@ -4,6 +4,7 @@ import harvey01 from 'public/assets/images/cats/harvey-01.jpg';
 import harvey02 from 'public/assets/images/cats/harvey-02.jpg';
 import harvey03 from 'public/assets/images/cats/harvey-03.jpg';
 import harvey04 from 'public/assets/images/cats/harvey-04.jpg';
+import harvey05 from 'public/assets/images/cats/harvey-05.jpg';
 import lalo01 from 'public/assets/images/cats/lalo-01.jpg';
 import lalo02 from 'public/assets/images/cats/lalo-02.jpg';
 import lalo03 from 'public/assets/images/cats/lalo-03.jpg';
@@ -23,6 +24,7 @@ export function useCatImageFile() {
 		else if (name === 'harvey' && catImageId === 2) return harvey02;
 		else if (name === 'harvey' && catImageId === 3) return harvey03;
 		else if (name === 'harvey' && catImageId === 4) return harvey04;
+		else if (name === 'harvey' && catImageId === 5) return harvey05;
 		else if (name === 'lalo' && catImageId === 1) return lalo01;
 		else if (name === 'lalo' && catImageId === 2) return lalo02;
 		else if (name === 'lalo' && catImageId === 3) return lalo03;
@@ -43,7 +45,13 @@ export function useCatImageFile() {
 		name = name.toLocaleLowerCase();
 		if (name === 'fearless') return { 1: fearless01 };
 		else if (name === 'harvey')
-			return { 1: harvey01, 2: harvey02, 3: harvey03, 4: harvey04 };
+			return {
+				1: harvey01,
+				2: harvey02,
+				3: harvey03,
+				4: harvey04,
+				5: harvey05,
+			};
 		else if (name === 'lalo')
 			return { 1: lalo01, 2: lalo02, 3: lalo03, 4: lalo04, 5: lalo05 };
 		else if (name === 'zelda')
