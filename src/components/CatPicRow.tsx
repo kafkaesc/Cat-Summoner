@@ -19,16 +19,12 @@ export default function CatbookCatBottomPics({
 			{images.map((image, index) => {
 				return (
 					<div
-						className="inline-block m-0.5"
+						className="inline-block w-1/2 sm:w-1/4 px-0.5 aspect-square "
 						key={`${catName}-bottom-pic-${index}`}
 					>
-						<Image
-							alt={image.alt}
-							className="inline-block"
-							height={150}
-							src={image.src}
-							width={150}
-						/>
+						<div className="relative inline-block w-full h-full">
+							<Image alt={image.alt} fill={true} src={image.src} />
+						</div>
 					</div>
 				);
 			})}
