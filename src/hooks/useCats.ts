@@ -21,6 +21,7 @@ const cats: Array<Cat> = [
 			'of your car.',
 		id: 902,
 		name: 'Harvey',
+		subheadline: 'The Car Watcher',
 	},
 	{
 		about:

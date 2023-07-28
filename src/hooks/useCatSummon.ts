@@ -29,7 +29,7 @@ export function useCatSummon() {
 	function randomizeId(name: string): number {
 		if (name.toLocaleLowerCase() === 'fearless') return 1;
 		else if (name.toLocaleLowerCase() === 'harvey')
-			return Math.floor(Math.random() * (5 - 1) + 1);
+			return Math.floor(Math.random() * (6 - 1) + 1);
 		else if (name.toLocaleLowerCase() === 'lalo')
 			return Math.floor(Math.random() * (6 - 1) + 1);
 		else if (name.toLocaleLowerCase() === 'zelda')
