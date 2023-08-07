@@ -7,7 +7,7 @@ const cats: Array<Cat> = [
 			'meowing through the windshield to make sure she was fed before the ' +
 			'humans left in the morning. She is obsessed with potato chips and ' +
 			'will run over if she hears a bag open. However, she is not a fan of ' +
-			'tortilla chips. If she feels you have tricked her by opening a ' +
+			'tortilla chips and if she feels you have tricked her by opening a ' +
 			'bag she will bully you.',
 		id: 901,
 		name: 'Fearless',
@@ -17,7 +17,7 @@ const cats: Array<Cat> = [
 		about:
 			'Harvey has no respect for your personal boundaries and will jump on ' +
 			'the table to steal any food he can get his paws on. His second ' +
-			'favorite place to sleep is anywhere—his favorite place is on top ' +
+			'favorite place to sleep is anywhere—his most favorite place is on top ' +
 			'of your car.',
 		id: 902,
 		name: 'Harvey',
@@ -32,7 +32,17 @@ const cats: Array<Cat> = [
 		name: 'Lalo',
 		subheadline: 'The Cow Cat',
 	},
-	{ id: 904, name: 'Zelda' },
+	{
+		about:
+			'Zelda likes to buck her carnivorous nature and instead pursues a ' +
+			"diet heavy in fruit—don't worry her owner makes sure she still has " +
+			"a balanced diet with plenty of taurine. When she's not eating she " +
+			'spends her time napping, especially if a pile of fresh laundry is ' +
+			'available.',
+		id: 904,
+		name: 'Zelda',
+		subheadline: 'AD: please add details',
+	},
 ];
 
 export function useCats() {
