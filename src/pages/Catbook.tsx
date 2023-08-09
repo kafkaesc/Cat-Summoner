@@ -4,16 +4,15 @@ import H1 from '@/elements/H1';
 import H2 from '@/elements/H2';
 import P from '@/elements/P';
 import Layout from '@/layout/Layout';
+import CatbookRow from '@/components/CatbookRow';
+import CatbookRowEmpty from '@/components/CatbookRowEmpty';
 import ConditionalLink from '@/components/ConditionalLink';
 import EmptyCatbook from '@/components/EmptyCatbook';
-import EmptyCatbookRow from '@/components/EmptyCatbookRow';
-import Polaroid from '@/components/Polaroid';
+
 import { useCatbook } from '@/hooks/useCatbook';
-import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 
 export default function Catbook() {
 	const { catbookData: catbook, clearCatbook, isEmpty } = useCatbook();
-	const { getImageDetails: getCatImage } = useCatImageDetails();
 
 	return (
 		<Layout>
@@ -35,16 +34,9 @@ export default function Catbook() {
 					</H2>
 					<div className="text-center md:text-left">
 						{catbook.fearless ? (
-							catbook.fearless.map((catImageId) => {
-								const image = getCatImage('fearless', catImageId);
-								return (
-									image && (
-										<Polaroid key={`fearless-${catImageId}`} {...image} />
-									)
-								);
-							})
+							<CatbookRow catImageIds={catbook.fearless} name="Fearless" />
 						) : (
-							<EmptyCatbookRow name="Fearless" />
+							<CatbookRowEmpty name="Fearless" />
 						)}
 					</div>
 					<H2>
@@ -57,14 +49,9 @@ export default function Catbook() {
 					</H2>
 					<div className="text-center md:text-left">
 						{catbook.harvey ? (
-							catbook.harvey.map((catImageId) => {
-								const image = getCatImage('harvey', catImageId);
-								return (
-									image && <Polaroid key={`harvey-${catImageId}`} {...image} />
-								);
-							})
+							<CatbookRow catImageIds={catbook.harvey} name="Harvey" />
 						) : (
-							<EmptyCatbookRow name="Harvey" />
+							<CatbookRowEmpty name="Harvey" />
 						)}
 					</div>
 					<H2>
@@ -77,14 +64,9 @@ export default function Catbook() {
 					</H2>
 					<div className="text-center md:text-left">
 						{catbook.lalo ? (
-							catbook.lalo.map((catImageId) => {
-								const image = getCatImage('lalo', catImageId);
-								return (
-									image && <Polaroid key={`lalo-${catImageId}`} {...image} />
-								);
-							})
+							<CatbookRow catImageIds={catbook.lalo} name="Lalo" />
 						) : (
-							<EmptyCatbookRow name="Lalo" />
+							<CatbookRowEmpty name="Lalo" />
 						)}
 					</div>
 					<H2>
@@ -97,14 +79,9 @@ export default function Catbook() {
 					</H2>
 					<div className="text-center md:text-left">
 						{catbook.zelda ? (
-							catbook.zelda?.map((catImageId) => {
-								const image = getCatImage('zelda', catImageId);
-								return (
-									image && <Polaroid key={`zelda-${catImageId}`} {...image} />
-								);
-							})
+							<CatbookRow catImageIds={catbook.zelda} name="Zelda" />
 						) : (
-							<EmptyCatbookRow name="Zelda" />
+							<CatbookRowEmpty name="Zelda" />
 						)}
 					</div>
 					<P className="text-center">

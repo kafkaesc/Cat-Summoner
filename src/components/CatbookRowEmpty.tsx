@@ -1,11 +1,11 @@
 import Link from '@/elements/Link';
 import P from '@/elements/P';
 
-interface EmptyCatbookRowProps {
+interface CatbookRowEmptyProps {
 	name: string;
 }
 
-export default function EmptyCatbookRow({ name }: EmptyCatbookRowProps) {
+export default function EmptyCatbookRow({ name }: CatbookRowEmptyProps) {
 	return (
 		<P className="text-left">
 			You have not unlocked any {name} pictures. You can visit the{' '}
