@@ -35,10 +35,12 @@ export default function Catbook() {
 					</H2>
 					<div className="text-center md:text-left">
 						{catbook.fearless ? (
-							catbook.fearless.map((catImageId, index) => {
+							catbook.fearless.map((catImageId) => {
 								const image = getCatImage('fearless', catImageId);
 								return (
-									image && <Polaroid key={`fearless-${index}`} {...image} />
+									image && (
+										<Polaroid key={`fearless-${catImageId}`} {...image} />
+									)
 								);
 							})
 						) : (
@@ -55,9 +57,11 @@ export default function Catbook() {
 					</H2>
 					<div className="text-center md:text-left">
 						{catbook.harvey ? (
-							catbook.harvey.map((catImageId, index) => {
+							catbook.harvey.map((catImageId) => {
 								const image = getCatImage('harvey', catImageId);
-								return image && <Polaroid key={`harvey-${index}`} {...image} />;
+								return (
+									image && <Polaroid key={`harvey-${catImageId}`} {...image} />
+								);
 							})
 						) : (
 							<EmptyCatbookRow name="Harvey" />
@@ -73,9 +77,11 @@ export default function Catbook() {
 					</H2>
 					<div className="text-center md:text-left">
 						{catbook.lalo ? (
-							catbook.lalo.map((catImageId, index) => {
+							catbook.lalo.map((catImageId) => {
 								const image = getCatImage('lalo', catImageId);
-								return image && <Polaroid key={`lalo-${index}`} {...image} />;
+								return (
+									image && <Polaroid key={`lalo-${catImageId}`} {...image} />
+								);
 							})
 						) : (
 							<EmptyCatbookRow name="Lalo" />
@@ -91,9 +97,11 @@ export default function Catbook() {
 					</H2>
 					<div className="text-center md:text-left">
 						{catbook.zelda ? (
-							catbook.zelda?.map((catImageId, index) => {
+							catbook.zelda?.map((catImageId) => {
 								const image = getCatImage('zelda', catImageId);
-								return image && <Polaroid key={`zelda-${index}`} {...image} />;
+								return (
+									image && <Polaroid key={`zelda-${catImageId}`} {...image} />
+								);
 							})
 						) : (
 							<EmptyCatbookRow name="Zelda" />
