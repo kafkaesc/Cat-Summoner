@@ -16,11 +16,11 @@ export default function CatbookCatBottomPics({
 	return (
 		<>
 			{title && <H2>{title}</H2>}
-			{images.map((image, index) => {
+			{images.map((image) => {
 				return (
 					<div
 						className="inline-block w-1/2 sm:w-1/4 px-0.5 aspect-square "
-						key={`${catName}-bottom-pic-${index}`}
+						key={`${catName}-bottom-pic-${image.catImageId}`}
 					>
 						<div className="relative inline-block w-full h-full">
 							<Image alt={image.alt} fill={true} src={image.src} />
