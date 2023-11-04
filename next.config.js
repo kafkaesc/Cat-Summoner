@@ -17,6 +17,10 @@ const nextConfig = {
 	assetPrefix: !debug ? 'https://kafkaesc.github.io/Cat-Summoner/' : '',
 	*/
 	reactStrictMode: true,
+	images: {
+    loader: 'akamai',
+    path: '/'
+}
 };
 
 module.exports = nextConfig;
