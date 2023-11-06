@@ -38,6 +38,8 @@ export function useCatSummon() {
 	}
 
 	function summonCat(name: string, catImageId?: number | null): void {
+		// Reset image before summoning new cat
+		__setImage(null);
 		// Use the specific catImageId if provided, otherwise generate a random one
 		const id: number = catImageId ? catImageId : randomizeId(name);
 		const imageDetails: CatImageDetails = getImageDetails(name, id)!;
