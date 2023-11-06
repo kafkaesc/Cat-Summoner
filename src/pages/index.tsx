@@ -45,7 +45,7 @@ export default function Home() {
 								src={loading}
 							/>
 						)}
-						{summonedCat && (
+						{!catIsLoading && summonedCat && (
 							<Image
 								alt={summonedCat.alt}
 								className="mx-auto md:m-0"

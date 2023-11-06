@@ -19,8 +19,8 @@ export function useCatSummon() {
 		if (__activeTimeout.current) {
 			clearTimeout(__activeTimeout.current);
 		}
+		__setImage(imageDetails);
 		__activeTimeout.current = setTimeout(() => {
-			__setImage(imageDetails);
 			unlockCatbookImage(name, id);
 			__setIsLoading(false);
 		}, 3000);
