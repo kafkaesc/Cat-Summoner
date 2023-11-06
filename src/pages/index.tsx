@@ -45,12 +45,21 @@ export default function Home() {
 								src={loading}
 							/>
 						)}
-						{summonedCat && (
+						{catIsLoading && summonedCat && (
+							<Image
+								alt={summonedCat.alt}
+								className="hidden"
+								height={500}
+								width={500}
+								src={summonedCat.src}
+							/>
+						)}
+						{!catIsLoading && summonedCat && (
 							<Image
 								alt={summonedCat.alt}
 								className="mx-auto md:m-0"
-								height={!catIsLoading ? 500 : 0.1}
-								width={!catIsLoading ? 500 : 0.1}
+								height={500}
+								width={500}
 								src={summonedCat.src}
 							/>
 						)}
