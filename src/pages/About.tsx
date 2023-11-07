@@ -46,6 +46,14 @@ export default function About() {
 				<A href="https://jestjs.io/" rel="noreferrer" target="_blank">
 					Jest
 				</A>
+				. The site is hosted on{' '}
+				<A
+					href="https://aws.amazon.com/what-is-aws/"
+					rel="noreferrer"
+					target="_blank"
+				>
+					Amazon Web Services (AWS)
+				</A>
 				. The{' '}
 				<A
 					href="https://github.com/kafkaesc/Cat-Summoner"

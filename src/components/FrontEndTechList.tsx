@@ -5,6 +5,7 @@ import ReactLogo from 'public/assets/images/tech/react.svg';
 import TypeScriptLogo from 'public/assets/images/tech/typescript.svg';
 import TailwindLogo from 'public/assets/images/tech/tailwind.svg';
 import JestLogo from 'public/assets/images/tech/jest.svg';
+import AwsLogo from 'public/assets/images/tech/aws.svg';
 
 const techLinks = [
 	{
@@ -37,6 +38,12 @@ const techLinks = [
 		src: JestLogo,
 		url: 'https://jestjs.io/',
 	},
+	{
+		alt: 'AWS Logo',
+		name: 'AWS',
+		src: AwsLogo,
+		url: 'https://aws.amazon.com/what-is-aws/',
+	},
 ];
 
 export default function FrontEndTechList() {
@@ -45,12 +52,13 @@ export default function FrontEndTechList() {
 			{techLinks.map((tl, index) => {
 				return (
 					<span key={`${tl.name}-Logo`}>
-						<li className="inline-block p-3 md:mx-3 hover:animate-float-up-750ms">
+						<li className="inline-block p-3 md:p-2 md:mx-3 hover:animate-float-up-750ms">
 							<a href={tl.url} rel="noreferrer" target="_blank">
-								<Image alt={tl.alt} height={48} src={tl.src} />
+								<Image alt={tl.alt} height={45} src={tl.src} />
 							</a>
 						</li>
 						{index === 0 && <br className="md:hidden" />}
+						{index === 4 && <br className="md:hidden" />}
 					</span>
 				);
 			})}
