@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import GitHubLogo from 'public/assets/images/social/github.png';
 import InstagramLogo from 'public/assets/images/social/instagram.png';
+import LinkedInLogo from 'public/assets/images/social/linkedin.png';
 import TwitterLogo from 'public/assets/images/social/twitter.png';
 
 const socialLinks = [
@@ -22,6 +23,12 @@ const socialLinks = [
 		name: 'Twitter',
 		src: TwitterLogo,
 		url: 'https://twitter.com/_kafkaesc',
+	},
+	{
+		alt: 'LinkedIn Logo',
+		name: 'LinkedIn',
+		src: LinkedInLogo,
+		url: 'https://linkedin.com/in/jahettinger',
 	},
 ];
 
