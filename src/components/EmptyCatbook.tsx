@@ -1,5 +1,5 @@
-import P from '@/elements/P';
 import Link from '@/elements/Link';
+import P from '@/elements/P';
 
 export default function EmptyCatbook() {
 	return (

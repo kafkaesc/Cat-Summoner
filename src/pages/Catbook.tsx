@@ -8,9 +8,6 @@ import CatbookRow from '@/components/CatbookRow';
 import CatbookRowEmpty from '@/components/CatbookRowEmpty';
 import ConditionalLink from '@/components/ConditionalLink';
 import EmptyCatbook from '@/components/EmptyCatbook';
-
-import CatbookPhotoModal from '@/components/CatbookPhotoModal';
-
 import { useCatbook } from '@/hooks/useCatbook';
 
 export default function Catbook() {
