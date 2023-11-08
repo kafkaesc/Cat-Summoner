@@ -26,7 +26,6 @@ export default function Catbook() {
 				<EmptyCatbook />
 			) : (
 				<>
-					<CatbookPhotoModal buttonText="Lalo Pic" />
 					<H2>
 						<ConditionalLink
 							condition={!!(catbook.fearless && catbook.fearless.length > 0)}

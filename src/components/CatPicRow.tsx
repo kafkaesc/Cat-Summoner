@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import H2 from '@/elements/H2';
+import CatbookPhotoModal from './CatbookPhotoModal';
 import { CatImageDetails } from '@/interfaces/CatInterfaces';
 
 interface CatPicRowProps {
@@ -23,7 +24,9 @@ export default function CatbookCatBottomPics({
 						key={`${catName}-bottom-pic-${image.catImageId}`}
 					>
 						<div className="relative inline-block w-full h-full">
-							<Image alt={image.alt} fill={true} src={image.src} />
+							<CatbookPhotoModal alt={image.alt} src={image.src}>
+								<Image alt={image.alt} fill={true} src={image.src} />
+							</CatbookPhotoModal>
 						</div>
 					</div>
 				);
