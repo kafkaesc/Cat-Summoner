@@ -46,6 +46,9 @@ const techLinks = [
 	},
 ];
 
+/**
+ * @returns JSX component of linked icons for technology used for the front end
+ */
 export default function FrontEndTechList() {
 	return (
 		<ul className="text-center">

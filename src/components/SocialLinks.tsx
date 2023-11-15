@@ -32,6 +32,9 @@ const socialLinks = [
 	},
 ];
 
+/**
+ * @returns JSX component of linked social media icons
+ */
 export default function SocialLinks() {
 	return (
 		<ul className="text-center">
