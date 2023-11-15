@@ -10,6 +10,17 @@ export function useCatSummon() {
 	const { unlockCatbookImage } = useCatbook();
 	const { getImageDetails } = useCatImageDetails();
 
+	/**
+	 * This function will begin loading the cat image associated with the name
+	 * and ID. It will set __isLoading to have a 3 sec timer. The image itself
+	 * is loaded ASAP and whether to enforce the 3 sec wait is up to the
+	 * component calling the hook.
+	 * 
+	 * @param {string} name The name of the cat to await
+	 * @param {number} id The ID of the cat's image to retrieve
+	 * @param {CatImageDetails} imageDetails Object with the details
+	 * for the cat image
+	 */
 	function awaitCat(
 		name: string,
 		id: number,
@@ -26,6 +37,11 @@ export function useCatSummon() {
 		}, 3000);
 	}
 
+	/**
+	 * @param {string} name The name of the cat to generate a random ID for
+	 * @returns {number} Random number in the range of image IDs for
+	 * the chosen cat
+	 */
 	function randomizeId(name: string): number {
 		if (name.toLocaleLowerCase() === 'fearless') return 1;
 		else if (name.toLocaleLowerCase() === 'harvey')
@@ -37,6 +53,12 @@ export function useCatSummon() {
 		return 1;
 	}
 
+	/**
+	 * This function updates the __image on an instance of this hook
+	 * @param {string} name The name of the cat to summon an image of
+	 * @param {number | null} catImageId The specific ID to summon,
+	 * or pass null to get a random image
+	 */
 	function summonCat(name: string, catImageId?: number | null): void {
 		// Reset image before summoning new cat
 		__setImage(null);
