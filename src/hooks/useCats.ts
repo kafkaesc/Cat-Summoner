@@ -48,7 +48,7 @@ const cats: Array<Cat> = [
 export function useCats() {
 	/**
 	 * @param {string} catName The name of a cat
-	 * @returns {Cat} A cat object matching catName with more details about 
+	 * @returns {Cat | null} A cat object matching catName with more details about
 	 * he cat, otherwise null if no matching cat is found
 	 */
 	function getCatByName(catName: string): Cat | null {
