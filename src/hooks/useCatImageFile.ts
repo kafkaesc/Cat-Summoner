@@ -17,6 +17,13 @@ import zelda04 from 'public/assets/images/cats/zelda-04.jpg';
 import zelda05 from 'public/assets/images/cats/zelda-05.jpg';
 
 export function useCatImageFile() {
+	/**
+	 * @param {string} name
+	 * @param {number} catImageId
+	 * @returns {StaticImageData | null} Returns the image data associated
+	 * with the cat name and image ID, returns null if no matching image
+	 * data is found
+	 */
 	function getImage(name: string, catImageId: number): StaticImageData | null {
 		name = name.toLocaleLowerCase();
 		if (name === 'fearless' && catImageId === 1) return fearless01;
@@ -41,6 +48,11 @@ export function useCatImageFile() {
 		}
 	}
 
+	/**
+	 * @param {string} name
+	 * @returns An object of StaticImageData objects with the key
+	 * corresponding to the image ID for the cat
+	 */
 	function getImagesFor(name: string) {
 		name = name.toLocaleLowerCase();
 		if (name === 'fearless') return { 1: fearless01 };
