@@ -33,7 +33,7 @@ const socialLinks = [
 ];
 
 /**
- * @returns JSX component of linked social media icons
+ * @returns {JSX.Element} Linked icons for social media accounts
  */
 export default function SocialLinks() {
 	return (

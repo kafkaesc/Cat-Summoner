@@ -10,7 +10,7 @@ interface PolaroidProps {
  * @param {string} alt Alt text for the image
  * @param {StaticImageData} src Image data to display within the polaroid
  * @param {any} props Optional props parameter that can include a className string
- * @returns JSX component of a square image (cropped if necessary) with extra
+ * @returns {JSX.Element} A square image (cropped if necessary) with extra
  * white space below, like a polaroid. Polaroid dimensions are 5:6.
  */
 export default function Polaroid({ alt, src, ...props }: PolaroidProps) {

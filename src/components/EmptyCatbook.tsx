@@ -1,6 +1,10 @@
 import Link from '@/elements/Link';
 import P from '@/elements/P';
 
+/**
+ * @returns {JSX.Element} Paragraph text telling the user they have no cat
+ * pictures and providing a link to the homepage to unlock cat pictures
+ */
 export default function EmptyCatbook() {
 	return (
 		<P>

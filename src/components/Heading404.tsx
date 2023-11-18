@@ -1,3 +1,6 @@
+/**
+ * @returns {JSX.Element} Heading for the 404 page
+ */
 export default function Heading404() {
 	return (
 		<div className="mb-2 text-center">

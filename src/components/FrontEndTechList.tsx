@@ -47,7 +47,7 @@ const techLinks = [
 ];
 
 /**
- * @returns JSX component of linked icons for technology used for the front end
+ * @returns {JSX.Element} Linked icons for technology used for the front end
  */
 export default function FrontEndTechList() {
 	return (
