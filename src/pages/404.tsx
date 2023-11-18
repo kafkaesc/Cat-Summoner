@@ -5,6 +5,9 @@ import ContentColumn from '@/layout/ContentColumn';
 import Heading404 from '@/components/Heading404';
 import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 
+/**
+ * @returns {JSX.Element} JSX component for the 404 page
+ */
 export default function Custom404() {
 	const { getSpecialImage } = useCatImageDetails();
 	const image = getSpecialImage('404');

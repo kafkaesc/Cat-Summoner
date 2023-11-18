@@ -6,6 +6,9 @@ import Link from '@/elements/Link';
 import P from '@/elements/P';
 import Layout from '@/layout/Layout';
 
+/**
+ * @returns {JSX.Element} Page-level JSX component for the FAQ page
+ */
 export default function Faqs() {
 	return (
 		<Layout>

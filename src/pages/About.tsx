@@ -7,6 +7,9 @@ import Layout from '@/layout/Layout';
 import FrontEndTechList from '@/components/FrontEndTechList';
 import SocialLinks from '@/components/SocialLinks';
 
+/**
+ * @returns {JSX.Element} Page-level JSX component for the about page
+ */
 export default function About() {
 	return (
 		<Layout>

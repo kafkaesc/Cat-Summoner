@@ -9,6 +9,9 @@ import loading from 'public/assets/images/loading.png';
 
 const cats = ['Fearless', 'Harvey', 'Lalo', 'Zelda'];
 
+/**
+ * @returns {JSX.Element} JSX component for the index/home page
+ */
 export default function Home() {
 	const { isLoading: catIsLoading, summonedCat, summonCat } = useCatSummon();
 
