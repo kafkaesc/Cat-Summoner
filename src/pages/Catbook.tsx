@@ -11,7 +11,6 @@ import EmptyCatbook from '@/components/EmptyCatbook';
 import { useCatbook } from '@/hooks/useCatbook';
 
 /**
- *
  * @returns {JSX.Element} Page-level JSX component for the Catbook page.
  * The Catbook page is a photobook page showing the photos the use has
  * previously unlocked.

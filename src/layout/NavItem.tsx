@@ -1,5 +1,13 @@
 import Link from 'next/link';
 
+/**
+ * List items to be used in the Navbar component
+ * @param {any} children The content to go inside the navigation link,
+ * usually a string
+ * @param {any} props Component props to be passed to the
+ * Next Link component
+ * @returns
+ */
 export default function NavItem({ children, ...props }: any) {
 	return (
 		<li className="inline-block">

@@ -1,6 +1,9 @@
 import ContentColumn from './ContentColumn';
 import NavItem from './NavItem';
 
+/**
+ * @returns {JSX.Element} Navigation bar with links to top-level pages
+ */
 export default function Navbar() {
 	return (
 		<div className="text-center bg-cs-primary text-cs-white">
