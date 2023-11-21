@@ -19,9 +19,16 @@ export default function Home() {
 		<>
 			<Head>
 				<title>Cat Summoner 🐱 the next cat app</title>
-				<meta name="description" content="Cat-Summoner 🐱 the next cat app" />
+				<meta name="description" content="Cat-Summoner 🐱 the Next cat app" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
+				{/* OpenGraph Meta Tags */}
+				<meta property="og:description" content="the Next cat app" />
+				<meta property="og:image" content="https://cat-summoner.com/ogp.png" />
+				<meta property="og:image:height" content="630" />
+				<meta property="og:image:width" content="1200" />
+				<meta property="og:title" content="Cat Summoner" />
+				<meta property="og:url" content="https://cat-summoner.com/" />
 			</Head>
 			<Layout>
 				<H1 className="mb-2">Cat Summoner</H1>
