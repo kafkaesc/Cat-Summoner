@@ -1,4 +1,5 @@
 import ContentColumn from './ContentColumn';
+import EmLogo from './EmLogo';
 import NavItem from './NavItem';
 
 /**
@@ -10,7 +11,7 @@ export default function Navbar() {
 			<ContentColumn>
 				<ul>
 					<NavItem aria-label="Home" href="/">
-						🐱
+						<EmLogo />
 					</NavItem>
 					<NavItem href="/Catbook">Catbook</NavItem>
 					<NavItem href="/About">About</NavItem>

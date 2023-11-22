@@ -12,7 +12,7 @@ export default function NavItem({ children, ...props }: any) {
 	return (
 		<li className="inline-block">
 			<Link {...props} className="inline-block px-2 py-2">
-				<span className="inline-block px-2 py-1 border-b-2 border-cs-primary hover:border-solid hover:border-cs-secondary hover:border-b-2">
+				<span className="inline-block px-2 py-1 align-bottom border-b-2 border-cs-primary hover:border-solid hover:border-cs-secondary hover:border-b-2">
 					{children}
 				</span>
 			</Link>
