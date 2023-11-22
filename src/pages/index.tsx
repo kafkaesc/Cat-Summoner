@@ -29,6 +29,16 @@ export default function Home() {
 				<meta property="og:image:width" content="1200" />
 				<meta property="og:title" content="Cat Summoner" />
 				<meta property="og:url" content="https://cat-summoner.com/" />
+				{/* Twitter Card Meta Tags */}
+				<meta name="twitter:creator" content="@_kafkaesc" />
+				<meta name="twitter:description" content="the Next cat app" />
+				<meta name="twitter:image" content="https://cat-summoner.com/twc.png" />
+				<meta
+					name="twitter:image:alt"
+					content="A smiling yellow cat on a steel blue background"
+				/>
+				<meta name="twitter:site" content="@_kafkaesc" />
+				<meta name="twitter:title" content="Cat Summoner" />
 			</Head>
 			<Layout>
 				<H1 className="mb-2">Cat Summoner</H1>
