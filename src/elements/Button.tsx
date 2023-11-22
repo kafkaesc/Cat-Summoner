@@ -1,5 +1,11 @@
 interface ButtonProps {
-	buttonStyle?: string;
+	buttonStyle?:
+		| 'danger'
+		| 'default'
+		| 'primary'
+		| 'secondary'
+		| 'text'
+		| 'warning';
 	children: string;
 	className?: string;
 	disabled?: boolean;
@@ -259,6 +265,18 @@ const WarningButton = ({
 	);
 };
 
+/**
+ * @param {string | undefined} buttonStyle Optional string indicating the
+ * style of the button, options are 'danger', 'default', 'primary',
+ * 'secondary', 'text', and 'warning'
+ * @param {string} children The content for the button
+ * @param {string | undefined} className Optional string, if it exists it
+ * will be appended to the classes for the button element
+ * @param {boolean | undefined} disabled Optional boolean, if true the input
+ * field will be disabled, the default value value is false
+ * @param {any} props Button element attributes that will be passed along
+ * @returns {JSX.Element} Button element styled according to the site styles
+ */
 export default function Button({
 	buttonStyle,
 	children,

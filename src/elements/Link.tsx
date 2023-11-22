@@ -4,10 +4,22 @@ interface LinkProps {
 	children: any;
 	className?: string;
 	href: string;
-	linkStyle?: string;
+	linkStyle?: 'dark-background' | 'light-background';
 	[props: string]: any;
 }
 
+/**
+ * @param {any} children Content of the Next Link component
+ * @param {string | undefined} className Optional string, if it exists it
+ * will be appended to the classes for the Next Link element
+ * @param {string} href The path or URL to navigate to
+ * @param {string | undefined} linkStyle Optional string indicating the style
+ * of the link, options are 'dark-background' and 'light-background', default
+ * is light-background
+ * @param {any} props Next Link component props that will be passed along
+ * @returns {JSX.Element} A JSX component from next/link that provide linking
+ * around the site via the Next framework
+ */
 export default function Link({
 	children,
 	className,
