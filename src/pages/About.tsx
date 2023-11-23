@@ -15,6 +15,13 @@ export default function About() {
 		<Layout>
 			<Head>
 				<title>About 🐱 Cat Summoner</title>
+				{/* OpenGraph Meta Tags */}
+				<meta property="og:description" content="About Cat Summoner" />
+				<meta property="og:title" content="About 🐱 Cat Summoner" />
+				<meta property="og:url" content="https://cat-summoner.com/FAQs" />
+				{/* Twitter Card Meta Tags */}
+				<meta name="twitter:description" content="About Cat Summoner" />
+				<meta name="twitter:title" content="About 🐱 Cat Summoner" />
 			</Head>
 			<H1 className="mb-0">About</H1>
 			<P className="text-center">Built by Jared Hettinger</P>

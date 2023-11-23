@@ -22,6 +22,16 @@ export default function Catbook() {
 		<Layout>
 			<Head>
 				<title>Catbook 🐱 Cat Summoner</title>
+				{/* OpenGraph Meta Tags */}
+				<meta property="og:description" content="The Catbook at Cat Summoner" />
+				<meta property="og:title" content="Catbook 🐱 Cat Summoner" />
+				<meta property="og:url" content="https://cat-summoner.com/FAQs" />
+				{/* Twitter Card Meta Tags */}
+				<meta
+					name="twitter:description"
+					content="The Catbook at Cat Summoner"
+				/>
+				<meta name="twitter:title" content="Catbook 🐱 Cat Summoner" />
 			</Head>
 			<H1 className="mb-2">Catbook</H1>
 			{isEmpty() ? (

@@ -14,6 +14,19 @@ export default function Faqs() {
 		<Layout>
 			<Head>
 				<title>Frequently Asked Questions 🐱 Cat Summoner</title>
+				{/* OpenGraph Meta Tags */}
+				<meta
+					property="og:description"
+					content="Frequently asked questions about Cat Summoner"
+				/>
+				<meta property="og:title" content="FAQs 🐱 Cat Summoner" />
+				<meta property="og:url" content="https://cat-summoner.com/FAQs" />
+				{/* Twitter Card Meta Tags */}
+				<meta
+					name="twitter:description"
+					content="Frequently asked questions about Cat Summoner"
+				/>
+				<meta name="twitter:title" content="FAQs 🐱 Cat Summoner" />
 			</Head>
 			<H1 className="mb-0">FAQs</H1>
 			<span className="block mb-2 font-serif text-lg italic text-center">
