@@ -18,10 +18,21 @@ export default function Custom404() {
 				<title>404 🐱 Cat Summoner</title>
 				{/* OpenGraph Meta Tags */}
 				<meta property="og:description" content="Page not found" />
+				<meta property="og:image" content="https://cat-summoner.com/ogp.png" />
+				<meta property="og:image:height" content="630" />
+				<meta property="og:image:width" content="1200" />
 				<meta property="og:title" content="404 🐱 Cat Summoner" />
-				<meta property="og:url" content="https://cat-summoner.com/FAQs" />
+				<meta property="og:url" content="https://cat-summoner.com/404" />
 				{/* Twitter Card Meta Tags */}
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:creator" content="@_kafkaesc" />
 				<meta name="twitter:description" content="Page not found" />
+				<meta name="twitter:image" content="https://cat-summoner.com/twc.png" />
+				<meta
+					name="twitter:image:alt"
+					content="A smiling yellow cat on a steel blue background"
+				/>
+				<meta name="twitter:site" content="@_kafkaesc" />
 				<meta name="twitter:title" content="404 🐱 Cat Summoner" />
 			</Head>
 			<div className="h-screen bg-black">
