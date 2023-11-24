@@ -13,7 +13,7 @@ export default function CatbookCatBottomPics({
 	catName,
 	images,
 	title,
-}: CatPicRowProps) {
+}: CatPicRowProps): JSX.Element {
 	return (
 		<>
 			{title && <H2>{title}</H2>}

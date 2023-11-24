@@ -15,7 +15,7 @@ import { useCatbook } from '@/hooks/useCatbook';
  * The Catbook page is a photobook page showing the photos the use has
  * previously unlocked.
  */
-export default function Catbook() {
+export default function Catbook(): JSX.Element {
 	const { catbookData: catbook, clearCatbook, isEmpty } = useCatbook();
 
 	return (

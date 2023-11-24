@@ -11,7 +11,11 @@ interface PProps {
  * @param {any} props Paragraph element attributes that will be passed along
  * @returns {JSX.Element} Paragraph element styled according to site styles
  */
-export default function P({ children, className, ...props }: PProps) {
+export default function P({
+	children,
+	className,
+	...props
+}: PProps): JSX.Element {
 	return className ? (
 		<p {...props} className={`mb-2 ${className}`}>
 			{children}

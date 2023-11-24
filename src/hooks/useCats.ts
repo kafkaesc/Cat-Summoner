@@ -49,7 +49,7 @@ export function useCats() {
 	/**
 	 * @param {string} catName The name of a cat
 	 * @returns {Cat | null} A cat object matching catName with more details about
-	 * he cat, otherwise null if no matching cat is found
+	 * the cat, otherwise null if no matching cat is found
 	 */
 	function getCatByName(catName: string): Cat | null {
 		const cat = cats.find(
@@ -60,8 +60,7 @@ export function useCats() {
 	}
 
 	/**
-	 * @returns {Array<string>} An array with the names of the cats
-	 * currently available on the site
+	 * @returns {Array<string>} An array with the names of the cats currently on the site
 	 */
 	function getCatNames(): Array<string> {
 		return ['Fearless', 'Harvey', 'Lalo', 'Zelda'];

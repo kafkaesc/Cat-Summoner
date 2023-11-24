@@ -12,7 +12,11 @@ interface H1Props {
  * @param {any} props Heading element attributes that will be passed along
  * @returns {JSX.Element} Heading 1 element styled according to site styles
  */
-export default function H1({ children, className, ...props }: H1Props) {
+export default function H1({
+	children,
+	className,
+	...props
+}: H1Props): JSX.Element {
 	return className &&
 		(className.includes('text-center') ||
 			className.includes('text-left') ||

@@ -50,10 +50,10 @@ export function useCatImageFile() {
 
 	/**
 	 * @param {string} name
-	 * @returns An object of StaticImageData objects with the key
+	 * @returns {any} An object of StaticImageData objects with the key
 	 * corresponding to the image ID for the cat
 	 */
-	function getImagesFor(name: string) {
+	function getImagesFor(name: string): any {
 		name = name.toLocaleLowerCase();
 		if (name === 'fearless') return { 1: fearless01 };
 		else if (name === 'harvey')

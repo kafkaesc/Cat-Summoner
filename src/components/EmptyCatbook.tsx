@@ -5,7 +5,7 @@ import P from '@/elements/P';
  * @returns {JSX.Element} Paragraph text telling the user they have no cat
  * pictures and providing a link to the homepage to unlock cat pictures
  */
-export default function EmptyCatbook() {
+export default function EmptyCatbook(): JSX.Element {
 	return (
 		<P>
 			Looks like you haven&apos;t unlocked any cat pictures yet! If you visit

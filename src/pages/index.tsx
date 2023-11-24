@@ -12,7 +12,7 @@ const cats = ['Fearless', 'Harvey', 'Lalo', 'Zelda'];
 /**
  * @returns {JSX.Element} JSX component for the index/home page
  */
-export default function Home() {
+export default function Home(): JSX.Element {
 	const { isLoading: catIsLoading, summonedCat, summonCat } = useCatSummon();
 
 	return (

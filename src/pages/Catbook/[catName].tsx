@@ -3,7 +3,7 @@ import CatbookCat from '@/components/CatbookCat';
 import CatbookCatError from '@/components/CatbookCatError';
 import { useCats } from '@/hooks/useCats';
 
-export default function CatPage() {
+export default function CatPage(): JSX.Element {
 	const router = useRouter();
 	const catNames = useCats().getCatNames();
 	const catName = router.query.catName;

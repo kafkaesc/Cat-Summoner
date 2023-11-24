@@ -6,7 +6,7 @@ import Navbar from './Navbar';
  * @returns A full page with navigation included at the top and
  * the children data inside of a content column
  */
-export default function Layout({ children }: any) {
+export default function Layout({ children }: any): JSX.Element {
 	return (
 		<>
 			<Navbar />

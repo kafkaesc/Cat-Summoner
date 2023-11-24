@@ -12,7 +12,11 @@ interface AProps {
  * @param {any} props Anchor element attributes that will be passed along
  * @returns {JSX.Element} Anchor element styled according to site styles
  */
-export default function A({ children, className, ...props }: AProps) {
+export default function A({
+	children,
+	className,
+	...props
+}: AProps): JSX.Element {
 	return className ? (
 		<a
 			{...props}

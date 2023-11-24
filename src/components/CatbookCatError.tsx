@@ -7,7 +7,7 @@ import Layout from '@/layout/Layout';
 /**
  * @returns {JSX.Element} Error content for an invalid catbook page
  */
-export default function CatbookCatError() {
+export default function CatbookCatError(): JSX.Element {
 	return (
 		<Layout>
 			<Head>

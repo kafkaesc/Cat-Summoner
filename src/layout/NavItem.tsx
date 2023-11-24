@@ -8,7 +8,7 @@ import Link from 'next/link';
  * Next Link component
  * @returns
  */
-export default function NavItem({ children, ...props }: any) {
+export default function NavItem({ children, ...props }: any): JSX.Element {
 	return (
 		<li className="inline-block">
 			<Link {...props} className="inline-block px-2 py-2">

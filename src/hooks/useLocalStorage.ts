@@ -3,8 +3,7 @@ export function useLocalStorage() {
 	 * Add a new value to localStorage at key
 	 * @param {string} key The key for storage in localStorage
 	 * @param {any} val The value to store at key in localStorage
-	 * @param {boolean?} arrayFlag Optional boolean, pass true
-	 * if val should go into an array
+	 * @param {boolean?} arrayFlag Optional boolean, pass true if val should go into an array
 	 */
 	function add(key: string, val: any, arrayFlag?: boolean): void {
 		if (typeof val === 'undefined') {
@@ -38,12 +37,13 @@ export function useLocalStorage() {
 		delete localStorage[attributeName];
 	}
 
-	/** Returns the value tied to key in localStorage */
-	function get(key: string) {
+	/** @returns {any} The value tied to key in localStorage */
+	function get(key: string): any {
 		return JSON.parse('' + localStorage.getItem(key));
 	}
 
-	/** Sets the value of key to val in localStorage. Previous stored
+	/**
+	 * Sets the value of key to val in localStorage. Previous stored
 	 * value(s) at key will be overwritten.
 	 * @param {string} key The key for storage in localStorage
 	 * @param {string} val The value to store at key in localStorage

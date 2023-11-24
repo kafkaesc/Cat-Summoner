@@ -6,7 +6,10 @@ interface CatbookRowProps {
 	name: string;
 }
 
-export default function CatbookRow({ catImageIds, name }: CatbookRowProps) {
+export default function CatbookRow({
+	catImageIds,
+	name,
+}: CatbookRowProps): JSX.Element {
 	const { getImageDetails: getImage } = useCatImageDetails();
 	return (
 		<div className="text-center md:text-left">

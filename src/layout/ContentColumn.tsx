@@ -4,6 +4,6 @@
  * content column ~896 pixels wide, centered, that will go to the edge of
  * the screen on smaller displays
  */
-export default function ContentColumn({ children }: any) {
+export default function ContentColumn({ children }: any): JSX.Element {
 	return <div className="max-w-4xl px-2 mx-auto">{children}</div>;
 }

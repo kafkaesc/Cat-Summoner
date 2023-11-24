@@ -1,10 +1,10 @@
 import Button from '@/elements/Button';
 import { useCatbook } from '@/hooks/useCatbook';
 
-export default function CatbookHookDebug() {
+export default function CatbookHookDebug(): JSX.Element {
 	const { clearCatbook, unlockCatbookImage } = useCatbook();
 
-	function unlockAll() {
+	function unlockAll(): void {
 		clearCatbook();
 		unlockCatbookImage('fearless', 1);
 		unlockCatbookImage('harvey', 1);
