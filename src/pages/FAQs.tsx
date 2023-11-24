@@ -25,7 +25,7 @@ export default function Faqs() {
 				<meta property="og:title" content="FAQs 🐱 Cat Summoner" />
 				<meta property="og:url" content="https://cat-summoner.com/FAQs" />
 				{/* Twitter Card Meta Tags */}
-				<meta name="twitter:card" content="summary" />
+				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:creator" content="@_kafkaesc" />
 				<meta
 					name="twitter:description"
