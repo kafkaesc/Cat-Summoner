@@ -1,4 +1,4 @@
-import Head from 'next/head';
+//import Head from 'next/head';
 import Image from 'next/image';
 import H1 from '@/elements/H1';
 import P from '@/elements/P';
@@ -27,38 +27,15 @@ export default function CatbookCat({ catName }: CatbookCatProps): JSX.Element {
 	if (hai === null) return <CatbookCatError />;
 
 	// Meta tag content for the Head component
+	/*const title = catName + ' 🐱 Cat Summoner';
 	const ogDescription = catName + "'s page on Cat Summoner";
 	const ogTitle = catName + ' 🐱 Cat Summoner';
 	const ogUrl = 'https://cat-summoner.com/Catbook/' + catName;
 	const twDescription = catName + "'s page on Cat Summoner";
-	const twTitle = catName + ' 🐱 Cat Summoner';
+	const twTitle = catName + ' 🐱 Cat Summoner';*/
 
 	return (
 		<Layout>
-			<Head>
-				<title>{cat.name} 🐱 Cat Summoner</title>
-				{/* OpenGraph Meta Tags */}
-				<meta property="og:description" content={ogDescription} />
-				<meta
-					property="og:image"
-					content="https://cat-summoner.com/ogp.png?v=2"
-				/>
-				<meta property="og:image:height" content="630" />
-				<meta property="og:image:width" content="1200" />
-				<meta property="og:title" content={ogTitle} />
-				<meta property="og:url" content={ogUrl} />
-				{/* Twitter Card Meta Tags */}
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:creator" content="@_kafkaesc" />
-				<meta name="twitter:description" content={twDescription} />
-				<meta name="twitter:image" content="https://cat-summoner.com/?v=2" />
-				<meta
-					name="twitter:image:alt"
-					content="A black and white cat sits in front of a dark night sky, he looks back toward the camera, the words Cat Summoner float in the foreground by his face"
-				/>
-				<meta name="twitter:site" content="@_kafkaesc" />
-				<meta name="twitter:title" content={twTitle} />
-			</Head>
 			<div className="pt-1.5 full-width">
 				<CatbookCatLeft>
 					{hai && hai.highlight && (
