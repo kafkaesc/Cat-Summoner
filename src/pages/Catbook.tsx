@@ -39,7 +39,10 @@ export default function Catbook(): JSX.Element {
 					name="twitter:description"
 					content="The Catbook at Cat Summoner"
 				/>
-				<meta name="twitter:image" content="https://cat-summoner.com/twc.png" />
+				<meta
+					name="twitter:image"
+					content="https://cat-summoner.com/twc.png?v=2"
+				/>
 				<meta
 					name="twitter:image:alt"
 					content="A smiling yellow cat on a steel blue background"

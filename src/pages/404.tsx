@@ -30,7 +30,7 @@ export default function Custom404(): JSX.Element {
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:creator" content="@_kafkaesc" />
 				<meta name="twitter:description" content="Page not found" />
-				<meta name="twitter:image" content="https://cat-summoner.com/twc.png" />
+				<meta name="twitter:image" content="https://cat-summoner.com/?v=2" />
 				<meta
 					name="twitter:image:alt"
 					content="A smiling yellow cat on a steel blue background"

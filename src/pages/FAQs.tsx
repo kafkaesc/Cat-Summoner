@@ -34,7 +34,10 @@ export default function Faqs(): JSX.Element {
 					name="twitter:description"
 					content="Frequently asked questions about Cat Summoner"
 				/>
-				<meta name="twitter:image" content="https://cat-summoner.com/twc.png" />
+				<meta
+					name="twitter:image"
+					content="https://cat-summoner.com/twc.png?v=2"
+				/>
 				<meta
 					name="twitter:image:alt"
 					content="A smiling yellow cat on a steel blue background"

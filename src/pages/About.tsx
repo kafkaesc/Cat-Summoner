@@ -29,7 +29,10 @@ export default function About(): JSX.Element {
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:creator" content="@_kafkaesc" />
 				<meta name="twitter:description" content="About Cat Summoner" />
-				<meta name="twitter:image" content="https://cat-summoner.com/twc.png" />
+				<meta
+					name="twitter:image"
+					content="https://cat-summoner.com/twc.png?v=2"
+				/>
 				<meta
 					name="twitter:image:alt"
 					content="A smiling yellow cat on a steel blue background"
