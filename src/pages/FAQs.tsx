@@ -19,7 +19,10 @@ export default function Faqs(): JSX.Element {
 					property="og:description"
 					content="Frequently asked questions about Cat Summoner"
 				/>
-				<meta property="og:image" content="https://cat-summoner.com/ogp.png" />
+				<meta
+					property="og:image"
+					content="https://cat-summoner.com/ogp.png?v=2"
+				/>
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:width" content="1200" />
 				<meta property="og:title" content="FAQs 🐱 Cat Summoner" />

@@ -24,7 +24,10 @@ export default function Home(): JSX.Element {
 				<link rel="icon" href="/favicon.ico" />
 				{/* OpenGraph Meta Tags */}
 				<meta property="og:description" content="the Next cat app" />
-				<meta property="og:image" content="https://cat-summoner.com/ogp.png" />
+				<meta
+					property="og:image"
+					content="https://cat-summoner.com/ogp.png?v=2"
+				/>
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:width" content="1200" />
 				<meta property="og:title" content="Cat Summoner" />

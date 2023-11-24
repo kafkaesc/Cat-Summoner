@@ -18,7 +18,10 @@ export default function Custom404(): JSX.Element {
 				<title>404 🐱 Cat Summoner</title>
 				{/* OpenGraph Meta Tags */}
 				<meta property="og:description" content="Page not found" />
-				<meta property="og:image" content="https://cat-summoner.com/ogp.png" />
+				<meta
+					property="og:image"
+					content="https://cat-summoner.com/ogp.png?v=2"
+				/>
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:width" content="1200" />
 				<meta property="og:title" content="404 🐱 Cat Summoner" />
