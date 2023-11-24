@@ -24,12 +24,12 @@ export default function CatPage(): JSX.Element {
 	if (invalidCatName(catName)) return <CatbookCatError />;
 
 	// Meta tag content for the Head component
-	const title = catName + ' 🐱 Cat Summoner';
-	const ogDescription = catName + "'s page on Cat Summoner";
-	const ogTitle = catName + ' 🐱 Cat Summoner';
+	const title = '' + catName + ' 🐱 Cat Summoner';
+	const ogDescription = '' + catName + "'s page on Cat Summoner";
+	const ogTitle = '' + catName + ' 🐱 Cat Summoner';
 	const ogUrl = 'https://cat-summoner.com/Catbook/' + catName;
-	const twDescription = catName + "'s page on Cat Summoner";
-	const twTitle = catName + ' 🐱 Cat Summoner';
+	const twDescription = '' + catName + "'s page on Cat Summoner";
+	const twTitle = '' + catName + ' 🐱 Cat Summoner';
 
 	return (
 		<>
