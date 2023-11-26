@@ -35,7 +35,7 @@ export default function About(): JSX.Element {
 				/>
 				<meta
 					name="twitter:image:alt"
-					content="A smiling yellow cat on a steel blue background"
+					content="A black and white cat sits in front of a dark night sky, he looks back toward the camera, the words Cat Summoner float in the foreground by his face"
 				/>
 				<meta name="twitter:site" content="@_kafkaesc" />
 				<meta name="twitter:title" content="About 🐱 Cat Summoner" />
