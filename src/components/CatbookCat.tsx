@@ -1,4 +1,3 @@
-//import Head from 'next/head';
 import Image from 'next/image';
 import H1 from '@/elements/H1';
 import P from '@/elements/P';
@@ -25,14 +24,6 @@ export default function CatbookCat({ catName }: CatbookCatProps): JSX.Element {
 	const hai = getHighlightAndImages(catName);
 
 	if (hai === null) return <CatbookCatError />;
-
-	// Meta tag content for the Head component
-	/*const title = catName + ' 🐱 Cat Summoner';
-	const ogDescription = catName + "'s page on Cat Summoner";
-	const ogTitle = catName + ' 🐱 Cat Summoner';
-	const ogUrl = 'https://cat-summoner.com/Catbook/' + catName;
-	const twDescription = catName + "'s page on Cat Summoner";
-	const twTitle = catName + ' 🐱 Cat Summoner';*/
 
 	return (
 		<Layout>
