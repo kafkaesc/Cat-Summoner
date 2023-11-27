@@ -25,12 +25,16 @@ export default function Custom404(): JSX.Element {
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:width" content="1200" />
 				<meta property="og:title" content="404 🐱 Cat Summoner" />
+				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://cat-summoner.com/404" />
 				{/* Twitter Card Meta Tags */}
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:creator" content="@_kafkaesc" />
 				<meta name="twitter:description" content="Page not found" />
-				<meta name="twitter:image" content="https://cat-summoner.com/?v=2" />
+				<meta
+					name="twitter:image"
+					content="https://cat-summoner.com/twc.png?v=2"
+				/>
 				<meta
 					name="twitter:image:alt"
 					content="A black and white cat sits in front of a dark night sky, he looks back toward the camera, the words Cat Summoner float in the foreground by his face"

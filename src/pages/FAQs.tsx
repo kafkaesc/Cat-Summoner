@@ -26,6 +26,7 @@ export default function Faqs(): JSX.Element {
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:width" content="1200" />
 				<meta property="og:title" content="FAQs 🐱 Cat Summoner" />
+				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://cat-summoner.com/FAQs" />
 				{/* Twitter Card Meta Tags */}
 				<meta name="twitter:card" content="summary_large_image" />

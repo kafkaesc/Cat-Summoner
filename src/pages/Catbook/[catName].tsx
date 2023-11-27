@@ -49,7 +49,10 @@ export default function CatPage(): JSX.Element {
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:creator" content="@_kafkaesc" />
 				<meta name="twitter:description" content={twDescription} />
-				<meta name="twitter:image" content="https://cat-summoner.com/?v=2" />
+				<meta
+					name="twitter:image"
+					content="https://cat-summoner.com/twc.png?v=2"
+				/>
 				<meta
 					name="twitter:image:alt"
 					content="A black and white cat sits in front of a dark night sky, he looks back toward the camera, the words Cat Summoner float in the foreground by his face"
