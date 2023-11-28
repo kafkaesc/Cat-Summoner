@@ -7,7 +7,11 @@ import ConditionalLink from '@/components/ConditionalLink';
 import EmptyCatbook from '@/components/EmptyCatbook';
 import { useCatbook } from '@/hooks/useCatbook';
 
-export default function CatbookFull() {
+/**
+ * @returns {JSX.Element} A photobook showing the cat photos the user has
+ * previously unlocked.
+ */
+export default function CatbookFull(): JSX.Element {
 	const { catbookData: catbook, clearCatbook, isEmpty } = useCatbook();
 
 	return (

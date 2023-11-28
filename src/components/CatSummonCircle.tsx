@@ -6,7 +6,11 @@ import loading from 'public/assets/images/loading.png';
 
 const cats = ['Fearless', 'Harvey', 'Lalo', 'Zelda'];
 
-export default function CatSummonCircle() {
+/**
+ * @returns {JSX.Element} Clickable buttons for each cat and a loading area
+ * that displays a new cat pic when one is summoned.
+ */
+export default function CatSummonCircle(): JSX.Element {
 	const { isLoading: catIsLoading, summonedCat, summonCat } = useCatSummon();
 
 	return (
