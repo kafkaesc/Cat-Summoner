@@ -24,7 +24,7 @@ const techLinks = [
 		alt: 'TypeScript Logo',
 		name: 'TypeScript',
 		src: TypeScriptLogo,
-		url: 'https://www.typescriptlang.org/',
+		url: 'https://typescriptlang.org/',
 	},
 	{
 		alt: 'Tailwind Logo',
