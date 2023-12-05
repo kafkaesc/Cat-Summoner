@@ -15,7 +15,7 @@ export default function Home(): JSX.Element {
 				</title>
 				<meta
 					name="description"
-					content="Cat-Summoner, the Next app where you can summon and meet new cats, built by Jared Hettinger"
+					content="Cat Summoner, the Next app where you can summon and meet new cats, built by Jared Hettinger"
 				/>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
