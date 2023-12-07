@@ -1,3 +1,16 @@
+/**
+ * The lsPrefix is used to prefix the keys being used in local storage and
+ * provide the site with some namespace protection if it's in a shared domain.
+ */
+const lsPrefix = '🐱::';
+
+/**
+ * Custom hook for managing local storage from within Next. This hook should
+ * never be called directly from a component. If the site needs something in
+ * local storage there should be a specific hook for that purpose that
+ * utilizes this one.
+ * @returns Functions for managing local storage
+ */
 export function useLocalStorage() {
 	/**
 	 * Add a new value to localStorage at key
@@ -6,24 +19,25 @@ export function useLocalStorage() {
 	 * @param {boolean?} arrayFlag Optional boolean, pass true if val should go into an array
 	 */
 	function add(key: string, val: any, arrayFlag?: boolean): void {
+		const fullKey = lsPrefix + key;
 		if (typeof val === 'undefined') {
 			val = null;
 		}
-		if (localStorage.getItem(key)) {
-			const prevStorage = JSON.parse('' + localStorage.getItem(key));
+		if (localStorage.getItem(fullKey)) {
+			const prevStorage = JSON.parse('' + localStorage.getItem(fullKey));
 			if (prevStorage && Array.isArray(prevStorage)) {
-				localStorage.setItem(key, JSON.stringify([...prevStorage, val]));
+				localStorage.setItem(fullKey, JSON.stringify([...prevStorage, val]));
 			} else if (prevStorage && typeof prevStorage === 'object') {
 				// TODO: Override object attributes,
 				// add new object attributes,
 				// leave the rest of the object untouched
 			} else {
-				localStorage.setItem(key, JSON.stringify([prevStorage, val]));
+				localStorage.setItem(fullKey, JSON.stringify([prevStorage, val]));
 			}
 		} else if (arrayFlag) {
-			localStorage.setItem(key, JSON.stringify([val]));
+			localStorage.setItem(fullKey, JSON.stringify([val]));
 		} else {
-			localStorage.setItem(key, JSON.stringify(val));
+			localStorage.setItem(fullKey, JSON.stringify(val));
 		}
 	}
 
@@ -33,13 +47,13 @@ export function useLocalStorage() {
 	}
 
 	/** Delete a specific attribute from local storage */
-	function clear(attributeName: string): void {
-		delete localStorage[attributeName];
+	function clear(key: string): void {
+		delete localStorage[lsPrefix + key];
 	}
 
 	/** @returns {any} The value tied to key in localStorage */
 	function get(key: string): any {
-		return JSON.parse('' + localStorage.getItem(key));
+		return JSON.parse('' + localStorage.getItem(lsPrefix + key));
 	}
 
 	/**
@@ -52,7 +66,7 @@ export function useLocalStorage() {
 		if (typeof val === 'undefined') {
 			val = null;
 		}
-		localStorage.setItem(key, JSON.stringify(val));
+		localStorage.setItem(lsPrefix + key, JSON.stringify(val));
 	}
 
 	return { add, clearAll, clear, get, set };
