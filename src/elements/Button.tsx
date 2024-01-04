@@ -25,35 +25,19 @@ const DangerButton = ({
 	disabled,
 	...props
 }: ButtonStyleProps): JSX.Element => {
-	return disabled ? (
-		className ? (
-			<button
-				{...props}
-				className={`px-4 py-2 border-2 cursor-not-allowed border-cs-danger text-cs-white bg-cs-danger ${className}`}
-				disabled={true}
-			>
-				{children}
-			</button>
-		) : (
-			<button
-				{...props}
-				className="px-4 py-2 border-2 cursor-not-allowed border-cs-danger text-cs-white bg-cs-danger"
-				disabled={true}
-			>
-				{children}
-			</button>
-		)
-	) : className ? (
+	return className ? (
 		<button
 			{...props}
-			className={`px-4 py-2 border-2 border-cs-danger text-cs-white bg-cs-danger hover:border-cs-black hover:bg-cs-danger-light ${className}`}
+			className={`px-4 py-2 border-2 border-cs-danger text-cs-white bg-cs-danger enabled:hover:border-cs-black enabled:hover:bg-cs-danger-light disabled:cursor-not-allowed ${className}`}
+			disabled={!!disabled}
 		>
 			{children}
 		</button>
 	) : (
 		<button
 			{...props}
-			className="px-4 py-2 border-2 border-cs-danger text-cs-white bg-cs-danger hover:border-cs-black hover:bg-cs-danger-light"
+			className="px-4 py-2 border-2 border-cs-danger text-cs-white bg-cs-danger enabled:hover:border-cs-black enabled:hover:bg-cs-danger-light disabled:cursor-not-allowed"
+			disabled={!!disabled}
 		>
 			{children}
 		</button>
@@ -66,35 +50,19 @@ const DefaultButton = ({
 	disabled,
 	...props
 }: ButtonStyleProps): JSX.Element => {
-	return disabled ? (
-		className ? (
-			<button
-				{...props}
-				className={`px-4 py-2 border-2 cursor-not-allowed border-gray text-cs-black bg-cs-primary ${className}`}
-				disabled={true}
-			>
-				{children}
-			</button>
-		) : (
-			<button
-				{...props}
-				className="px-4 py-2 border-2 cursor-not-allowed border-gray text-cs-black"
-				disabled={true}
-			>
-				{children}
-			</button>
-		)
-	) : className ? (
+	return className ? (
 		<button
 			{...props}
-			className={`px-4 py-2 border-2 border-gray text-cs-black bg-gray hover:border-cs-black hover:bg-gray-light ${className}`}
+			className={`px-4 py-2 border-2 border-gray text-cs-black bg-gray enabled:hover:border-cs-black enabled:hover:bg-gray-light disabled:cursor-not-allowed ${className}`}
+			disabled={!!disabled}
 		>
 			{children}
 		</button>
 	) : (
 		<button
 			{...props}
-			className="px-4 py-2 border-2 border-gray text-cs-black bg-gray hover:border-cs-black hover:bg-gray-light"
+			className="px-4 py-2 border-2 border-gray text-cs-black bg-gray enabled:hover:border-cs-black enabled:hover:bg-gray-light disabled:cursor-not-allowed"
+			disabled={!!disabled}
 		>
 			{children}
 		</button>
@@ -107,35 +75,19 @@ const PrimaryButton = ({
 	disabled,
 	...props
 }: ButtonStyleProps): JSX.Element => {
-	return disabled ? (
-		className ? (
-			<button
-				{...props}
-				className={`px-4 py-2 border-2 cursor-not-allowed border-cs-primary text-cs-white bg-cs-primary ${className}`}
-				disabled={true}
-			>
-				{children}
-			</button>
-		) : (
-			<button
-				{...props}
-				className="px-4 py-2 border-2 cursor-not-allowed border-cs-primary text-cs-white bg-cs-primary"
-				disabled={true}
-			>
-				{children}
-			</button>
-		)
-	) : className ? (
+	return className ? (
 		<button
 			{...props}
-			className={`px-4 py-2 border-2 border-cs-primary text-cs-white bg-cs-primary hover:border-cs-black hover:bg-cs-primary-light ${className}`}
+			className={`px-4 py-2 border-2 border-cs-primary text-cs-white bg-cs-primary enabled:hover:border-cs-black enabled:hover:bg-cs-primary-light disabled:cursor-not-allowed ${className}`}
+			disabled={!!disabled}
 		>
 			{children}
 		</button>
 	) : (
 		<button
 			{...props}
-			className="px-4 py-2 border-2 border-cs-primary text-cs-white bg-cs-primary hover:border-cs-black hover:bg-cs-primary-light"
+			className="px-4 py-2 border-2 border-cs-primary text-cs-white bg-cs-primary enabled:hover:border-cs-black enabled:hover:bg-cs-primary-light disabled:cursor-not-allowed"
+			disabled={!!disabled}
 		>
 			{children}
 		</button>
@@ -148,35 +100,19 @@ const SecondaryButton = ({
 	disabled,
 	...props
 }: ButtonStyleProps): JSX.Element => {
-	return disabled ? (
-		className ? (
-			<button
-				{...props}
-				className={`px-4 py-2 border-2 cursor-not-allowed border-cs-secondary bg-cs-secondary text-cs-white ${className}`}
-				disabled={true}
-			>
-				{children}
-			</button>
-		) : (
-			<button
-				{...props}
-				className="px-4 py-2 border-2 cursor-not-allowed border-cs-secondary bg-cs-secondary text-cs-white"
-				disabled={true}
-			>
-				{children}
-			</button>
-		)
-	) : className ? (
+	return className ? (
 		<button
 			{...props}
-			className={`px-4 py-2 border-2 border-cs-secondary text-cs-white bg-cs-secondary hover:border-cs-black hover:bg-cs-secondary-light ${className}`}
+			className={`px-4 py-2 border-2 border-cs-secondary text-cs-white bg-cs-secondary enabled:hover:border-cs-black enabled:hover:bg-cs-secondary-light disabled:cursor-not-allowed ${className}`}
+			disabled={!!disabled}
 		>
 			{children}
 		</button>
 	) : (
 		<button
 			{...props}
-			className="px-4 py-2 border-2 border-cs-secondary text-cs-white bg-cs-secondary hover:border-cs-black hover:bg-cs-secondary-light"
+			className="px-4 py-2 border-2 border-cs-secondary text-cs-white bg-cs-secondary enabled:hover:border-cs-black enabled:hover:bg-cs-secondary-light disabled:cursor-not-allowed"
+			disabled={!!disabled}
 		>
 			{children}
 		</button>
@@ -189,35 +125,19 @@ const TextButton = ({
 	disabled,
 	...props
 }: ButtonStyleProps): JSX.Element => {
-	return disabled ? (
-		className ? (
-			<button
-				{...props}
-				className={`cursor-not-allowed text-link-hover ${className}`}
-				disabled={true}
-			>
-				{children}
-			</button>
-		) : (
-			<button
-				{...props}
-				className="cursor-not-allowed text-link-hover"
-				disabled={true}
-			>
-				{children}
-			</button>
-		)
-	) : className ? (
+	return className ? (
 		<button
 			{...props}
-			className={`text-link hover:text-link-hover hover:underline ${className}`}
+			className={`text-link enabled:hover:text-link-hover enabled:hover:underline disabled:cursor-not-allowed ${className}`}
+			disabled={!!disabled}
 		>
 			{children}
 		</button>
 	) : (
 		<button
 			{...props}
-			className="text-link hover:text-link-hover hover:underline"
+			className="text-link enabled:hover:text-link-hover enabled:hover:underline disabled:cursor-not-allowed"
+			disabled={!!disabled}
 		>
 			{children}
 		</button>
@@ -230,35 +150,19 @@ const WarningButton = ({
 	disabled,
 	...props
 }: ButtonStyleProps): JSX.Element => {
-	return disabled ? (
-		className ? (
-			<button
-				{...props}
-				className={`px-4 py-2 border-2 cursor-not-allowed border-cs-warning text-cs-black bg-cs-warning ${className}`}
-				disabled={true}
-			>
-				{children}
-			</button>
-		) : (
-			<button
-				{...props}
-				className="px-4 py-2 border-2 cursor-not-allowed border-cs-warning text-cs-black bg-cs-warning"
-				disabled={true}
-			>
-				{children}
-			</button>
-		)
-	) : className ? (
+	return className ? (
 		<button
 			{...props}
-			className={`px-4 py-2 border-2 border-cs-warning text-cs-black bg-cs-warning hover:border-cs-black hover:bg-cs-warning-light ${className}`}
+			className={`px-4 py-2 border-2 border-cs-warning text-cs-black bg-cs-warning enabled:hover:border-cs-black enabled:hover:bg-cs-warning-light disabled:cursor-not-allowed ${className}`}
+			disabled={!!disabled}
 		>
 			{children}
 		</button>
 	) : (
 		<button
 			{...props}
-			className="px-4 py-2 border-2 border-cs-warning text-cs-black bg-cs-warning hover:border-cs-black hover:bg-cs-warning-light"
+			className="px-4 py-2 border-2 border-cs-warning text-cs-black bg-cs-warning enabled:hover:border-cs-black enabled:hover:bg-cs-warning-light disabled:cursor-not-allowed"
+			disabled={!!disabled}
 		>
 			{children}
 		</button>
@@ -285,31 +189,31 @@ export default function Button({
 	...props
 }: ButtonProps): JSX.Element {
 	return buttonStyle === 'danger' ? (
-		<DangerButton className={className} disabled={disabled} {...props}>
+		<DangerButton className={className} disabled={!!disabled} {...props}>
 			{children}
 		</DangerButton>
 	) : buttonStyle === 'default' ? (
-		<DefaultButton className={className} disabled={disabled} {...props}>
+		<DefaultButton className={className} disabled={!!disabled} {...props}>
 			{children}
 		</DefaultButton>
 	) : buttonStyle === 'primary' ? (
-		<PrimaryButton className={className} disabled={disabled} {...props}>
+		<PrimaryButton className={className} disabled={!!disabled} {...props}>
 			{children}
 		</PrimaryButton>
 	) : buttonStyle === 'secondary' ? (
-		<SecondaryButton className={className} disabled={disabled} {...props}>
+		<SecondaryButton className={className} disabled={!!disabled} {...props}>
 			{children}
 		</SecondaryButton>
 	) : buttonStyle === 'text' ? (
-		<TextButton className={className} disabled={disabled} {...props}>
+		<TextButton className={className} disabled={!!disabled} {...props}>
 			{children}
 		</TextButton>
 	) : buttonStyle === 'warning' ? (
-		<WarningButton className={className} disabled={disabled} {...props}>
+		<WarningButton className={className} disabled={!!disabled} {...props}>
 			{children}
 		</WarningButton>
 	) : (
-		<DefaultButton className={className} disabled={disabled} {...props}>
+		<DefaultButton className={className} disabled={!!disabled} {...props}>
 			{children}
 		</DefaultButton>
 	);
