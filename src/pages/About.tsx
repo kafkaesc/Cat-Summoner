@@ -93,13 +93,6 @@ export default function About(): JSX.Element {
 				is available on GitHub.
 			</P>
 			<FrontEndTechList />
-			{/*<H2>The Cats</H2>
-			<P>
-				{`Pluto — this was the cat's name — was my favorite pet
-				and playmate. I alone fed him, and he attended me wherever I went about
-				the house. It was even with difficulty that I could prevent him from
-				following me through the streets.`}
-	    </P>*/}
 		</Layout>
 	);
 }

@@ -52,10 +52,10 @@ export default function Faqs(): JSX.Element {
 			</span>
 			<H2>What is this site?</H2>
 			<P>
-				{`Cat Summoner is an interactive activity where you can "summon" cats 
-				by calling their name. After 3 seconds the cat will arrive, 
-				represented by a randomly selected picture of them. When you encounter 
-				a new picture it will be added to your `}
+				{`Cat Summoner is an interactive site where you can "summon" cats `}
+				{`by calling their name. After 3 seconds the cat will arrive, `}
+				{`represented by a randomly selected picture of them. When you encounter `}
+				{`a new picture it will be added to your `}
 				<Link href="/Catbook">Catbook</Link>
 				{` collection.`}
 			</P>
@@ -69,11 +69,11 @@ export default function Faqs(): JSX.Element {
 				>
 					localStorage
 				</A>
-				{` to store data across browser sessions. This means the data is stored on
-				your computer—specifically by your current web browser. It also means
-				that the data for this site will not load across browsers. For example,
-				if you are using Chrome and visit this site in Firefox any images you
-				have unlocked will not show up on the `}
+				{` to store data across browser sessions. This means the data is stored on `}
+				{`your computer—specifically by your current web browser. It also means `}
+				{`that the data for this site will not load across browsers. For example, `}
+				{`if you are using Chrome and visit this site in Firefox any images you `}
+				{`have unlocked will not show up on the `}
 				<Link href="/Catbook">Catbook</Link> page.
 			</P>
 		</Layout>
