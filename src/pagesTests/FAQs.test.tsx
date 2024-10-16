@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import Faqs from './FAQs';
+import Faqs from '../pages/FAQs';
 
 it('Has the expected page heading', () => {
 	render(<Faqs />);
