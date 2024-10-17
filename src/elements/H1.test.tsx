@@ -16,3 +16,21 @@ it('Loads the className prop onto the child h1 element', () => {
 	expect(heading).toHaveTextContent(/hello world, but red/i);
 	expect(heading).toHaveClass('red');
 });
+
+it('Loads text-left without including the default text-center', () => {
+	render(<H1 className="text-left">hello world</H1>);
+	const heading = screen.getByRole('heading', { level: 1 });
+	expect(heading).toBeInTheDocument();
+	expect(heading).toHaveTextContent(/hello world/i);
+	expect(heading).toHaveClass('text-left');
+	expect(heading).not.toHaveClass('text-center');
+});
+
+it('Loads text-right without including the default text-center', () => {
+	render(<H1 className="text-right">hello world</H1>);
+	const heading = screen.getByRole('heading', { level: 1 });
+	expect(heading).toBeInTheDocument();
+	expect(heading).toHaveTextContent(/hello world/i);
+	expect(heading).toHaveClass('text-right');
+	expect(heading).not.toHaveClass('text-center');
+});
