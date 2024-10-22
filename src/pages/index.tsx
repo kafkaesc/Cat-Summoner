@@ -13,10 +13,7 @@ export default function Home(): JSX.Element {
 				<title>
 					Cat Summoner 🐱 the Next cat app, built by Jared Hettinger
 				</title>
-				<meta
-					name="description"
-					content="Cat Summoner, the Next app where you can summon and meet new cats, built by Jared Hettinger"
-				/>
+				<meta name="description" content="Cat Summoner, the Next app where you can summon and meet new cats, built by Jared Hettinger" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 				{/* OpenGraph Meta Tags */}
@@ -31,7 +28,7 @@ export default function Home(): JSX.Element {
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:creator" content="@_kafkaesc" />
 				<meta name="twitter:description" content="The Next cat app, built by Jared Hettinger" />
-				<meta name="twitter:image" content="https://cat-summoner.com/twc.png" />
+				<meta name="twitter:image:src" content="https://cat-summoner.com/twc.png" />
 				<meta name="twitter:image:alt" content="A black and white cat sits in front of a dark night sky, he looks back toward the camera, the words Cat Summoner float in the foreground by his face" />
 				<meta name="twitter:site" content="@_kafkaesc" />
 				<meta name="twitter:title" content="Cat Summoner" />
