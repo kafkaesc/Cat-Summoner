@@ -114,7 +114,7 @@ const catImageData: Array<CatImageDetails> = [
 		src: require('public/assets/images/cats/zelda-05.jpg'),
 	},
 	{
-		alt: 'TODO: Allan please add the alt text for this image.',
+		alt: 'A black cat sits back in a covered bed. The interior is dark, causing the black cat to disappear inside the bed with only their eyes visible.',
 		catId: 905,
 		catImageId: 1,
 		name: 'special',
