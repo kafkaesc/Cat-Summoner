@@ -27,11 +27,12 @@ export default function Home(): JSX.Element {
 				{/* Twitter Card Meta Tags */}
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:creator" content="@_kafkaesc" />
-				<meta name="twitter:description" content="The Next cat app, built by Jared Hettinger" />
+				<meta name="twitter:description" content="Cat Summoner, the Next app where you can summon and meet new cats, built by Jared Hettinger" />
+				<meta name="twitter:site" content="@_kafkaesc" />
+				<meta name="twitter:title" content="Cat Summoner 🐱 the Next cat app, built by Jared Hettinger" />
+				<meta name="twitter:image" content="https://cat-summoner.com/twc.png" />
 				<meta name="twitter:image:src" content="https://cat-summoner.com/twc.png" />
 				<meta name="twitter:image:alt" content="A black and white cat sits in front of a dark night sky, he looks back toward the camera, the words Cat Summoner float in the foreground by his face" />
-				<meta name="twitter:site" content="@_kafkaesc" />
-				<meta name="twitter:title" content="Cat Summoner" />
 			</Head>
 			<Layout>
 				<H1 className="mb-2">Cat Summoner</H1>
