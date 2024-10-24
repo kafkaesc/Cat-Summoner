@@ -16,30 +16,21 @@ export default function About(): JSX.Element {
 			<Head>
 				<title>About 🐱 Cat Summoner</title>
 				{/* OpenGraph Meta Tags */}
-				<meta property="og:description" content="About Cat Summoner" />
-				<meta
-					property="og:image"
-					content="https://cat-summoner.com/ogp.png?v=2"
-				/>
+				<meta property="og:description" content="About Cat Summoner: all the technical details you do (and don't) want to know" />
+				<meta property="og:image" content="https://cat-summoner.com/ogp.png" />
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:width" content="1200" />
-				<meta property="og:title" content="About 🐱 Cat Summoner" />
+				<meta property="og:title" content="About 🐱 Cat Summoner, the Next cat app" />
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://cat-summoner.com/About" />
 				{/* Twitter Card Meta Tags */}
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:creator" content="@_kafkaesc" />
-				<meta name="twitter:description" content="About Cat Summoner" />
-				<meta
-					name="twitter:image"
-					content="https://cat-summoner.com/twc.png?v=2"
-				/>
-				<meta
-					name="twitter:image:alt"
-					content="A black and white cat sits in front of a dark night sky, he looks back toward the camera, the words Cat Summoner float in the foreground by his face"
-				/>
+				<meta name="twitter:description" content="About Cat Summoner: all the technical details you do (and don't) want to know" />
+				<meta name="twitter:image" content="https://cat-summoner.com/twc.png" />
+				<meta name="twitter:image:alt" content="A black and white cat sits in front of a dark night sky, he looks back toward the camera, the words Cat Summoner float in the foreground by his face" />
 				<meta name="twitter:site" content="@_kafkaesc" />
-				<meta name="twitter:title" content="About 🐱 Cat Summoner" />
+				<meta name="twitter:title" content="About 🐱 Cat Summoner, the Next cat app" />
 			</Head>
 			<H1 className="mb-0">About</H1>
 			<P className="text-center">Built by Jared Hettinger</P>
