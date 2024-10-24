@@ -17,11 +17,11 @@ export default function Home(): JSX.Element {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 				{/* OpenGraph Meta Tags */}
-				<meta property="og:description" content="The Next cat app, built by Jared Hettinger" />
+				<meta property="og:description" content="Cat Summoner, the Next app where you can summon and meet new cats, built by Jared Hettinger" />
 				<meta property="og:image" content="https://cat-summoner.com/ogp.png" />
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:width" content="1200" />
-				<meta property="og:title" content="Cat Summoner" />
+				<meta property="og:title" content="Cat Summoner 🐱 the Next cat app, built by Jared Hettinger" />
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://cat-summoner.com/" />
 				{/* Twitter Card Meta Tags */}
