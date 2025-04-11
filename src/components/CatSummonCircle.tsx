@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Button from '@/elements/Button';
 import { useCatSummon } from '@/hooks/useCatSummon';
 
-import loading from 'public/assets/images/loading.png';
+// import loading from 'public/assets/images/loading.png';
 
 const cats = ['Fearless', 'Harvey', 'Lalo', 'Zelda'];
 
@@ -34,7 +34,7 @@ export default function CatSummonCircle(): JSX.Element {
 						className="mx-auto animate-spin-3 md:m-0"
 						height="500"
 						width="500"
-						src={loading}
+						src="/assets/images/loading.png"
 					/>
 				)}
 				{catIsLoading && summonedCat && (

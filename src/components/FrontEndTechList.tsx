@@ -1,47 +1,40 @@
 import Image from 'next/image';
 
-import NextJsLogo from 'public/assets/images/tech/next.svg';
-import ReactLogo from 'public/assets/images/tech/react.svg';
-import TypeScriptLogo from 'public/assets/images/tech/typescript.svg';
-import TailwindLogo from 'public/assets/images/tech/tailwind.svg';
-import JestLogo from 'public/assets/images/tech/jest.svg';
-import AwsLogo from 'public/assets/images/tech/aws.svg';
-
 const techLinks = [
 	{
 		alt: 'Next.js Logo',
 		name: 'Next.js',
-		src: NextJsLogo,
+		src: '/assets/images/tech/next.svg',
 		url: 'https://nextjs.org/',
 	},
 	{
 		alt: 'React Logo',
 		name: 'React',
-		src: ReactLogo,
+		src: '/assets/images/tech/react.svg',
 		url: 'https://react.dev/',
 	},
 	{
 		alt: 'TypeScript Logo',
 		name: 'TypeScript',
-		src: TypeScriptLogo,
+		src: '/assets/images/tech/typescript.svg',
 		url: 'https://typescriptlang.org/',
 	},
 	{
 		alt: 'Tailwind Logo',
 		name: 'Tailwind',
-		src: TailwindLogo,
+		src: '/assets/images/tech/tailwind.svg',
 		url: 'https://tailwindcss.com/',
 	},
 	{
 		alt: 'Jest Logo',
 		name: 'Jest',
-		src: JestLogo,
+		src: '/assets/images/tech/jest.svg',
 		url: 'https://jestjs.io/',
 	},
 	{
 		alt: 'AWS Logo',
 		name: 'AWS',
-		src: AwsLogo,
+		src: '/assets/images/tech/aws.svg',
 		url: 'https://aws.amazon.com/what-is-aws/',
 	},
 ];
@@ -57,7 +50,13 @@ export default function FrontEndTechList(): JSX.Element {
 					<span key={`${tl.name}-Logo`}>
 						<li className="inline-block p-3 md:p-2 md:mx-3 hover:animate-float-up-750ms">
 							<a href={tl.url} rel="noreferrer" target="_blank">
-								<Image alt={tl.alt} height={45} src={tl.src} />
+								<Image
+									alt={tl.alt}
+									height={0}
+									src={tl.src}
+									width={0}
+									style={{ height: 45, width: 'auto' }}
+								/>
 							</a>
 						</li>
 						{index === 0 && <br className="md:hidden" />}

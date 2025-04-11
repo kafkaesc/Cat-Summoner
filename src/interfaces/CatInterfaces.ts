@@ -15,6 +15,7 @@ export interface CatImageDetails {
 	catImageId: number;
 	height?: number;
 	name: string;
-	src: StaticImageData;
+	src: string;
+	// src: StaticImageData;
 	width?: number;
 }

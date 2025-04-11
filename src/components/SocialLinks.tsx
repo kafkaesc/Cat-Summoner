@@ -1,33 +1,28 @@
 import Image from 'next/image';
 
-import GitHubLogo from 'public/assets/images/social/github.png';
-import InstagramLogo from 'public/assets/images/social/instagram.png';
-import LinkedInLogo from 'public/assets/images/social/linkedin.png';
-import TwitterLogo from 'public/assets/images/social/twitter.png';
-
 const socialLinks = [
 	{
 		alt: 'GitHub Logo',
 		name: 'GitHub',
-		src: GitHubLogo,
+		src: '/assets/images/social/github.png',
 		url: 'https://github.com/kafkaesc',
 	},
 	{
 		alt: 'Instagram Logo',
 		name: 'Instagram',
-		src: InstagramLogo,
+		src: '/assets/images/social/instagram.png',
 		url: 'https://instagram.com/kafkaesc',
 	},
 	{
 		alt: 'Twitter Logo',
 		name: 'Twitter',
-		src: TwitterLogo,
+		src: '/assets/images/social/twitter.png',
 		url: 'https://twitter.com/_kafkaesc',
 	},
 	{
 		alt: 'LinkedIn Logo',
 		name: 'LinkedIn',
-		src: LinkedInLogo,
+		src: '/assets/images/social/linkedin.png',
 		url: 'https://linkedin.com/in/jahettinger',
 	},
 ];
@@ -42,7 +37,13 @@ export default function SocialLinks(): JSX.Element {
 				return (
 					<li key={`${so.name}-Logo`} className="inline-block mx-3">
 						<a href={so.url} rel="noreferrer" target="_blank">
-							<Image alt={so.alt} height={24} src={so.src} />
+							<Image
+								alt={so.alt}
+								height={52}
+								src={so.src}
+								style={{ height: 24, width: 'auto' }}
+								width={52}
+							/>
 						</a>
 					</li>
 				);
