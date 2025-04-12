@@ -1,14 +1,14 @@
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 interface PolaroidProps {
 	alt: string;
-	src: StaticImageData;
+	src: string;
 	[props: string]: any;
 }
 
 /**
  * @param {string} alt Alt text for the image
- * @param {StaticImageData} src Image data to display within the polaroid
+ * @param {string} src Image path to display within the polaroid
  * @param {any} props Optional props parameter that can include a className string
  * @returns {JSX.Element} A square image (cropped if necessary) with extra
  * white space below, like a polaroid. Polaroid dimensions are 5:6.

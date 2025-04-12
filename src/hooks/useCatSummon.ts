@@ -33,7 +33,7 @@ export function useCatSummon() {
 		__activeTimeout.current = setTimeout(() => {
 			unlockCatbookImage(name, id);
 			__setIsLoading(false);
-		}, 3000);
+		}, 0);
 	}
 
 	/**

@@ -1,5 +1,3 @@
-import { StaticImageData } from 'next/image';
-
 export interface Cat {
 	about?: string;
 	age?: number;
@@ -15,6 +13,6 @@ export interface CatImageDetails {
 	catImageId: number;
 	height?: number;
 	name: string;
-	src: StaticImageData;
+	src: string;
 	width?: number;
 }
