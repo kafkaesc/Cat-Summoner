@@ -1,5 +1,4 @@
 import Image from 'next/image';
-// import Logo from 'public/logo.png';
 
 /**
  * @returns {JSX.Element} An image of the site logo a little less than 2rem wide and tall

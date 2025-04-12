@@ -2,8 +2,6 @@ import Image from 'next/image';
 import Button from '@/elements/Button';
 import { useCatSummon } from '@/hooks/useCatSummon';
 
-// import loading from 'public/assets/images/loading.png';
-
 const cats = ['Fearless', 'Harvey', 'Lalo', 'Zelda'];
 
 /**

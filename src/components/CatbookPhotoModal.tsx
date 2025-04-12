@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Button from '@/elements/Button';
 
 interface CatbookPhotoModalProps {
 	alt: string;
 	children: any;
-	src: StaticImageData;
+	src: string;
 }
 
 export default function CatbookPhotoModal({

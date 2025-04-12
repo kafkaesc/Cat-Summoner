@@ -7,7 +7,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 1,
 		name: 'fearless',
 		src: '/assets/images/cats/fearless-01.jpg',
-		// src: require('public/assets/images/cats/fearless-01.jpg'),
 	},
 	{
 		alt: 'An orange cat sits on a gray bed sheet. They are sitting back, with their front legs facing forward and their back legs facing toward the camera. Their tail is wrapped around their back legs. Their ears are perked up and their eyes are squeezed near-shut in a pleasant expression.',
@@ -15,7 +14,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 1,
 		name: 'harvey',
 		src: '/assets/images/cats/harvey-01.jpg',
-		// src: require('public/assets/images/cats/harvey-01.jpg'),
 	},
 	{
 		alt: 'An orange cat sits on the hood of an electric-blue car. They lean slightly toward the camera with a curious look on their face.',
@@ -23,7 +21,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 2,
 		name: 'harvey',
 		src: '/assets/images/cats/harvey-02.jpg',
-		// src: require('public/assets/images/cats/harvey-02.jpg'),
 	},
 	{
 		alt: 'An orange cat is sitting next to a small Christmas tree with a single ornament. The small tree leans over toward the cat with the weight of its single ornament. The cat is leaning away from the ornament with an expression of slight befuddlement.',
@@ -31,7 +28,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 3,
 		name: 'harvey',
 		src: '/assets/images/cats/harvey-03.jpg',
-		// src: require('public/assets/images/cats/harvey-03.jpg'),
 	},
 	{
 		alt: 'A close-up head shot of an orange cat. Their face resembles a human face expressing irritation and annoyance.',
@@ -39,7 +35,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 4,
 		name: 'harvey',
 		src: '/assets/images/cats/harvey-04.jpg',
-		// src: require('public/assets/images/cats/harvey-04.jpg'),
 	},
 	{
 		alt: 'An orange cat sits atop a blue suitcase. He is sitting like a loaf, a.k.a, sitting with his back paws flat and his front paws tucked under his chest. His stern expression looks toward the camera.',
@@ -47,7 +42,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 5,
 		name: 'harvey',
 		src: '/assets/images/cats/harvey-05.jpg',
-		// src: require('public/assets/images/cats/harvey-05.jpg'),
 	},
 	{
 		alt: 'A mostly white cat with black spots around their eyes and on their back faces the camera. The cat is walking forward with their front right paw tucked under their body. Their black tail is held up with a hook at the top. Their eyes look into the camera with curiosity.',
@@ -55,7 +49,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 1,
 		name: 'lalo',
 		src: '/assets/images/cats/lalo-01.jpg',
-		// src: require('public/assets/images/cats/lalo-01.jpg'),
 	},
 	{
 		alt: 'A cat sits at the edge of a porch beneath a black night sky. Their fur is mostly white with some black spots down the back. The cat has their back to the camera, but their head is turned to face backward, making them seem peaceful and contemplative.',
@@ -63,7 +56,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 2,
 		name: 'lalo',
 		src: '/assets/images/cats/lalo-02.jpg',
-		// src: require('public/assets/images/cats/lalo-02.jpg'),
 	},
 	{
 		alt: 'A mostly white cat with black spots around their eyes lies inside of a cylindrical wicker enclosed bed. Their head peeks out of the circular hole on its front. Inside the enclosure the cat can be seen holding onto a stuffed chile pepper toy.',
@@ -71,7 +63,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 3,
 		name: 'lalo',
 		src: '/assets/images/cats/lalo-03.jpg',
-		// src: require('public/assets/images/cats/lalo-03.jpg'),
 	},
 	{
 		alt: 'A mostly white cat with black spots around their eyes and on their back sits on the edge of a blue porch that stretches off into the background. Their body is perpendicular to the camera with their tail wrapping forward, creating a classic cat silhouette.',
@@ -79,7 +70,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 4,
 		name: 'lalo',
 		src: '/assets/images/cats/lalo-04.jpg',
-		// src: require('public/assets/images/cats/lalo-04.jpg'),
 	},
 	{
 		alt: 'A mostly white cat with black spots around their eyes and on their back stands atop a roof. They are perched above the camera and face downward with their mouth open mid-meow. Behind them arcs a rainbow.',
@@ -87,7 +77,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 5,
 		name: 'lalo',
 		src: '/assets/images/cats/lalo-05.jpg',
-		// src: require('public/assets/images/cats/lalo-05.jpg'),
 	},
 	{
 		alt: 'A tortoiseshell cat sits on a small rug of alternating gray and turquoise lines and next to a door with a full length window looking outside. The cat is looking back toward the camera expectantly.',
@@ -95,7 +84,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 1,
 		name: 'zelda',
 		src: '/assets/images/cats/zelda-01.jpg',
-		// src: require('public/assets/images/cats/zelda-01.jpg'),
 	},
 	{
 		alt: 'A tortoiseshell cat is laying on their back on a wood floor. The soft, fluffy hair on their belly is visible as they look upward.',
@@ -103,7 +91,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 2,
 		name: 'zelda',
 		src: '/assets/images/cats/zelda-02.jpg',
-		// src: require('public/assets/images/cats/zelda-02.jpg'),
 	},
 	{
 		alt: "A close-up side profile of a tortoiseshell cat. The cat is backlit by a tv running in a blurry background, which contrasts strongly with the cat's sharply defined face.",
@@ -111,7 +98,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 3,
 		name: 'zelda',
 		src: '/assets/images/cats/zelda-03.jpg',
-		// src: require('public/assets/images/cats/zelda-03.jpg'),
 	},
 	{
 		alt: 'A tortoiseshell cat lies near the edge of a leather couch. Their paws point outward from the front of their body as they stare at something outside of frame.',
@@ -119,7 +105,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 4,
 		name: 'zelda',
 		src: '/assets/images/cats/zelda-04.jpg',
-		// src: require('public/assets/images/cats/zelda-04.jpg'),
 	},
 	{
 		alt: 'A tortoiseshell cat is peeking out of a paper shopping bag that is laying on the floor.',
@@ -127,7 +112,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 5,
 		name: 'zelda',
 		src: '/assets/images/cats/zelda-05.jpg',
-		// src: require('public/assets/images/cats/zelda-05.jpg'),
 	},
 	{
 		alt: 'A black cat sits back in a covered bed. The interior is dark, causing the black cat to disappear inside the bed with only their eyes visible.',
@@ -135,7 +119,6 @@ const catImageData: Array<CatImageDetails> = [
 		catImageId: 1,
 		name: 'special',
 		src: '/assets/images/cats/special-01.jpg',
-		// src: require('public/assets/images/cats/special-01.jpg'),
 	},
 ];
 
