@@ -2,8 +2,7 @@ import Link from 'next/link';
 
 /**
  * List items to be used in the Navbar component
- * @param {any} children The content to go inside the navigation link,
- * usually a string
+ * @param {ReactNode} children The content to go inside the navigation link
  * @param {any} props Component props to be passed to the
  * Next Link component
  * @returns
