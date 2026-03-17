@@ -1,7 +1,8 @@
+import { ReactNode } from 'react';
 import Link from '@/elements/Link';
 
 interface ConditionalLinkProps {
-	children: any;
+	children: ReactNode;
 	condition: boolean;
 	link: string;
 }
