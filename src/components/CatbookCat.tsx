@@ -29,7 +29,7 @@ export default function CatbookCat({ catName }: CatbookCatProps): JSX.Element {
 		<Layout>
 			<div className="pt-1.5 full-width">
 				<CatbookCatLeft>
-					{hai && hai.highlight && (
+					{hai.highlight && (
 						<Image
 							alt={hai.highlight.alt}
 							className="inline-block"
@@ -45,7 +45,7 @@ export default function CatbookCat({ catName }: CatbookCatProps): JSX.Element {
 					{cat.about && <P>{cat.about}</P>}
 				</CatbookCatRight>
 			</div>
-			{hai && hai.images && (
+			{hai.images && (
 				<div className="pt-1.5 full-width">
 					<CatPicRow
 						catName={catName}
