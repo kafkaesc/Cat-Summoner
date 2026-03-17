@@ -23,22 +23,35 @@ export function useLocalStorage() {
 		if (typeof val === 'undefined') {
 			val = null;
 		}
-		if (localStorage.getItem(fullKey)) {
-			const prevStorage = JSON.parse('' + localStorage.getItem(fullKey));
-			if (prevStorage && Array.isArray(prevStorage)) {
-				localStorage.setItem(fullKey, JSON.stringify([...prevStorage, val]));
-			} else if (prevStorage && typeof prevStorage === 'object') {
-				// TODO: Override object attributes,
-				// add new object attributes,
-				// leave the rest of the object untouched
-			} else {
-				localStorage.setItem(fullKey, JSON.stringify([prevStorage, val]));
-			}
-		} else if (arrayFlag) {
-			localStorage.setItem(fullKey, JSON.stringify([val]));
-		} else {
-			localStorage.setItem(fullKey, JSON.stringify(val));
+
+		// No existing value — store val directly (wrapped in array if arrayFlag is set)
+		const rawPrevStorage = localStorage.getItem(fullKey);
+		if (!rawPrevStorage) {
+			localStorage.setItem(fullKey, JSON.stringify(arrayFlag ? [val] : val));
+			return;
 		}
+
+		// Parse the previous value, falling back to null if the stored JSON is malformed
+		let prevStorage: any;
+		try {
+			prevStorage = JSON.parse(rawPrevStorage);
+		} catch {
+			prevStorage = null;
+		}
+
+		// If the previous value is an array, append val to it
+		if (Array.isArray(prevStorage)) {
+			localStorage.setItem(fullKey, JSON.stringify([...prevStorage, val]));
+			return;
+		}
+
+		// TODO: Override object attributes, add new object attributes, leave the rest untouched
+		if (prevStorage && typeof prevStorage === 'object') {
+			return;
+		}
+
+		// If the previous value is a primitive, create an array with the previous value and val
+		localStorage.setItem(fullKey, JSON.stringify([prevStorage, val]));
 	}
 
 	/** Clear all local storage */
@@ -48,12 +61,20 @@ export function useLocalStorage() {
 
 	/** Delete a specific attribute from local storage */
 	function clear(key: string): void {
-		delete localStorage[lsPrefix + key];
+		localStorage.removeItem(lsPrefix + key);
 	}
 
-	/** @returns {any} The value tied to key in localStorage */
+	/** @returns {any} The value tied to key in localStorage, or null if missing or invalid JSON */
 	function get(key: string): any {
-		return JSON.parse('' + localStorage.getItem(lsPrefix + key));
+		const raw = localStorage.getItem(lsPrefix + key);
+		if (raw === null) {
+			return null;
+		}
+		try {
+			return JSON.parse(raw);
+		} catch {
+			return null;
+		}
 	}
 
 	/**
