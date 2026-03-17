@@ -12,8 +12,8 @@ export function useCatSummon() {
 
 	/**
 	 * This function will begin loading the cat image associated with the name
-	 * and ID. It will set __isLoading to have a 3 sec timer. The image itself
-	 * is loaded ASAP and whether to enforce the 3 sec wait is up to the
+	 * and ID. It will set __isLoading to have a 2.5 sec timer. The image itself
+	 * is loaded ASAP and whether to enforce the 2.5 sec wait is up to the
 	 * component calling the hook.
 	 *
 	 * @param {string} name The name of the cat to await
@@ -23,7 +23,7 @@ export function useCatSummon() {
 	function awaitCat(
 		name: string,
 		id: number,
-		imageDetails: CatImageDetails
+		imageDetails: CatImageDetails,
 	): void {
 		__setIsLoading(true);
 		if (__activeTimeout.current) {
@@ -33,7 +33,7 @@ export function useCatSummon() {
 		__activeTimeout.current = setTimeout(() => {
 			unlockCatbookImage(name, id);
 			__setIsLoading(false);
-		}, 0);
+		}, 2500);
 	}
 
 	/**
@@ -41,13 +41,19 @@ export function useCatSummon() {
 	 * @returns {number} Random number in the range of image IDs for the chosen cat
 	 */
 	function randomizeId(name: string): number {
-		if (name.toLocaleLowerCase() === 'fearless') return 1;
-		else if (name.toLocaleLowerCase() === 'harvey')
+		const normalizedName = name.toLocaleLowerCase();
+		if (normalizedName === 'fearless') {
+			return 1;
+		}
+		if (normalizedName === 'harvey') {
 			return Math.floor(Math.random() * (6 - 1) + 1);
-		else if (name.toLocaleLowerCase() === 'lalo')
+		}
+		if (normalizedName === 'lalo') {
 			return Math.floor(Math.random() * (6 - 1) + 1);
-		else if (name.toLocaleLowerCase() === 'zelda')
+		}
+		if (normalizedName === 'zelda') {
 			return Math.floor(Math.random() * (6 - 1) + 1);
+		}
 		return 1;
 	}
 

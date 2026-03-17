@@ -29,7 +29,7 @@ export default function CatSummonCircle(): JSX.Element {
 				{catIsLoading && (
 					<Image
 						alt="Loading"
-						className="mx-auto animate-spin-3 md:m-0"
+						className="mx-auto animate-spin-2.5 md:m-0"
 						height="500"
 						width="500"
 						src="/assets/images/loading.png"
