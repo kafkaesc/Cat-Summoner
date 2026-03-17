@@ -40,6 +40,7 @@ export default function CatSummonCircle(): JSX.Element {
 						alt={summonedCat.alt}
 						className="hidden"
 						height={500}
+						loading="eager"
 						width={500}
 						src={summonedCat.src}
 					/>
