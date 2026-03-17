@@ -1,12 +1,13 @@
+import { ReactNode } from 'react';
+
 interface H2Props {
-	children: any;
+	children: ReactNode;
 	className?: string;
 	[props: string]: any;
 }
 
 /**
- * @param {any} children JSX element or HTML element going inside the
- * h2 element
+ * @param {ReactNode} children content going inside the h2 element
  * @param {string | undefined} className Optional string, if it exists it
  * will be appended to the classes for the heading element
  * @param {any} props Heading element attributes that will be passed along

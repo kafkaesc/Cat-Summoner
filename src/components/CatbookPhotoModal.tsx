@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import Image from 'next/image';
 import Button from '@/elements/Button';
 
 interface CatbookPhotoModalProps {
 	alt: string;
-	children: any;
+	children: ReactNode;
 	src: string;
 }
 

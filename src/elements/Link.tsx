@@ -1,7 +1,8 @@
+import { ReactNode } from 'react';
 import NextLink from 'next/link';
 
 interface LinkProps {
-	children: any;
+	children: ReactNode;
 	className?: string;
 	href: string;
 	linkStyle?: 'dark-background' | 'light-background';
@@ -9,7 +10,7 @@ interface LinkProps {
 }
 
 /**
- * @param {any} children Content of the Next Link component
+ * @param {ReactNode} children Content of the Next Link component
  * @param {string | undefined} className Optional string, if it exists it
  * will be appended to the classes for the Next Link element
  * @param {string} href The path or URL to navigate to

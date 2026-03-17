@@ -1,12 +1,13 @@
+import { ReactNode } from 'react';
+
 interface AProps {
-	children: any;
+	children: ReactNode;
 	className?: string;
 	[props: string]: any;
 }
 
 /**
- * @param {any} children JSX element or HTML element going inside the
- * anchor element
+ * @param {ReactNode} children content going inside the anchor element
  * @param {string | undefined} className Optional string, if it exists it
  * will be appended to the classes for the anchor element
  * @param {any} props Anchor element attributes that will be passed along
