@@ -30,28 +30,19 @@ export default function CatSummonCircle(): JSX.Element {
 					<Image
 						alt="Loading"
 						className="mx-auto animate-spin-2.5 md:m-0"
-						height="500"
-						width="500"
+						height={500}
 						src="/assets/images/loading.png"
+						width={500}
 					/>
 				)}
-				{catIsLoading && summonedCat && (
+				{summonedCat && (
 					<Image
 						alt={summonedCat.alt}
-						className="hidden"
+						className={catIsLoading ? 'hidden' : 'mx-auto md:m-0'}
 						height={500}
 						loading="eager"
-						width={500}
 						src={summonedCat.src}
-					/>
-				)}
-				{!catIsLoading && summonedCat && (
-					<Image
-						alt={summonedCat.alt}
-						className="mx-auto md:m-0"
-						height={500}
 						width={500}
-						src={summonedCat.src}
 					/>
 				)}
 			</div>

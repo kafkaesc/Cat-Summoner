@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 
 interface CatbookData {
-	fearless?: Array<number>;
-	harvey?: Array<number>;
-	lalo?: Array<number>;
-	zelda?: Array<number>;
+	fearless?: number[];
+	harvey?: number[];
+	lalo?: number[];
+	zelda?: number[];
 }
 
 export function useCatbook() {
