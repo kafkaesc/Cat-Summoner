@@ -23,6 +23,7 @@
 	"devDependencies": {
 		"@testing-library/jest-dom": "^6.9.1",
 		"@testing-library/react": "^14.0.0",
+		"@types/jest": "^30.0.0",
 		"autoprefixer": "^10.4.27",
 		"jest": "^30.3.0",
 		"jest-environment-jsdom": "^30.3.0",

@@ -1,5 +1,7 @@
+import { ReactNode } from 'react';
+
 interface CcLeftProps {
-	children: React.ReactNode;
+	children: ReactNode;
 }
 
 export default function CatbookCatLeft({ children }: CcLeftProps): JSX.Element {
