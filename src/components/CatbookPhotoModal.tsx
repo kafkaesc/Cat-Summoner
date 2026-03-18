@@ -31,8 +31,8 @@ export default function CatbookPhotoModal({
 									alt={alt}
 									className="mx-auto md:m-0"
 									height={512}
-									width={512}
 									src={src}
+									width={512}
 								/>
 							</div>
 							<div className="flex items-center justify-center p-1">

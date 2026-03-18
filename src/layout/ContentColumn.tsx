@@ -1,5 +1,7 @@
+import { ReactNode } from 'react';
+
 interface CcProps {
-	children: React.ReactNode;
+	children: ReactNode;
 }
 
 /**

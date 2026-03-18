@@ -1,5 +1,5 @@
-import { useCatbook } from '@/hooks/useCatbook';
-import { useCatImageDetails } from '@/hooks/useCatImageDetails';
+import { useCatbook } from './useCatbook';
+import { useCatImageDetails } from './useCatImageDetails';
 import { CatImageDetails } from '@/interfaces/CatInterfaces';
 
 interface HighlightAndImages {

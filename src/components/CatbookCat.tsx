@@ -17,13 +17,9 @@ export default function CatbookCat({ catName }: CatbookCatProps): JSX.Element {
 	const { getCatByName } = useCats();
 	const { getHighlightAndImages } = useCatbookHighlightAndImages();
 	const cat = getCatByName(catName);
+	const hai = getHighlightAndImages(catName); // I won't be apologizing for this variable name
 
-	if (!cat) return <CatbookCatError />;
-
-	// I won't be apologizing for this variable name
-	const hai = getHighlightAndImages(catName);
-
-	if (hai === null) return <CatbookCatError />;
+	if (!cat || hai === null) return <CatbookCatError />;
 
 	return (
 		<Layout>
