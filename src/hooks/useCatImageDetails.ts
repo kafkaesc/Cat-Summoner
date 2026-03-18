@@ -137,14 +137,15 @@ export function useCatImageDetails() {
 	}
 
 	function getImageDetailsFor(name: string): CatImageDetails[] {
+		const normalName = name.toLocaleLowerCase();
 		if (
-			name.toLocaleLowerCase() === 'fearless' ||
-			name.toLocaleLowerCase() === 'harvey' ||
-			name.toLocaleLowerCase() === 'lalo' ||
-			name.toLocaleLowerCase() === 'zelda'
+			normalName === 'fearless' ||
+			normalName === 'harvey' ||
+			normalName === 'lalo' ||
+			normalName === 'zelda'
 		) {
 			return catImageData.filter(
-				(cid) => name.toLocaleLowerCase() === cid.name.toLocaleLowerCase(),
+				(cid) => normalName === cid.name.toLocaleLowerCase(),
 			);
 		} else {
 			return [];
