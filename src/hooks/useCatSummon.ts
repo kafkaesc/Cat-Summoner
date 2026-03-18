@@ -41,18 +41,18 @@ export function useCatSummon() {
 	 * @returns {number} Random number in the range of image IDs for the chosen cat
 	 */
 	function randomizeId(name: string): number {
-		const normalizedName = name.toLocaleLowerCase();
-		if (normalizedName === 'fearless') {
+		const normalName = name.toLocaleLowerCase();
+		if (normalName === 'fearless') {
 			return 1;
 		}
-		if (normalizedName === 'harvey') {
-			return Math.floor(Math.random() * (6 - 1) + 1);
+		if (normalName === 'harvey') {
+			return Math.floor(Math.random() * 5 + 1);
 		}
-		if (normalizedName === 'lalo') {
-			return Math.floor(Math.random() * (6 - 1) + 1);
+		if (normalName === 'lalo') {
+			return Math.floor(Math.random() * 5 + 1);
 		}
-		if (normalizedName === 'zelda') {
-			return Math.floor(Math.random() * (6 - 1) + 1);
+		if (normalName === 'zelda') {
+			return Math.floor(Math.random() * 5 + 1);
 		}
 		return 1;
 	}
@@ -66,8 +66,8 @@ export function useCatSummon() {
 		// Reset image before summoning new cat
 		__setImage(null);
 		// Use the specific catImageId if provided, otherwise generate a random one
-		const id: number = catImageId ? catImageId : randomizeId(name);
-		const imageDetails: CatImageDetails = getImageDetails(name, id)!;
+		const id: number = catImageId ?? randomizeId(name);
+		const imageDetails: CatImageDetails = getImageDetails(name, id);
 		awaitCat(name, id, imageDetails);
 	}
 

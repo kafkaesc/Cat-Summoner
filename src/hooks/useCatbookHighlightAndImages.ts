@@ -4,7 +4,7 @@ import { CatImageDetails } from '@/interfaces/CatInterfaces';
 
 interface HighlightAndImages {
 	highlight: CatImageDetails | null;
-	images: Array<CatImageDetails> | null;
+	images: CatImageDetails[] | null;
 }
 
 export function useCatbookHighlightAndImages() {
@@ -12,41 +12,42 @@ export function useCatbookHighlightAndImages() {
 	const { getImageDetails } = useCatImageDetails();
 
 	function getHighlightAndImages(name: string): HighlightAndImages | null {
+		const normalName = name.toLocaleLowerCase();
 		if (
-			name.toLowerCase() !== 'fearless' &&
-			name.toLowerCase() !== 'harvey' &&
-			name.toLowerCase() !== 'lalo' &&
-			name.toLowerCase() !== 'zelda'
+			normalName !== 'fearless' &&
+			normalName !== 'harvey' &&
+			normalName !== 'lalo' &&
+			normalName !== 'zelda'
 		) {
 			return null;
 		}
-		let catbookList = getCatbookDataFor(name);
+		let catbookList = getCatbookDataFor(normalName);
 		if (!catbookList || catbookList.length === 0) return null;
 
 		// Shuffle the images available via Catbook, assign the first image as the
 		// highlight image, assign all remaining images to the images attribute.
 		catbookList = shuffle(catbookList);
-		const highlight = getImageDetails(name, catbookList[0]);
+		const highlight = getImageDetails(normalName, catbookList[0]);
 		let images: CatImageDetails[] = [];
-		catbookList.map((catImageId, index) => {
-			if (index != 0) {
-				const img = getImageDetails(name, catImageId);
-				if (img) images.push(img);
+		catbookList.forEach((catImageId, index) => {
+			if (index !== 0) {
+				const img = getImageDetails(normalName, catImageId);
+				images.push(img);
 			}
 		});
 
 		return {
-			highlight: highlight,
+			highlight,
 			images: images.length > 0 ? images : null,
 		};
 	}
 
-	function shuffle(arr: Array<any>) {
+	function shuffle(arr: any[]) {
 		// Move backward through the array and pick random numbers
 		// below the currentIndex to swap with along the way.
 		let currentIndex = arr.length;
 		let randomIndex = 0;
-		while (currentIndex != 0) {
+		while (currentIndex !== 0) {
 			randomIndex = Math.floor(Math.random() * currentIndex);
 			currentIndex--;
 

@@ -1,6 +1,6 @@
 import { CatImageDetails } from '@/interfaces/CatInterfaces';
 
-const catImageData: Array<CatImageDetails> = [
+const catImageData: CatImageDetails[] = [
 	{
 		alt: 'A black cat sits on a table with their two front legs covering a stack of cards. The logo is visible on the cards, revealing that the cat is interrupting a game of Exploding Kittens. The cat stares up into the camera with a deadpan expression, unconcerned with their interruption of the game.',
 		catId: 901,
@@ -123,24 +123,20 @@ const catImageData: Array<CatImageDetails> = [
 ];
 
 export function useCatImageDetails() {
-	function getImageDetails(
-		name: string,
-		catImageId: number
-	): CatImageDetails | null {
-		const images = catImageData.filter(
+	function getImageDetails(name: string, catImageId: number): CatImageDetails {
+		const image = catImageData.find(
 			(cid) =>
 				catImageId === cid.catImageId &&
-				name.toLocaleLowerCase() === cid.name.toLocaleLowerCase()
+				name.toLocaleLowerCase() === cid.name.toLocaleLowerCase(),
 		);
-		if (images.length > 0) {
-			return images[0];
-		} else {
-			console.warn(`No image data for args: ${name}, ${catImageId})`);
-			return null;
+
+		if (!image) {
+			throw new Error(`No image data for args: ${name}, ${catImageId}`);
 		}
+		return image;
 	}
 
-	function getImageDetailsFor(name: string): Array<CatImageDetails> {
+	function getImageDetailsFor(name: string): CatImageDetails[] {
 		if (
 			name.toLocaleLowerCase() === 'fearless' ||
 			name.toLocaleLowerCase() === 'harvey' ||
@@ -148,7 +144,7 @@ export function useCatImageDetails() {
 			name.toLocaleLowerCase() === 'zelda'
 		) {
 			return catImageData.filter(
-				(cid) => name.toLocaleLowerCase() === cid.name.toLocaleLowerCase()
+				(cid) => name.toLocaleLowerCase() === cid.name.toLocaleLowerCase(),
 			);
 		} else {
 			return [];
@@ -157,9 +153,11 @@ export function useCatImageDetails() {
 
 	function getSpecialImage(arg: string): CatImageDetails | null {
 		if (arg === '404') {
-			return catImageData.filter(
-				(cid) => cid.catImageId === 1 && cid.name === 'special'
-			)[0];
+			return (
+				catImageData.find(
+					(cid) => cid.catImageId === 1 && cid.name === 'special',
+				) ?? null
+			);
 		}
 		return null;
 	}
