@@ -2,6 +2,9 @@
 
 Built by Jared Hettinger
 
+![Tests](https://github.com/kafkaesc/cat-summoner/actions/workflows/test.yml/badge.svg)
+![Lint](https://github.com/kafkaesc/cat-summoner/actions/workflows/lint.yml/badge.svg)
+
 Cat Summoner is a site for summoning cats. Built with React, Next, TypeScript, and Tailwind. Tested with Jest and React Testing Library. Visitors to the site can call a cat by clicking the button with their name. They will be treated to a random photo of the summoned cat. Once a photo is found it will be "unlocked" and viewable in the user's catbook.
 
 Cat Summoner is hosted at [cat-summoner.com](https://cat-summoner.com)
