@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # GitHub checkout clones the repo into the runner
+      - uses: actions/checkout@v4
+      # Install Node.js and cache npm dependencies
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      # Install dependencies and run tests
+      - run: npm ci
+      # Run tests with CI environment variable set to true
+      - run: npm test
+        env:
+          CI: true
