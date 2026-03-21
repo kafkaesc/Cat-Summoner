@@ -27,10 +27,11 @@ export function useCatbook() {
 	}
 
 	function getCatbookDataFor(name: string) {
-		if (name.toLowerCase() === 'fearless') return __catbookData.fearless;
-		if (name.toLowerCase() === 'harvey') return __catbookData.harvey;
-		if (name.toLowerCase() === 'lalo') return __catbookData.lalo;
-		if (name.toLowerCase() === 'zelda') return __catbookData.zelda;
+		const normalName = name.toLocaleLowerCase();
+		if (normalName === 'fearless') return __catbookData.fearless;
+		if (normalName === 'harvey') return __catbookData.harvey;
+		if (normalName === 'lalo') return __catbookData.lalo;
+		if (normalName === 'zelda') return __catbookData.zelda;
 	}
 
 	function isEmpty() {
