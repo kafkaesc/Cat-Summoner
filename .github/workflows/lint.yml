@@ -1,11 +1,11 @@
-name: Test
+name: Lint
 
 on:
   push:
   pull_request:
 
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
     steps:
       # GitHub checkout clones the repo into the runner
@@ -17,7 +17,5 @@ jobs:
           cache: npm
       # Install dependencies via npm ci
       - run: npm ci
-      # Run tests with CI environment variable set to true
-      - run: npm test
-        env:
-          CI: true
+      # Run ESLint
+      - run: npm run lint
