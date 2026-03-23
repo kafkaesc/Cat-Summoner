@@ -10,6 +10,6 @@ interface CcProps {
  * content column ~896 pixels wide, centered, that will go to the edge of
  * the screen on smaller displays
  */
-export default function ContentColumn({ children }: CcProps): JSX.Element {
+export default function ContentColumn({ children }: CcProps) {
 	return <div className="max-w-4xl px-2 mx-auto">{children}</div>;
 }

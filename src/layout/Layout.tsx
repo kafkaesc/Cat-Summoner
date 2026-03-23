@@ -11,7 +11,7 @@ interface LayoutProps {
  * @returns A full page with navigation included at the top and
  * the children data inside of a content column
  */
-export default function Layout({ children }: LayoutProps): JSX.Element {
+export default function Layout({ children }: LayoutProps) {
 	return (
 		<>
 			<Navbar />

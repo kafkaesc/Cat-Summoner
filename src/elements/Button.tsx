@@ -24,7 +24,7 @@ const DangerButton = ({
 	className,
 	disabled,
 	...props
-}: ButtonStyleProps): JSX.Element => {
+}: ButtonStyleProps) => {
 	return className ? (
 		<button
 			{...props}
@@ -49,7 +49,7 @@ const DefaultButton = ({
 	className,
 	disabled,
 	...props
-}: ButtonStyleProps): JSX.Element => {
+}: ButtonStyleProps) => {
 	return className ? (
 		<button
 			{...props}
@@ -74,7 +74,7 @@ const PrimaryButton = ({
 	className,
 	disabled,
 	...props
-}: ButtonStyleProps): JSX.Element => {
+}: ButtonStyleProps) => {
 	return className ? (
 		<button
 			{...props}
@@ -99,7 +99,7 @@ const SecondaryButton = ({
 	className,
 	disabled,
 	...props
-}: ButtonStyleProps): JSX.Element => {
+}: ButtonStyleProps) => {
 	return className ? (
 		<button
 			{...props}
@@ -124,7 +124,7 @@ const TextButton = ({
 	className,
 	disabled,
 	...props
-}: ButtonStyleProps): JSX.Element => {
+}: ButtonStyleProps) => {
 	return className ? (
 		<button
 			{...props}
@@ -149,7 +149,7 @@ const WarningButton = ({
 	className,
 	disabled,
 	...props
-}: ButtonStyleProps): JSX.Element => {
+}: ButtonStyleProps) => {
 	return className ? (
 		<button
 			{...props}
@@ -187,7 +187,7 @@ export default function Button({
 	className,
 	disabled,
 	...props
-}: ButtonProps): JSX.Element {
+}: ButtonProps) {
 	return buttonStyle === 'danger' ? (
 		<DangerButton className={className} disabled={!!disabled} {...props}>
 			{children}
