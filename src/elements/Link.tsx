@@ -27,7 +27,7 @@ export default function Link({
 	href,
 	linkStyle,
 	...props
-}: LinkProps): JSX.Element {
+}: LinkProps) {
 	return linkStyle === 'dark-background' && className ? (
 		<NextLink
 			{...props}

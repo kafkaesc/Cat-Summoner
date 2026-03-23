@@ -10,7 +10,7 @@ import SocialLinks from '@/components/SocialLinks';
 /**
  * @returns {JSX.Element} Page-level JSX component for the about page
  */
-export default function About(): JSX.Element {
+export default function About() {
 	return (
 		<Layout>
 			<Head>

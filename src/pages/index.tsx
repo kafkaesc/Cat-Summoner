@@ -6,7 +6,7 @@ import CatSummonCircle from '@/components/CatSummonCircle';
 /**
  * @returns {JSX.Element} JSX component for the index/home page
  */
-export default function Home(): JSX.Element {
+export default function Home() {
 	return (
 		<>
 			<Head>

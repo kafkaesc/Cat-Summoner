@@ -12,7 +12,7 @@ export default function CatbookPhotoModal({
 	alt,
 	children,
 	src,
-}: CatbookPhotoModalProps): JSX.Element {
+}: CatbookPhotoModalProps) {
 	const [showModal, setShowModal] = useState<boolean>(false);
 	return (
 		<>

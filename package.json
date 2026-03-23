@@ -1,34 +1,35 @@
 {
-	"name": "cat-summoner",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"build": "next build",
-		"dev": "next dev",
-		"lint": "next lint",
-		"start": "next start",
-		"test": "jest --watch"
-	},
-	"dependencies": {
-		"@types/node": "20.12.0",
-		"@types/react": "18.0.35",
-		"@types/react-dom": "18.0.11",
-		"eslint": "8.38.0",
-		"eslint-config-next": "13.3.0",
-		"font-awesome": "^4.7.0",
-		"next": "^15.3.0",
-		"react": "18.2.0",
-		"react-dom": "18.2.0"
-	},
-	"devDependencies": {
-		"@testing-library/jest-dom": "^6.9.1",
-		"@testing-library/react": "^14.0.0",
-		"@types/jest": "^30.0.0",
-		"autoprefixer": "^10.4.27",
-		"jest": "^30.3.0",
-		"jest-environment-jsdom": "^30.3.0",
-		"postcss": "^8.5.8",
-		"tailwindcss": "^3.3.1",
-		"typescript": "^5.9.3"
-	}
+  "name": "cat-summoner",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "eslint .",
+    "start": "next start",
+    "test": "jest --watch"
+  },
+  "dependencies": {
+    "@types/node": "20.12.0",
+    "@types/react": "18.0.35",
+    "@types/react-dom": "18.0.11",
+    "eslint": "^9",
+    "font-awesome": "^4.7.0",
+    "next": "^15.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^30.0.0",
+    "autoprefixer": "^10.4.27",
+    "eslint-config-next": "^15.5.14",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.3.1",
+    "typescript": "^5.9.3"
+  }
 }

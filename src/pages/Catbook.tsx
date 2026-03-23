@@ -7,7 +7,7 @@ import CatbookFull from '@/components/CatbookFull';
  * @returns {JSX.Element} Page-level JSX component for the Catbook page, which
  * is a photobook page showing the photos the user has previously unlocked.
  */
-export default function Catbook(): JSX.Element {
+export default function Catbook() {
 	return (
 		<Layout>
 			<Head>
