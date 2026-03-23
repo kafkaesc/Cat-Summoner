@@ -13,11 +13,7 @@ interface H3Props {
  * @param {any} props Heading element attributes that will be passed along
  * @returns {JSX.Element} Heading 3 element styled according to site styles
  */
-export default function H3({
-	children,
-	className,
-	...props
-}: H3Props): JSX.Element {
+export default function H3({ children, className, ...props }: H3Props) {
 	return className ? (
 		<h3 {...props} className={`mb-2 text-xl font-bold ${className}`}>
 			{children}

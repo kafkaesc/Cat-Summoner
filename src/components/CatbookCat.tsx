@@ -13,7 +13,7 @@ interface CatbookCatProps {
 	catName: string;
 }
 
-export default function CatbookCat({ catName }: CatbookCatProps): JSX.Element {
+export default function CatbookCat({ catName }: CatbookCatProps) {
 	const { getCatByName } = useCats();
 	const { getHighlightAndImages } = useCatbookHighlightAndImages();
 	const cat = getCatByName(catName);

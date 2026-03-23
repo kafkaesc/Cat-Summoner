@@ -4,7 +4,7 @@ import CatbookCat from '@/components/CatbookCat';
 import CatbookCatError from '@/components/CatbookCatError';
 import { useCats } from '@/hooks/useCats';
 
-export default function CatPage(): JSX.Element {
+export default function CatPage() {
 	const router = useRouter();
 	const catNames = useCats().getCatNames();
 	const catName = router.query.catName;
@@ -37,10 +37,7 @@ export default function CatPage(): JSX.Element {
 				<title>{title}</title>
 				{/* OpenGraph Meta Tags */}
 				<meta property="og:description" content={ogDescription} />
-				<meta
-					property="og:image"
-					content="https://cat-summoner.com/ogp.png?v=2"
-				/>
+				<meta property="og:image" content="https://cat-summoner.com/ogp.png?v=2" />
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:width" content="1200" />
 				<meta property="og:title" content={ogTitle} />
@@ -49,14 +46,8 @@ export default function CatPage(): JSX.Element {
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:creator" content="@_kafkaesc" />
 				<meta name="twitter:description" content={twDescription} />
-				<meta
-					name="twitter:image"
-					content="https://cat-summoner.com/twc.png?v=2"
-				/>
-				<meta
-					name="twitter:image:alt"
-					content="A black and white cat sits in front of a dark night sky, he looks back toward the camera, the words Cat Summoner float in the foreground by his face"
-				/>
+				<meta name="twitter:image" content="https://cat-summoner.com/twc.png?v=2" />
+				<meta name="twitter:image:alt" content="A black and white cat sits in front of a dark night sky, he looks back toward the camera, the words Cat Summoner float in the foreground by his face" />
 				<meta name="twitter:site" content="@_kafkaesc" />
 				<meta name="twitter:title" content={twTitle} />
 			</Head>

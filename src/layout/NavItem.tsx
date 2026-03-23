@@ -5,9 +5,9 @@ import Link from 'next/link';
  * @param {ReactNode} children The content to go inside the navigation link
  * @param {any} props Component props to be passed to the
  * Next Link component
- * @returns
+ * @returns {JSX.Element} A list item with a link to an internal page
  */
-export default function NavItem({ children, ...props }: any): JSX.Element {
+export default function NavItem({ children, ...props }: any) {
 	return (
 		<li className="inline-block">
 			<Link {...props} className="inline-block px-2 py-2">

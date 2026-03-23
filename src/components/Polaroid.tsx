@@ -13,11 +13,7 @@ interface PolaroidProps {
  * @returns {JSX.Element} A square image (cropped if necessary) with extra
  * white space below, like a polaroid. Polaroid dimensions are 5:6.
  */
-export default function Polaroid({
-	alt,
-	src,
-	...props
-}: PolaroidProps): JSX.Element {
+export default function Polaroid({ alt, src, ...props }: PolaroidProps) {
 	return (
 		<div
 			className="inline-block p-2 mx-1 border border-cs-black"

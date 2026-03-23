@@ -30,7 +30,7 @@ const socialLinks = [
 /**
  * @returns {JSX.Element} Linked icons for social media accounts
  */
-export default function SocialLinks(): JSX.Element {
+export default function SocialLinks() {
 	return (
 		<ul className="text-center">
 			{socialLinks.map((so) => {

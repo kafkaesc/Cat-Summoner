@@ -8,7 +8,7 @@ const cats = ['Fearless', 'Harvey', 'Lalo', 'Zelda'];
  * @returns {JSX.Element} Clickable buttons for each cat and a loading area
  * that displays a new cat pic when one is summoned.
  */
-export default function CatSummonCircle(): JSX.Element {
+export default function CatSummonCircle() {
 	const { isLoading: catIsLoading, summonedCat, summonCat } = useCatSummon();
 
 	return (

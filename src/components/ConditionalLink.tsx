@@ -11,6 +11,6 @@ export default function ConditionalLink({
 	children,
 	condition,
 	link,
-}: ConditionalLinkProps): JSX.Element {
+}: ConditionalLinkProps) {
 	return condition ? <Link href={link}>{children}</Link> : <>{children}</>;
 }
