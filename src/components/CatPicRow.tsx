@@ -9,11 +9,7 @@ interface CatPicRowProps {
 	title?: string;
 }
 
-export default function CatbookCatBottomPics({
-	catName,
-	images,
-	title,
-}: CatPicRowProps) {
+export default function CatPicRow({ catName, images, title }: CatPicRowProps) {
 	return (
 		<>
 			{title && <H2>{title}</H2>}
@@ -23,7 +19,7 @@ export default function CatbookCatBottomPics({
 						className="inline-block w-1/2 sm:w-1/4 px-0.5 aspect-square"
 						key={`${catName}-bottom-pic-${image.catImageId}`}
 					>
-						<CatbookPhotoModal alt={image.alt} src={image.src}>
+						<CatbookPhotoModal alt={image.alt} src={image.src} title={catName}>
 							<Image alt={image.alt} fill={true} src={image.src} />
 						</CatbookPhotoModal>
 					</div>

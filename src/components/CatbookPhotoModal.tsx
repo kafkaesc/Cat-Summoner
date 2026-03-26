@@ -6,12 +6,14 @@ interface CatbookPhotoModalProps {
 	alt: string;
 	children: ReactNode;
 	src: string;
+	title?: string;
 }
 
 export default function CatbookPhotoModal({
 	alt,
 	children,
 	src,
+	title,
 }: CatbookPhotoModalProps) {
 	const [showModal, setShowModal] = useState(false);
 	return (
@@ -34,7 +36,7 @@ export default function CatbookPhotoModal({
 						<div className="relative flex flex-col w-full bg-white border rounded-lg shadow-lg outline-none focus:outline-none">
 							<div className="flex items-start justify-between p-1">
 								<h2 id="catbookPhotoModalTitle" className="text-2xl font-bold">
-									General Info
+									{title || 'Cat'}
 								</h2>
 							</div>
 							<div className="relative flex-auto px-1">
