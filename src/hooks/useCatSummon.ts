@@ -65,7 +65,6 @@ export function useCatSummon() {
 	 */
 	function summonCat(name: string, catImageId?: number | null): void {
 		// Reset before summoning a new cat
-		__setImage(null);
 		__setError(null);
 
 		// Use the specific catImageId if provided, otherwise generate a random one
