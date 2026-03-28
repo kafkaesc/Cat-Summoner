@@ -5,6 +5,7 @@ import { CatImageDetails } from '@/interfaces/CatInterfaces';
 
 export function useCatSummon() {
 	const __activeTimeout = useRef<NodeJS.Timeout | null>(null);
+	const [__error, __setError] = useState<string | null>(null);
 	const [__image, __setImage] = useState<CatImageDetails | null>(null);
 	const [__isLoading, __setIsLoading] = useState<boolean>(false);
 	const { unlockCatbookImage } = useCatbook();
@@ -63,13 +64,28 @@ export function useCatSummon() {
 	 * @param {number | null} catImageId The specific ID to summon, or pass null to get a random image
 	 */
 	function summonCat(name: string, catImageId?: number | null): void {
-		// Reset image before summoning new cat
+		// Reset before summoning a new cat
 		__setImage(null);
+		__setError(null);
+
 		// Use the specific catImageId if provided, otherwise generate a random one
 		const id: number = catImageId ?? randomizeId(name);
-		const imageDetails: CatImageDetails = getImageDetails(name, id);
-		awaitCat(name, id, imageDetails);
+
+		try {
+			// Get the image details for the cat and then await the cat
+			const imageDetails: CatImageDetails = getImageDetails(name, id);
+			awaitCat(name, id, imageDetails);
+		} catch (e) {
+			// If there was an error, clear the loading state and set the error message
+			__setIsLoading(false);
+			__setError(e instanceof Error ? e.message : 'Failed to summon cat');
+		}
 	}
 
-	return { summonedCat: __image, isLoading: __isLoading, summonCat };
+	return {
+		summonedCat: __image,
+		isLoading: __isLoading,
+		summonCat,
+		error: __error,
+	};
 }

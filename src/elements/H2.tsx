@@ -1,18 +1,8 @@
-import { ReactNode } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
-interface H2Props {
-	children: ReactNode;
-	className?: string;
-	[props: string]: any;
-}
+type H2Props = ComponentPropsWithoutRef<'h2'>;
 
-/**
- * @param {ReactNode} children content going inside the h2 element
- * @param {string | undefined} className Optional string, if it exists it
- * will be appended to the classes for the heading element
- * @param {any} props Heading element attributes that will be passed along
- * @returns {JSX.Element} Heading 2 element styled according to site styles
- */
+/** A styled heading element that accepts all native attributes */
 export default function H2({ children, className, ...props }: H2Props) {
 	return className ? (
 		<h2 {...props} className={`mb-2 text-2xl font-bold ${className}`}>

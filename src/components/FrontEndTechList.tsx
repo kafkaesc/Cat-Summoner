@@ -3,6 +3,7 @@ import Image from 'next/image';
 const techLinks = [
 	{
 		alt: 'Next.js Logo',
+		display: 'mobile-wide',
 		name: 'Next.js',
 		src: '/assets/images/tech/next.svg',
 		url: 'https://nextjs.org/',
@@ -33,6 +34,7 @@ const techLinks = [
 	},
 	{
 		alt: 'AWS Logo',
+		display: 'mobile-wide',
 		name: 'AWS',
 		src: '/assets/images/tech/aws.svg',
 		url: 'https://aws.amazon.com/what-is-aws/',
@@ -43,27 +45,28 @@ const techLinks = [
  * @returns {JSX.Element} Linked icons for technology used for the front end
  */
 export default function FrontEndTechList() {
+	const mobileWideClasses =
+		'basis-full flex justify-center md:basis-auto md:block';
 	return (
-		<ul className="text-center">
-			{techLinks.map((tl, index) => {
-				return (
-					<span key={`${tl.name}-Logo`}>
-						<li className="inline-block p-3 md:p-2 md:mx-3 hover:animate-float-up-750ms">
-							<a href={tl.url} rel="noreferrer" target="_blank">
-								<Image
-									alt={tl.alt}
-									height={0}
-									src={tl.src}
-									width={0}
-									style={{ height: 45, width: 'auto' }}
-								/>
-							</a>
-						</li>
-						{index === 0 && <br className="md:hidden" />}
-						{index === 4 && <br className="md:hidden" />}
-					</span>
-				);
-			})}
+		<ul className="flex flex-wrap justify-center md:flex-nowrap">
+			{techLinks.map((tl, index) => (
+				<li
+					className={`p-3 md:p-2 md:mx-3 hover:animate-float-up-750ms ${
+						tl.display === 'mobile-wide' ? mobileWideClasses : ''
+					}`}
+					key={`${tl.name}-Logo`}
+				>
+					<a href={tl.url} rel="noreferrer" target="_blank">
+						<Image
+							alt={tl.alt}
+							height={0}
+							src={tl.src}
+							width={0}
+							style={{ height: 45, width: 'auto' }}
+						/>
+					</a>
+				</li>
+			))}
 		</ul>
 	);
 }

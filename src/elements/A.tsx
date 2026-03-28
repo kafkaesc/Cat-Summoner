@@ -1,18 +1,8 @@
-import { ReactNode } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
-interface AProps {
-	children: ReactNode;
-	className?: string;
-	[props: string]: any;
-}
+type AProps = ComponentPropsWithoutRef<'a'>;
 
-/**
- * @param {ReactNode} children content going inside the anchor element
- * @param {string | undefined} className Optional string, if it exists it
- * will be appended to the classes for the anchor element
- * @param {any} props Anchor element attributes that will be passed along
- * @returns {JSX.Element} Anchor element styled according to site styles
- */
+/** A styled anchor element that accepts all native attributes */
 export default function A({ children, className, ...props }: AProps) {
 	return className ? (
 		<a
