@@ -5,31 +5,38 @@ import CatbookCatError from '@/components/CatbookCatError';
 import { useCats } from '@/hooks/useCats';
 
 export default function CatPage() {
+	// Get catName from the URL and the list of cat names from the useCats hook
 	const router = useRouter();
 	const catNames = useCats().getCatNames();
 	const catName = router.query.catName;
 
-	function invalidCatName(catName: any): boolean {
+	// Check if the catName is valid, if not, return true
+	function invalidCatName(catName: string | string[] | undefined) {
 		if (!catName || typeof catName !== 'string') return true;
 
 		catName = catName.toLowerCase();
 
 		if (catNames.find((cn) => cn.toLowerCase() === catName)) return false;
-		else return true;
+
+		return true;
 	}
 
 	// Check here to prevent a flicker before CatbookCat loads
 	if (typeof catName === 'undefined' || !catNames) return <></>;
 
+	// If the catName is invalid, show the error component
 	if (invalidCatName(catName)) return <CatbookCatError />;
 
+	// Confirmed string for the catName
+	const cn = '' + catName;
+
 	// Meta tag content for the Head component
-	const title = '' + catName + ' 🐱 Cat Summoner';
-	const ogDescription = '' + catName + "'s page on Cat Summoner";
-	const ogTitle = '' + catName + ' 🐱 Cat Summoner';
-	const ogUrl = 'https://cat-summoner.com/Catbook/' + catName;
-	const twDescription = '' + catName + "'s page on Cat Summoner";
-	const twTitle = '' + catName + ' 🐱 Cat Summoner';
+	const title = cn + ' 🐱 Cat Summoner';
+	const ogDescription = cn + "'s page on Cat Summoner";
+	const ogTitle = cn + ' 🐱 Cat Summoner';
+	const ogUrl = 'https://cat-summoner.com/Catbook/' + cn;
+	const twDescription = cn + "'s page on Cat Summoner";
+	const twTitle = cn + ' 🐱 Cat Summoner';
 
 	return (
 		<>
@@ -51,7 +58,7 @@ export default function CatPage() {
 				<meta name="twitter:site" content="@_kafkaesc" />
 				<meta name="twitter:title" content={twTitle} />
 			</Head>
-			<CatbookCat catName={'' + catName} />
+			<CatbookCat catName={cn} />
 		</>
 	);
 }
