@@ -1,20 +1,17 @@
-import Link from 'next/link';
+import { ComponentPropsWithoutRef } from 'react';
+import NextLink from 'next/link';
 
-/**
- * List items to be used in the Navbar component
- * @param {ReactNode} children The content to go inside the navigation link
- * @param {any} props Component props to be passed to the
- * Next Link component
- * @returns {JSX.Element} A list item with a link to an internal page
- */
-export default function NavItem({ children, ...props }: any) {
+type NavItemProps = ComponentPropsWithoutRef<typeof NextLink>;
+
+/** @returns An individual navigation link */
+export default function NavItem({ children, ...props }: NavItemProps) {
 	return (
 		<li className="inline-block">
-			<Link {...props} className="inline-block px-2 py-2">
+			<NextLink {...props} className="inline-block px-2 py-2">
 				<span className="inline-block px-2 py-1 align-bottom border-b-2 border-cs-primary hover:border-solid hover:border-cs-secondary hover:border-b-2">
 					{children}
 				</span>
-			</Link>
+			</NextLink>
 		</li>
 	);
 }
