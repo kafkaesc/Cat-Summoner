@@ -5,10 +5,10 @@ it('Has the expected page headings', () => {
 	render(<Custom404 />);
 	const h1 = screen.getByRole('heading', { level: 1 });
 	expect(h1).toBeInTheDocument();
-	expect(h1).toHaveTextContent(/404/i);
+	expect(h1).toHaveTextContent(/cat not found/i);
 	const h2 = screen.getByRole('heading', { level: 2 });
 	expect(h2).toBeInTheDocument();
-	expect(h2).toHaveTextContent(/cat not found/i);
+	expect(h2).toHaveTextContent(/404/i);
 });
 
 it('Has Shimi', () => {

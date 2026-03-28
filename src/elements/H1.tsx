@@ -1,18 +1,8 @@
-import { ReactNode } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
-interface H1Props {
-	children: ReactNode;
-	className?: string;
-	[props: string]: any;
-}
+type H1Props = ComponentPropsWithoutRef<'h1'>;
 
-/**
- * @param {ReactNode} children content going inside the h1 element
- * @param {string | undefined} className Optional string, if it exists it
- * will be appended to the classes for the heading element
- * @param {any} props Heading element attributes that will be passed along
- * @returns {JSX.Element} Heading 1 element styled according to site styles
- */
+/** A styled heading element that accepts all native attributes */
 export default function H1({ children, className, ...props }: H1Props) {
 	return className &&
 		(className.includes('text-center') ||

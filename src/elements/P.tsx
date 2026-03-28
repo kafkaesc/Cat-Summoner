@@ -1,18 +1,8 @@
-import { ReactNode } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
-interface PProps {
-	children: ReactNode;
-	className?: string;
-	[props: string]: any;
-}
+type PProps = ComponentPropsWithoutRef<'p'>;
 
-/**
- * @param {ReactNode} children content going inside the p element`
- * @param {string | undefined} className Optional string, if it exists it
- * will be appended to the classes for the heading element
- * @param {any} props Paragraph element attributes that will be passed along
- * @returns {JSX.Element} Paragraph element styled according to site styles
- */
+/** A styled paragraph element that accepts all native attributes */
 export default function P({ children, className, ...props }: PProps) {
 	return className ? (
 		<p {...props} className={`mb-2 ${className}`}>
