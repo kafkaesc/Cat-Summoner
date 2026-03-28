@@ -65,6 +65,8 @@ export function useCatbook() {
 			zelda: ls.get('zelda'),
 		};
 		__setCatbookData(localCatbookData);
+		// intentionally mount-only, adding ls to the
+		// dependency array will cause an infinite loop
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
