@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <style>
+      /* Wind blows left-to-right: blades lean right, then settle back.
+         Each blade in a tuft is staggered so the breeze visibly sweeps across. */
+
+      /* === Top-left tuft (base y=135) === */
+      .tl1 { transform-origin: 68px 135px; animation: breeze 3s ease-in-out 0s 1 forwards; }
+      .tl2 { transform-origin: 78px 135px; animation: breeze 3s ease-in-out 0.12s 1 forwards; }
+      .tl3 { transform-origin: 88px 135px; animation: breeze 3s ease-in-out 0.24s 1 forwards; }
+      .tl4 { transform-origin: 96px 135px; animation: breeze 3s ease-in-out 0.36s 1 forwards; }
+      .tl5 { transform-origin: 104px 135px; animation: breeze 3s ease-in-out 0.48s 1 forwards; }
+
+      /* === Middle-right tuft (base y=225) === */
+      .mr1 { transform-origin: 268px 225px; animation: breeze 3s ease-in-out 0.15s 1 forwards; }
+      .mr2 { transform-origin: 278px 225px; animation: breeze 3s ease-in-out 0.27s 1 forwards; }
+      .mr3 { transform-origin: 288px 225px; animation: breeze 3s ease-in-out 0.39s 1 forwards; }
+      .mr4 { transform-origin: 296px 225px; animation: breeze 3s ease-in-out 0.51s 1 forwards; }
+      .mr5 { transform-origin: 304px 225px; animation: breeze 3s ease-in-out 0.63s 1 forwards; }
+
+      /* === Bottom-left tuft (base y=325) === */
+      .bl1 { transform-origin: 88px 325px; animation: breeze 3s ease-in-out 0.08s 1 forwards; }
+      .bl2 { transform-origin: 98px 325px; animation: breeze 3s ease-in-out 0.20s 1 forwards; }
+      .bl3 { transform-origin: 108px 325px; animation: breeze 3s ease-in-out 0.32s 1 forwards; }
+      .bl4 { transform-origin: 116px 325px; animation: breeze 3s ease-in-out 0.44s 1 forwards; }
+      .bl5 { transform-origin: 124px 325px; animation: breeze 3s ease-in-out 0.56s 1 forwards; }
+
+      /* Breeze: blades lean right (positive skew), sway gently, then return upright */
+      @keyframes breeze {
+        0%   { transform: skewX(0deg); }
+        5%   { transform: skewX(0deg); }
+        20%  { transform: skewX(8deg); }
+        35%  { transform: skewX(-3deg); }
+        50%  { transform: skewX(5deg); }
+        65%  { transform: skewX(-2deg); }
+        78%  { transform: skewX(2deg); }
+        90%  { transform: skewX(-0.5deg); }
+        100% { transform: skewX(0deg); }
+      }
+    </style>
+  </defs>
+
+  <rect width="400" height="400" fill="#fdfdfd"/>
+
+  <!-- Top-left grass tuft -->
+  <path class="tl1" d="M68,135 Q66,120 62,105 Q64,120 68,135Z" fill="#2d5a3a" stroke="#2d5a3a" stroke-width="0.5"/>
+  <path class="tl2" d="M78,135 Q74,115 68,93 Q76,115 78,135Z" fill="#3a7a4a" stroke="#3a7a4a" stroke-width="0.5"/>
+  <path class="tl3" d="M88,135 Q86,113 85,87 Q90,113 88,135Z" fill="#2d5a3a" stroke="#2d5a3a" stroke-width="0.5"/>
+  <path class="tl4" d="M96,135 Q98,115 104,93 Q100,115 96,135Z" fill="#3a7a4a" stroke="#3a7a4a" stroke-width="0.5"/>
+  <path class="tl5" d="M104,135 Q108,121 114,105 Q110,121 104,135Z" fill="#2d5a3a" stroke="#2d5a3a" stroke-width="0.5"/>
+
+  <!-- Middle-right grass tuft -->
+  <path class="mr1" d="M268,225 Q266,210 262,195 Q264,210 268,225Z" fill="#2d5a3a" stroke="#2d5a3a" stroke-width="0.5"/>
+  <path class="mr2" d="M278,225 Q274,205 268,183 Q276,205 278,225Z" fill="#3a7a4a" stroke="#3a7a4a" stroke-width="0.5"/>
+  <path class="mr3" d="M288,225 Q286,203 285,177 Q290,203 288,225Z" fill="#2d5a3a" stroke="#2d5a3a" stroke-width="0.5"/>
+  <path class="mr4" d="M296,225 Q298,205 304,183 Q300,205 296,225Z" fill="#3a7a4a" stroke="#3a7a4a" stroke-width="0.5"/>
+  <path class="mr5" d="M304,225 Q308,211 314,195 Q310,211 304,225Z" fill="#2d5a3a" stroke="#2d5a3a" stroke-width="0.5"/>
+
+  <!-- Bottom-left grass tuft -->
+  <path class="bl1" d="M88,325 Q86,310 82,295 Q84,310 88,325Z" fill="#2d5a3a" stroke="#2d5a3a" stroke-width="0.5"/>
+  <path class="bl2" d="M98,325 Q94,305 88,283 Q96,305 98,325Z" fill="#3a7a4a" stroke="#3a7a4a" stroke-width="0.5"/>
+  <path class="bl3" d="M108,325 Q106,303 105,277 Q110,303 108,325Z" fill="#2d5a3a" stroke="#2d5a3a" stroke-width="0.5"/>
+  <path class="bl4" d="M116,325 Q118,305 124,283 Q120,305 116,325Z" fill="#3a7a4a" stroke="#3a7a4a" stroke-width="0.5"/>
+  <path class="bl5" d="M124,325 Q128,311 134,295 Q130,311 124,325Z" fill="#2d5a3a" stroke="#2d5a3a" stroke-width="0.5"/>
+</svg>
