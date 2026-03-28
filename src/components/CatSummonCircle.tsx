@@ -37,15 +37,14 @@ export default function CatSummonCircle() {
 						width={500}
 					/>
 				)}
-				{catIsLoading && (
-					<Image
-						alt="Loading. The grass is slowly swaying in the breeze, you anticipate the arrival of the summoned cat."
-						className="mx-auto md:m-0"
-						height={500}
-						src="/assets/images/grass-animated.svg"
-						width={500}
-					/>
-				)}
+				{/* Always rendered so the browser preloads it before loading is triggered */}
+				<Image
+					alt="Loading. The grass is slowly swaying in the breeze, you anticipate the arrival of the summoned cat."
+					className={catIsLoading ? 'mx-auto md:m-0' : 'hidden'}
+					height={500}
+					src="/assets/images/grass-animated.svg"
+					width={500}
+				/>
 				{summonedCat && (
 					<Image
 						alt={summonedCat.alt}
