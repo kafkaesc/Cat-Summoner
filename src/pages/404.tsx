@@ -17,7 +17,7 @@ export default function Custom404() {
 			<Head>
 				<title>404 🐱 Cat Summoner</title>
 				{/* OpenGraph Meta Tags */}
-				<meta property="og:description" content="Page not found: these are not the cats you're looking for" />
+				<meta property="og:description" content="Cat Summoner Page not found: these are not the cats you're looking for" />
 				<meta property="og:image" content="https://cat-summoner.com/ogp.png" />
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:width" content="1200" />
@@ -27,7 +27,7 @@ export default function Custom404() {
 				{/* Twitter Card Meta Tags */}
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:creator" content="@_kafkaesc" />
-				<meta name="twitter:description" content="Page not found: these are not the cats you're looking for" />
+				<meta name="twitter:description" content="Cat Summoner Page not found: these are not the cats you're looking for" />
 				<meta name="twitter:image" content="https://cat-summoner.com/twc.png" />
 				<meta name="twitter:image:alt" content="A black and white cat sits in front of a dark night sky, he looks back toward the camera, the words Cat Summoner float in the foreground by his face" />
 				<meta name="twitter:site" content="@_kafkaesc" />

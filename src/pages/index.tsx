@@ -13,11 +13,11 @@ export default function Home() {
 				<title>
 					Cat Summoner 🐱 the Next cat app, built by Jared Hettinger
 				</title>
-				<meta name="description" content="Cat Summoner, the Next app where you can summon and meet new cats, built by Jared Hettinger" />
+				<meta name="description" content="Make new friends. Call a cat by name, wait a few seconds, and see a photo of them appear. Collect new photos in your Catbook, stored locally in your browser." />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 				{/* OpenGraph Meta Tags */}
-				<meta property="og:description" content="Cat Summoner, the Next app where you can summon and meet new cats, built by Jared Hettinger" />
+				<meta property="og:description" content="Make new friends. Call a cat by name, wait a few seconds, and see a photo of them appear. Collect new photos in your Catbook, stored locally in your browser." />
 				<meta property="og:image" content="https://cat-summoner.com/ogp.png" />
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:width" content="1200" />
@@ -27,7 +27,7 @@ export default function Home() {
 				{/* Twitter Card Meta Tags */}
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:creator" content="@_kafkaesc" />
-				<meta name="twitter:description" content="Cat Summoner, the Next app where you can summon and meet new cats, built by Jared Hettinger" />
+				<meta name="twitter:description" content="Make new friends. Call a cat by name, wait a few seconds, and see a photo of them appear. Collect new photos in your Catbook, stored locally in your browser." />
 				<meta name="twitter:site" content="@_kafkaesc" />
 				<meta name="twitter:title" content="Cat Summoner 🐱 the Next cat app, built by Jared Hettinger" />
 				<meta name="twitter:image" content="http://cat-summoner.com/twc.png" />
