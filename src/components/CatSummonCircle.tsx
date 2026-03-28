@@ -10,6 +10,7 @@ const cats = ['Fearless', 'Harvey', 'Lalo', 'Zelda'];
  */
 export default function CatSummonCircle() {
 	const { isLoading: catIsLoading, summonedCat, summonCat } = useCatSummon();
+	const noLoadingNoSummon = !catIsLoading && !summonedCat;
 
 	return (
 		<div className="text-center md:flex">
@@ -18,6 +19,7 @@ export default function CatSummonCircle() {
 					<Button
 						buttonStyle="secondary"
 						className="md:mb-1 md:w-full"
+						disabled={catIsLoading}
 						key={cat}
 						onClick={() => summonCat(cat)}
 					>
@@ -26,18 +28,28 @@ export default function CatSummonCircle() {
 				))}
 			</div>
 			<div className="w-full md:flex-grow md:py-1 md:px-0.5">
+				{noLoadingNoSummon && (
+					<Image
+						alt="An image of grass, still and quiet, waiting for a cat to be summoned. It sits on a transparent background, with the grass as a green and inviting foreground."
+						className="mx-auto md:m-0"
+						height={500}
+						src="/assets/images/grass-still.svg"
+						width={500}
+					/>
+				)}
 				{catIsLoading && (
 					<Image
-						alt="Loading"
-						className="mx-auto animate-spin-2.5 md:m-0"
+						alt="Loading. The grass is slowly swaying in the breeze, you anticipate the arrival of the summoned cat."
+						className="mx-auto md:m-0"
 						height={500}
-						src="/assets/images/loading.png"
+						src="/assets/images/grass-animated.svg"
 						width={500}
 					/>
 				)}
 				{summonedCat && (
 					<Image
 						alt={summonedCat.alt}
+						// catIsLoading hides the image while playing the rustling grass animation
 						className={catIsLoading ? 'hidden' : 'mx-auto md:m-0'}
 						height={500}
 						loading="eager"
