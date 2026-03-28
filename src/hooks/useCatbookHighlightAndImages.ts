@@ -42,7 +42,7 @@ export function useCatbookHighlightAndImages() {
 		};
 	}
 
-	function shuffle(arr: any[]) {
+	function shuffle(arr: number[]) {
 		// Move backward through the array and pick random numbers
 		// below the currentIndex to swap with along the way.
 		let currentIndex = arr.length;
