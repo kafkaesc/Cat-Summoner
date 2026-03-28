@@ -41,7 +41,7 @@ const cats: Array<Cat> = [
 			'available.',
 		id: 904,
 		name: 'Zelda',
-		subheadline: 'AD: please add details',
+		subheadline: 'The Fruit Lover',
 	},
 ];
 
@@ -53,7 +53,7 @@ export function useCats() {
 	 */
 	function getCatByName(catName: string): Cat | null {
 		const cat = cats.find(
-			(cat) => cat.name.toLowerCase() === catName.toLowerCase()
+			(cat) => cat.name.toLowerCase() === catName.toLowerCase(),
 		);
 		if (!cat) return null;
 		return cat;
