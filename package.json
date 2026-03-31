@@ -15,7 +15,7 @@
     "@types/react-dom": "18.0.11",
     "eslint": "^9",
     "font-awesome": "^4.7.0",
-    "next": "^15.3.0",
+    "next": "^15.5.14",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
