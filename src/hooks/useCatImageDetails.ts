@@ -147,9 +147,8 @@ export function useCatImageDetails() {
 			return catImageData.filter(
 				(cid) => normalName === cid.name.toLocaleLowerCase(),
 			);
-		} else {
-			return [];
 		}
+		return [];
 	}
 
 	function getSpecialImage(arg: string): CatImageDetails | null {
