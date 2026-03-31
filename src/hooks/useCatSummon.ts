@@ -3,6 +3,7 @@ import { useCatbook } from '@/hooks/useCatbook';
 import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 import { CatImageDetails } from '@/interfaces/CatInterfaces';
 
+/** Hook to summon a cat that also provides the summoned cat, loading state, and any errors */
 export function useCatSummon() {
 	const __activeTimeout = useRef<NodeJS.Timeout | null>(null);
 	const [__error, __setError] = useState<string | null>(null);
