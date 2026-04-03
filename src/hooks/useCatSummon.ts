@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react';
-import { useCatbook } from './useCatbook';
-import { useCatImageDetails } from './useCatImageDetails';
+import { useEffect, useRef, useState } from 'react';
+import { useCatbook } from '@/hooks/useCatbook';
+import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 import { CatImageDetails } from '@/interfaces/CatInterfaces';
 
+/** Hook to summon a cat that also provides the summoned cat, loading state, and any errors */
 export function useCatSummon() {
 	const __activeTimeout = useRef<NodeJS.Timeout | null>(null);
 	const [__error, __setError] = useState<string | null>(null);
@@ -10,6 +11,16 @@ export function useCatSummon() {
 	const [__isLoading, __setIsLoading] = useState<boolean>(false);
 	const { unlockCatbookImage } = useCatbook();
 	const { getImageDetails } = useCatImageDetails();
+
+	// Clear any active timeouts when the component using this hook unmounts
+	useEffect(() => {
+		return () => {
+			if (__activeTimeout.current) {
+				clearTimeout(__activeTimeout.current);
+				__activeTimeout.current = null;
+			}
+		};
+	}, []);
 
 	/**
 	 * This function will begin loading the cat image associated with the name
@@ -21,11 +32,7 @@ export function useCatSummon() {
 	 * @param {number} id The ID of the cat's image to retrieve
 	 * @param {CatImageDetails} imageDetails Object with the details for the cat image
 	 */
-	function awaitCat(
-		name: string,
-		id: number,
-		imageDetails: CatImageDetails,
-	): void {
+	function awaitCat(name: string, id: number, imageDetails: CatImageDetails) {
 		__setIsLoading(true);
 		if (__activeTimeout.current) {
 			clearTimeout(__activeTimeout.current);
@@ -41,7 +48,7 @@ export function useCatSummon() {
 	 * @param {string} name The name of the cat to generate a random ID for
 	 * @returns {number} Random number in the range of image IDs for the chosen cat
 	 */
-	function randomizeId(name: string): number {
+	function randomizeId(name: string) {
 		const normalName = name.toLocaleLowerCase();
 		if (normalName === 'fearless') {
 			return 1;
@@ -63,7 +70,7 @@ export function useCatSummon() {
 	 * @param {string} name The name of the cat to summon an image of
 	 * @param {number | null} catImageId The specific ID to summon, or pass null to get a random image
 	 */
-	function summonCat(name: string, catImageId?: number | null): void {
+	function summonCat(name: string, catImageId?: number | null) {
 		// Reset before summoning a new cat
 		__setError(null);
 

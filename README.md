@@ -34,7 +34,9 @@ Once the project is installed, running it just takes two steps:
 
 ## 🎯 Testing
 
-`npm test` - Runs Jest in watch mode, re-running tests automatically as files change
+- `npm test` - Run all tests
+- `npm run test:coverage` - Run all tests and generate a coverage report
+- `npm run test:watch` - Run tests in 'watch mode', re-running as files are changed
 
 ## 🤝 Collaboration
 

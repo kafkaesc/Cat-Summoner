@@ -54,7 +54,7 @@ export default function Faqs() {
 				>
 					localStorage
 				</A>
-				{` to store data across browser sessions. This means the data is stored on `}
+				{` to store data across browser sessions. This means the data are stored on `}
 				{`your computer—specifically by your current web browser. It also means `}
 				{`that the data for this site will not load across browsers. For example, `}
 				{`if you are using Chrome and visit this site in Firefox any images you `}
