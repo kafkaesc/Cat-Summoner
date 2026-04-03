@@ -65,10 +65,35 @@ it('Passes the catImageId to getImageDetails', () => {
 	expect(mockGetImageDetails).toHaveBeenCalledWith('Lalo', 3);
 });
 
+// Fearless's test is structured this way as long as they only have 1 image
 it('Uses ID 1 for Fearless when no catImageId is provided', () => {
 	const { result } = renderHook(() => useCatSummon());
 	act(() => result.current.summonCat('fearless'));
 	expect(mockGetImageDetails).toHaveBeenCalledWith('fearless', 1);
+});
+
+it('Uses a random ID for Harvey', () => {
+	jest.spyOn(Math, 'random').mockReturnValue(0.8); // => Math.floor(0.8 * 5 + 1) = 5
+	const { result } = renderHook(() => useCatSummon());
+	act(() => result.current.summonCat('Harvey'));
+	expect(mockGetImageDetails).toHaveBeenCalledWith('Harvey', 5);
+	jest.spyOn(Math, 'random').mockRestore();
+});
+
+it('Uses a random ID for Lalo', () => {
+	jest.spyOn(Math, 'random').mockReturnValue(0.6); // => Math.floor(0.6 * 5 + 1) = 4
+	const { result } = renderHook(() => useCatSummon());
+	act(() => result.current.summonCat('Lalo'));
+	expect(mockGetImageDetails).toHaveBeenCalledWith('Lalo', 4);
+	jest.spyOn(Math, 'random').mockRestore();
+});
+
+it('Uses a random ID for Zelda', () => {
+	jest.spyOn(Math, 'random').mockReturnValue(0.4); // => Math.floor(0.4 * 5 + 1) = 3
+	const { result } = renderHook(() => useCatSummon());
+	act(() => result.current.summonCat('Zelda'));
+	expect(mockGetImageDetails).toHaveBeenCalledWith('Zelda', 3);
+	jest.spyOn(Math, 'random').mockRestore();
 });
 
 it('Uses ID 1 for an unknown cat name when no catImageId is provided', () => {
