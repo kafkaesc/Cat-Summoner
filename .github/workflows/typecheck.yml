@@ -1,4 +1,4 @@
-name: Lint
+name: Typecheck
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  lint:
+  typecheck:
     runs-on: ubuntu-latest
     steps:
       # GitHub checkout clones the repo into the runner
@@ -19,5 +19,5 @@ jobs:
           cache: npm
       # Install dependencies via npm ci
       - run: npm ci
-      # Run ESLint
-      - run: npm run lint
+      # Run TypeScript type check
+      - run: npx tsc --noEmit

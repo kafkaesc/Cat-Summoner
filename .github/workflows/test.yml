@@ -1,11 +1,10 @@
 name: Test
 
 on:
-  push:
+  pull_request:
     branches:
       - aws
       - main
-  pull_request:
 
 jobs:
   test:
@@ -20,5 +19,5 @@ jobs:
           cache: npm
       # Install dependencies via npm ci
       - run: npm ci
-      # Run jest directly with watchAll=false
-      - run: npx jest --watchAll=false
+      # Run tests
+      - run: npm test
