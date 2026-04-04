@@ -4,7 +4,7 @@
 		"name": "Jared Hettinger",
 		"url": "https://github.com/kafkaesc"
 	},
-	"description": "Cat Summoner, the Next app where you can summon and meet new cats, built by Jared Hettinger",
+	"description": "Cat Summoner, the Next app to make new friends. Call a cat by name, wait a few seconds, and see a photo of them appear. Collect new photos in your Catbook, stored locally in your browser. Built by Jared Hettinger",
 	"homepage_url": "https://www.cat-summoner.com/",
 	"icons": [
 		{
