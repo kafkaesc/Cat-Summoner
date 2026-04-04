@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import CatSummonCircle from './CatSummonCircle';
-import exp from 'constants';
 
 const mockSummonCat = jest.fn();
 const mockUseCatSummon = jest.fn();
