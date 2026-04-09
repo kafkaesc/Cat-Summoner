@@ -19,5 +19,9 @@ jobs:
           cache: npm
       # Install dependencies via npm ci
       - run: npm ci
-      # Run tests
-      - run: npm test
+      # Run tests with coverage
+      - run: npm run test:coverage
+      # Upload coverage to Codecov
+      - uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
