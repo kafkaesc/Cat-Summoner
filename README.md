@@ -3,6 +3,7 @@
 Built by Jared Hettinger
 
 ![Tests](https://github.com/kafkaesc/cat-summoner/actions/workflows/test.yml/badge.svg)
+[![codecov](https://codecov.io/gh/kafkaesc/cat-summoner/branch/main/graph/badge.svg)](https://codecov.io/gh/kafkaesc/cat-summoner)
 ![Lint](https://github.com/kafkaesc/cat-summoner/actions/workflows/lint.yml/badge.svg)
 ![Typecheck](https://github.com/kafkaesc/cat-summoner/actions/workflows/typecheck.yml/badge.svg)
 
