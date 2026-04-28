@@ -36,9 +36,15 @@ Once the project is installed, running it just takes two steps:
 
 ## 🎯 Testing
 
+Tests are written with [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/), with coverage tracked using [Codecov](https://codecov.io/).
+
 - `npm test` - Run all tests
 - `npm run test:coverage` - Run all tests and generate a coverage report
 - `npm run test:watch` - Run tests in 'watch mode', re-running as files are changed
+
+### Coverage Graph 
+
+![Coverage Graph](https://codecov.io/gh/kafkaesc/Cat-Summoner/graphs/sunburst.svg?token=W5IE8WJBPW)
 
 ## 🤝 Collaboration
 
