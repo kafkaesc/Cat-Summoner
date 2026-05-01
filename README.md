@@ -44,7 +44,7 @@ Tests are written with [Jest](https://jestjs.io/) and [React Testing Library](ht
 
 ### Coverage Graph 
 
-![Coverage Graph](https://codecov.io/gh/kafkaesc/Cat-Summoner/graphs/sunburst.svg?token=W5IE8WJBPW)
+[![Coverage Graph](https://codecov.io/gh/kafkaesc/Cat-Summoner/graphs/sunburst.svg?token=W5IE8WJBPW)](https://codecov.io/gh/kafkaesc/cat-summoner)
 
 ## 🤝 Collaboration
 
