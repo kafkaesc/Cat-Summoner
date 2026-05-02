@@ -1,0 +1,18 @@
+{
+	"version": "0.2",
+	"ignorePaths": [".next", "node_modules"],
+	"words": [
+		"Hettinger",
+		"Shimi",
+		"catbook",
+		"harv",
+		"kafkaesc",
+		"lalo",
+		"nextjs",
+		"photobook",
+		"sprigatito",
+		"subheadline",
+		"summonable",
+		"tailwindcss"
+	]
+}
