@@ -48,10 +48,10 @@ it('Has a Tailwind link', () => {
 
 it('Has a React Testing Library link', () => {
 	render(<About />);
-	const rtll = screen.getByRole('link', { name: 'React Testing Library' });
-	expect(rtll).toBeInTheDocument();
-	expect(rtll).toHaveAttribute('href', 'https://testing-library.com/');
-	expect(rtll).toHaveAttribute('target', '_blank');
+	const rtlLink = screen.getByRole('link', { name: 'React Testing Library' });
+	expect(rtlLink).toBeInTheDocument();
+	expect(rtlLink).toHaveAttribute('href', 'https://testing-library.com/');
+	expect(rtlLink).toHaveAttribute('target', '_blank');
 });
 
 it('Has a Jest link', () => {
@@ -64,10 +64,15 @@ it('Has a Jest link', () => {
 
 it('Has an AWS link', () => {
 	render(<About />);
-	const awsl = screen.getByRole('link', { name: 'Amazon Web Services (AWS)' });
-	expect(awsl).toBeInTheDocument();
-	expect(awsl).toHaveAttribute('href', 'https://aws.amazon.com/what-is-aws/');
-	expect(awsl).toHaveAttribute('target', '_blank');
+	const awsLink = screen.getByRole('link', {
+		name: 'Amazon Web Services (AWS)',
+	});
+	expect(awsLink).toBeInTheDocument();
+	expect(awsLink).toHaveAttribute(
+		'href',
+		'https://aws.amazon.com/what-is-aws/',
+	);
+	expect(awsLink).toHaveAttribute('target', '_blank');
 });
 
 it('Has the GitHub link', () => {
@@ -76,7 +81,7 @@ it('Has the GitHub link', () => {
 	expect(ghl).toBeInTheDocument();
 	expect(ghl).toHaveAttribute(
 		'href',
-		'https://github.com/kafkaesc/Cat-Summoner'
+		'https://github.com/kafkaesc/Cat-Summoner',
 	);
 	expect(ghl).toHaveAttribute('target', '_blank');
 });
