@@ -11,12 +11,12 @@ Cat Summoner is a site for summoning cats. Built with React, Next, TypeScript, a
 
 Cat Summoner is hosted at [cat-summoner.com](https://cat-summoner.com)
 
-The full code for this project is hosted at [github.com/kafkaesc/Cat-Summoner](https://github.com/kafkaesc/Cat-Summoner)
+The full code for this project is hosted at [github.com/kafkaesc/cat-summoner](https://github.com/kafkaesc/cat-summoner)
 
 ## 📋 Prerequisites
 
-- Node 18+
-- npm
+- [Node 18+](https://nodejs.org)
+- [npm](https://www.npmjs.com)
 
 ## 📦 Installation & Operation
 
@@ -29,10 +29,10 @@ Once the project is installed, running it just takes two steps:
 
 ## 🛠️ Tech Stack
 
-- Next 15
-- TypeScript 5
-- React 18
-- Tailwind 3
+- [Next 15](https://nextjs.org)
+- [TypeScript 5](https://www.typescriptlang.org)
+- [React 18](https://react.dev)
+- [Tailwind 3](https://tailwindcss.com)
 
 ## 🎯 Testing
 
@@ -42,16 +42,16 @@ Tests are written with [Jest](https://jestjs.io/) and [React Testing Library](ht
 - `npm run test:coverage` - Run all tests and generate a coverage report
 - `npm run test:watch` - Run tests in 'watch mode', re-running as files are changed
 
-### Coverage Graph 
+### Coverage Graph
 
-[![Coverage Graph](https://codecov.io/gh/kafkaesc/Cat-Summoner/graphs/sunburst.svg?token=W5IE8WJBPW)](https://codecov.io/gh/kafkaesc/cat-summoner)
+[![Coverage Graph](https://codecov.io/gh/kafkaesc/cat-summoner/graphs/sunburst.svg?token=W5IE8WJBPW)](https://codecov.io/gh/kafkaesc/cat-summoner)
 
 ## 🤝 Collaboration
 
-Wow! You must really love cats. 🐱 I always welcome new collaborations so if this project strikes your fancy feel free to contact me on [Instagram](https://www.instagram.com/kafkaesc) or [Twitter](https://www.twitter.com/_kafkaesc) to discuss your ideas.
+Wow! You must really love cats. 🐱 I always welcome new collaborations so if this project strikes your fancy feel free to contact me on [Instagram](https://www.instagram.com/kafkaesc) or [X/Twitter](https://www.twitter.com/_kafkaesc) to discuss your ideas.
 
 ## ⚖️ License
 
 The code in this project is licensed under the [MIT License](LICENSE).
 
-The cat photos are not covered by this license. They may be shared as part of this project but may not be reused elsewhere without permission. To request permission for other uses, please reach out via [Instagram DM](https://www.instagram.com/kafkaesc).
+The cat photos are not covered by this license. They may be shared as part of this project, but may not be reused elsewhere without permission. To request permission for other uses, please reach out via [Instagram DM](https://www.instagram.com/kafkaesc).
