@@ -49,16 +49,23 @@ export default function FrontEndTechList() {
 		'basis-full flex justify-center md:basis-auto md:block';
 	return (
 		<ul className="flex flex-wrap justify-center md:flex-nowrap">
-			{techLinks.map((tl, index) => (
+			{techLinks.map((tl) => (
 				<li
 					className={`p-3 md:p-2 md:mx-3 hover:animate-float-up-750ms ${
 						tl.display === 'mobile-wide' ? mobileWideClasses : ''
 					}`}
 					key={`${tl.name}-Logo`}
 				>
-					<a href={tl.url} rel="noreferrer" target="_blank">
+					<a
+						aria-label={`${tl.name}`}
+						href={tl.url}
+						rel="noreferrer"
+						target="_blank"
+					>
 						<Image
-							alt={tl.alt}
+							// Empty alt: the link's aria-label already names the destination,
+							// so a null alt keeps the image from being announced twice.
+							alt=""
 							height={0}
 							src={tl.src}
 							width={0}
