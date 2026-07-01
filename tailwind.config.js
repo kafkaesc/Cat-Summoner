@@ -11,9 +11,10 @@ module.exports = {
 			'cs-primary': '#38678f',
 			'cs-primary-dark': '#2a4d6a',
 			'cs-primary-light': '#4681b4',
-			'cs-secondary': '#53a135',
-			'cs-secondary-dark': '#3f7b28',
-			'cs-secondary-light': '#5db43b',
+			'cs-secondary': '#44842b',
+			'cs-secondary-dark': '#346421',
+			'cs-secondary-light': '#4d9631',
+			'cs-secondary-xlight': '#58aa38', // one step lighter than cs-secondary-light
 			'cs-warning': '#ffc300',
 			'cs-warning-dark': '#ebb400',
 			'cs-warning-light': '#ffcc27',
