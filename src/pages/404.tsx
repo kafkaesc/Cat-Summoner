@@ -33,7 +33,7 @@ export default function Custom404() {
 				<meta name="twitter:site" content="@_kafkaesc" />
 				<meta name="twitter:title" content="404: Page Not Found 🐱 Cat Summoner" />
 			</Head>
-			<div className="h-screen bg-black">
+			<main className="h-screen bg-black">
 				<ContentColumn>
 					<Heading404 />
 					{image && (
@@ -53,7 +53,7 @@ export default function Custom404() {
 						.
 					</P>
 				</ContentColumn>
-			</div>
+			</main>
 		</>
 	);
 }
