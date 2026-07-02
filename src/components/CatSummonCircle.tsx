@@ -27,7 +27,7 @@ export default function CatSummonCircle() {
 					</Button>
 				))}
 			</div>
-			<div className="w-full md:flex-grow md:py-1 md:px-0.5">
+			<output className="block w-full md:flex-grow md:py-1 md:px-0.5">
 				{noLoadingNoSummon && (
 					<Image
 						alt="An image of grass, still and quiet, waiting for a cat to be summoned. It sits on a transparent background, with the grass as a green and inviting foreground."
@@ -57,7 +57,7 @@ export default function CatSummonCircle() {
 						width={500}
 					/>
 				)}
-			</div>
+			</output>
 		</div>
 	);
 }

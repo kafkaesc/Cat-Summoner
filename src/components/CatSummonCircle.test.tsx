@@ -83,3 +83,9 @@ it('Shows a cat image when a cat has been summoned', () => {
 	const laloImg = screen.getByAltText('Lalo on a porch');
 	expect(laloImg).toBeInTheDocument();
 });
+
+it('Renders the summon circle result as a status region', () => {
+	render(<CatSummonCircle />);
+	const status = screen.getByRole('status');
+	expect(status).toBeInTheDocument();
+});
