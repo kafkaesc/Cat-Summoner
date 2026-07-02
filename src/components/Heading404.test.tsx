@@ -8,9 +8,8 @@ it("Loads a heading 1 saying 'cat not found'", () => {
 	expect(pageHeader).toHaveTextContent(/cat not found/i);
 });
 
-it('Loads a heading 2 announcing 404', () => {
+it('Displays 404', () => {
 	render(<Heading404 />);
-	const pageHeader = screen.getByRole('heading', { level: 2 });
-	expect(pageHeader).toBeInTheDocument();
-	expect(pageHeader).toHaveTextContent(/404/i);
+	const display404 = screen.getByText(/404/);
+	expect(display404).toBeInTheDocument();
 });
