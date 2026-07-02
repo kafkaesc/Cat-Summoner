@@ -16,7 +16,7 @@ it('Has the built by notice', () => {
 
 it('Has a React link', () => {
 	render(<About />);
-	const rl = screen.getByRole('link', { name: 'React' });
+	const rl = screen.getByText('React');
 	expect(rl).toBeInTheDocument();
 	expect(rl).toHaveAttribute('href', 'https://react.dev/');
 	expect(rl).toHaveAttribute('target', '_blank');
@@ -24,7 +24,7 @@ it('Has a React link', () => {
 
 it('Has a Next.js link', () => {
 	render(<About />);
-	const nl = screen.getByRole('link', { name: 'Next.js' });
+	const nl = screen.getByText('Next.js');
 	expect(nl).toBeInTheDocument();
 	expect(nl).toHaveAttribute('href', 'https://nextjs.org/');
 	expect(nl).toHaveAttribute('target', '_blank');
@@ -32,7 +32,7 @@ it('Has a Next.js link', () => {
 
 it('Has a TypeScript link', () => {
 	render(<About />);
-	const tsl = screen.getByRole('link', { name: 'TypeScript' });
+	const tsl = screen.getByText('TypeScript');
 	expect(tsl).toBeInTheDocument();
 	expect(tsl).toHaveAttribute('href', 'https://www.typescriptlang.org/');
 	expect(tsl).toHaveAttribute('target', '_blank');
@@ -40,7 +40,7 @@ it('Has a TypeScript link', () => {
 
 it('Has a Tailwind link', () => {
 	render(<About />);
-	const tl = screen.getByRole('link', { name: 'Tailwind' });
+	const tl = screen.getByText('Tailwind');
 	expect(tl).toBeInTheDocument();
 	expect(tl).toHaveAttribute('href', 'https://tailwindcss.com/');
 	expect(tl).toHaveAttribute('target', '_blank');
@@ -56,7 +56,7 @@ it('Has a React Testing Library link', () => {
 
 it('Has a Jest link', () => {
 	render(<About />);
-	const jl = screen.getByRole('link', { name: 'Jest' });
+	const jl = screen.getByText('Jest');
 	expect(jl).toBeInTheDocument();
 	expect(jl).toHaveAttribute('href', 'https://jestjs.io/');
 	expect(jl).toHaveAttribute('target', '_blank');
