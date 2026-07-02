@@ -16,7 +16,11 @@ export default function NavItem({ children, href, ...props }: NavItemProps) {
 				className="inline-block px-2 py-2"
 				href={href}
 			>
-				<span className="inline-block px-2 py-1 align-bottom border-b-2 border-cs-primary hover:border-solid hover:border-cs-secondary-xlight hover:border-b-2">
+				<span
+					className={`inline-block px-2 py-1 align-bottom border-b-2 hover:border-solid hover:border-cs-secondary-xlight hover:border-b-2 ${
+						isActive ? 'border-cs-secondary-xlight' : 'border-cs-primary'
+					}`}
+				>
 					{children}
 				</span>
 			</NextLink>
