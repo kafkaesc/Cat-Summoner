@@ -3,6 +3,7 @@
 	"ignorePaths": [".next", "node_modules"],
 	"words": [
 		"Hettinger",
+		"NOSONAR",
 		"Shimi",
 		"catbook",
 		"harv",
