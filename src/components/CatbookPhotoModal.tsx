@@ -1,6 +1,7 @@
 import { ReactNode, useState } from 'react';
 import Image from 'next/image';
-import Button from '@/elements/Button';
+
+import Modal from '@/layout/Modal';
 
 interface CatbookPhotoModalProps {
 	alt: string;
@@ -9,6 +10,14 @@ interface CatbookPhotoModalProps {
 	title?: string;
 }
 
+/**
+ * @param {string} alt Alt text for the full-size cat photo
+ * @param {ReactNode} children The clickable trigger content
+ * @param {string} src Source of the full-size cat photo
+ * @param {string} title Optional heading for the modal, defaults to 'Cat'
+ * @returns {JSX.Element} A button wrapping the provided children that opens
+ * the cat photo in a modal dialog when clicked
+ */
 export default function CatbookPhotoModal({
 	alt,
 	children,
@@ -16,6 +25,7 @@ export default function CatbookPhotoModal({
 	title,
 }: CatbookPhotoModalProps) {
 	const [showModal, setShowModal] = useState(false);
+
 	return (
 		<>
 			<button
@@ -26,36 +36,15 @@ export default function CatbookPhotoModal({
 				{children}
 			</button>
 			{showModal ? (
-				<div
-					aria-modal="true"
-					className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none"
-					aria-labelledby="catbookPhotoModalTitle"
-					role="dialog"
-				>
-					<div className="relative w-auto max-w-3xl mx-auto my-6">
-						<div className="relative flex flex-col w-full bg-white border rounded-lg shadow-lg outline-none focus:outline-none">
-							<div className="flex items-start justify-between p-1">
-								<h2 id="catbookPhotoModalTitle" className="text-2xl font-bold">
-									{title || 'Cat'}
-								</h2>
-							</div>
-							<div className="relative flex-auto px-1">
-								<Image
-									alt={alt}
-									className="mx-auto md:m-0"
-									height={512}
-									src={src}
-									width={512}
-								/>
-							</div>
-							<div className="flex items-center justify-center p-1">
-								<Button onClick={() => setShowModal(false)} type="button">
-									Close
-								</Button>
-							</div>
-						</div>
-					</div>
-				</div>
+				<Modal onClose={() => setShowModal(false)} title={title || 'Cat'}>
+					<Image
+						alt={alt}
+						className="mx-auto md:m-0"
+						height={512}
+						src={src}
+						width={512}
+					/>
+				</Modal>
 			) : null}
 		</>
 	);
