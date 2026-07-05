@@ -16,12 +16,12 @@ interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
 const baseStyle = 'px-4 py-2 border-2 disabled:cursor-not-allowed';
 
 const buttonStyles: Record<ButtonStyle, string> = {
-	danger: `${baseStyle} border-cs-danger text-cs-white bg-cs-danger enabled:hover:border-cs-black enabled:hover:bg-cs-danger-light enabled:focus-visible:border-cs-black enabled:focus-visible:bg-cs-danger-light`,
-	default: `${baseStyle} border-gray text-cs-black bg-gray enabled:hover:border-cs-black enabled:hover:bg-gray-light enabled:focus-visible:border-cs-black enabled:focus-visible:bg-gray-light`,
-	primary: `${baseStyle} border-cs-primary text-cs-white bg-cs-primary enabled:hover:border-cs-black enabled:hover:bg-cs-primary-light enabled:focus-visible:border-cs-black enabled:focus-visible:bg-cs-primary-light`,
-	secondary: `${baseStyle} border-cs-secondary text-cs-white bg-cs-secondary enabled:hover:border-cs-black enabled:hover:bg-cs-secondary-light enabled:focus-visible:border-cs-black enabled:focus-visible:bg-cs-secondary-light`,
+	danger: `${baseStyle} border-cs-danger text-cs-white bg-cs-danger enabled:hover:border-cs-black enabled:hover:bg-cs-danger-dark enabled:focus-visible:border-cs-black enabled:focus-visible:bg-cs-danger-dark`,
+	default: `${baseStyle} border-gray text-cs-black bg-gray enabled:hover:border-cs-black enabled:hover:bg-gray-dark enabled:focus-visible:border-cs-black enabled:focus-visible:bg-gray-dark`,
+	primary: `${baseStyle} border-cs-primary text-cs-white bg-cs-primary enabled:hover:border-cs-black enabled:hover:bg-cs-primary-dark enabled:focus-visible:border-cs-black enabled:focus-visible:bg-cs-primary-dark`,
+	secondary: `${baseStyle} border-cs-secondary text-cs-white bg-cs-secondary enabled:hover:border-cs-black enabled:hover:bg-cs-secondary-dark enabled:focus-visible:border-cs-black enabled:focus-visible:bg-cs-secondary-dark`,
 	text: 'text-link enabled:hover:text-link-hover enabled:hover:underline enabled:focus-visible:text-link-hover enabled:focus-visible:underline disabled:cursor-not-allowed',
-	warning: `${baseStyle} border-cs-warning text-cs-black bg-cs-warning enabled:hover:border-cs-black enabled:hover:bg-cs-warning-light enabled:focus-visible:border-cs-black enabled:focus-visible:bg-cs-warning-light`,
+	warning: `${baseStyle} border-cs-warning text-cs-black bg-cs-warning enabled:hover:border-cs-black enabled:hover:bg-cs-warning-dark enabled:focus-visible:border-cs-black enabled:focus-visible:bg-cs-warning-dark`,
 };
 
 /** A styled button element that accepts all native attributes */
