@@ -37,7 +37,7 @@ export default function SocialLinks() {
 				return (
 					<li key={`${so.name}-Logo`} className="inline-block mx-3">
 						<a
-							aria-label={`${so.name} Profile`}
+							aria-label={`${so.name} Profile (opens a new tab)`}
 							href={so.url}
 							rel="noreferrer"
 							target="_blank"

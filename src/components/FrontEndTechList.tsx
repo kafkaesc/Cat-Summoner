@@ -57,7 +57,7 @@ export default function FrontEndTechList() {
 					key={`${tl.name}-Logo`}
 				>
 					<a
-						aria-label={`${tl.name}`}
+						aria-label={`${tl.name} (opens a new tab)`}
 						href={tl.url}
 						rel="noreferrer"
 						target="_blank"
