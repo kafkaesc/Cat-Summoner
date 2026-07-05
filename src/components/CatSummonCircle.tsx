@@ -19,7 +19,6 @@ export default function CatSummonCircle() {
 					<Button
 						buttonStyle="secondary"
 						className="md:mb-1 md:w-full"
-						disabled={catIsLoading}
 						key={cat}
 						onClick={() => summonCat(cat)}
 					>

@@ -55,7 +55,7 @@ it('Shows the animated grass image when loading', () => {
 	expect(swayImg).toHaveAttribute('src', '/assets/images/grass-animated.svg');
 });
 
-it('Disables all buttons when loading', () => {
+it('Calls summonCat when a button is clicked while a summon is loading', () => {
 	mockUseCatSummon.mockReturnValue({
 		isLoading: true,
 		summonedCat: null,
@@ -63,14 +63,9 @@ it('Disables all buttons when loading', () => {
 	});
 	render(<CatSummonCircle />);
 
-	const fearlessBtn = screen.getByRole('button', { name: 'Fearless' });
-	expect(fearlessBtn).toBeDisabled();
-	const harveyBtn = screen.getByRole('button', { name: 'Harvey' });
-	expect(harveyBtn).toBeDisabled();
-	const laloBtn = screen.getByRole('button', { name: 'Lalo' });
-	expect(laloBtn).toBeDisabled();
 	const zeldaBtn = screen.getByRole('button', { name: 'Zelda' });
-	expect(zeldaBtn).toBeDisabled();
+	fireEvent.click(zeldaBtn);
+	expect(mockSummonCat).toHaveBeenCalledWith('Zelda');
 });
 
 it('Shows a cat image when a cat has been summoned', () => {
