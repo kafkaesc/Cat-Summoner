@@ -7,7 +7,7 @@ import NavItem from './NavItem';
  */
 export default function Navbar() {
 	return (
-		<div className="text-center bg-cs-primary text-cs-white">
+		<nav className="text-center bg-cs-primary text-cs-white">
 			<ContentColumn>
 				<ul>
 					<NavItem aria-label="Home" href="/">
@@ -18,6 +18,6 @@ export default function Navbar() {
 					<NavItem href="/FAQs">FAQs</NavItem>
 				</ul>
 			</ContentColumn>
-		</div>
+		</nav>
 	);
 }
