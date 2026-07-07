@@ -49,13 +49,25 @@ it('Shows the animated grass image when loading', () => {
 		summonedCat: null,
 		summonCat: mockSummonCat,
 	});
-	render(<CatSummonCircle />);
-	const swayImg = screen.getByAltText(/slowly swaying/i);
+	const { container } = render(<CatSummonCircle />);
+	const swayImg = container.querySelector(
+		'img[src="/assets/images/grass-animated.svg"]',
+	);
 	expect(swayImg).toBeInTheDocument();
-	expect(swayImg).toHaveAttribute('src', '/assets/images/grass-animated.svg');
 });
 
-it('Disables all buttons when loading', () => {
+it('Announces a loading status in the status region while summoning', () => {
+	mockUseCatSummon.mockReturnValue({
+		isLoading: true,
+		summonedCat: null,
+		summonCat: mockSummonCat,
+	});
+	render(<CatSummonCircle />);
+	const status = screen.getByRole('status');
+	expect(status).toHaveTextContent(/summoning a cat/i);
+});
+
+it('Calls summonCat when a button is clicked while a summon is loading', () => {
 	mockUseCatSummon.mockReturnValue({
 		isLoading: true,
 		summonedCat: null,
@@ -63,14 +75,9 @@ it('Disables all buttons when loading', () => {
 	});
 	render(<CatSummonCircle />);
 
-	const fearlessBtn = screen.getByRole('button', { name: 'Fearless' });
-	expect(fearlessBtn).toBeDisabled();
-	const harveyBtn = screen.getByRole('button', { name: 'Harvey' });
-	expect(harveyBtn).toBeDisabled();
-	const laloBtn = screen.getByRole('button', { name: 'Lalo' });
-	expect(laloBtn).toBeDisabled();
 	const zeldaBtn = screen.getByRole('button', { name: 'Zelda' });
-	expect(zeldaBtn).toBeDisabled();
+	fireEvent.click(zeldaBtn);
+	expect(mockSummonCat).toHaveBeenCalledWith('Zelda');
 });
 
 it('Shows a cat image when a cat has been summoned', () => {
@@ -82,4 +89,10 @@ it('Shows a cat image when a cat has been summoned', () => {
 	render(<CatSummonCircle />);
 	const laloImg = screen.getByAltText('Lalo on a porch');
 	expect(laloImg).toBeInTheDocument();
+});
+
+it('Renders the summon circle result as a status region', () => {
+	render(<CatSummonCircle />);
+	const status = screen.getByRole('status');
+	expect(status).toBeInTheDocument();
 });

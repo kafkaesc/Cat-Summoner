@@ -3,10 +3,10 @@ import SocialLinks from './SocialLinks';
 
 it('Has the social links', () => {
 	render(<SocialLinks />);
-	const githubLink = screen.getByRole('link', { name: /github logo/i });
-	const twitterLink = screen.getByRole('link', { name: /twitter logo/i });
-	const instagramLink = screen.getByRole('link', { name: /instagram logo/i });
-	const linkedInLink = screen.getByRole('link', { name: /linkedin logo/i });
+	const githubLink = screen.getByRole('link', { name: /github/i });
+	const twitterLink = screen.getByRole('link', { name: /twitter/i });
+	const instagramLink = screen.getByRole('link', { name: /instagram/i });
+	const linkedInLink = screen.getByRole('link', { name: /linkedin/i });
 	expect(githubLink).toBeInTheDocument();
 	expect(twitterLink).toBeInTheDocument();
 	expect(instagramLink).toBeInTheDocument();
@@ -15,10 +15,10 @@ it('Has the social links', () => {
 
 it('Opens links in a new tab', () => {
 	render(<SocialLinks />);
-	const githubLink = screen.getByRole('link', { name: /github logo/i });
-	const twitterLink = screen.getByRole('link', { name: /twitter logo/i });
-	const instagramLink = screen.getByRole('link', { name: /instagram logo/i });
-	const linkedInLink = screen.getByRole('link', { name: /linkedin logo/i });
+	const githubLink = screen.getByRole('link', { name: /github/i });
+	const twitterLink = screen.getByRole('link', { name: /twitter/i });
+	const instagramLink = screen.getByRole('link', { name: /instagram/i });
+	const linkedInLink = screen.getByRole('link', { name: /linkedin/i });
 	expect(githubLink).toBeInTheDocument();
 	expect(githubLink).toHaveAttribute('target', '_blank');
 	expect(twitterLink).toBeInTheDocument();
@@ -31,10 +31,10 @@ it('Opens links in a new tab', () => {
 
 it('Opens the correct URLs', () => {
 	render(<SocialLinks />);
-	const githubLink = screen.getByRole('link', { name: /github logo/i });
-	const twitterLink = screen.getByRole('link', { name: /twitter logo/i });
-	const instagramLink = screen.getByRole('link', { name: /instagram logo/i });
-	const linkedInLink = screen.getByRole('link', { name: /linkedin logo/i });
+	const githubLink = screen.getByRole('link', { name: /github/i });
+	const twitterLink = screen.getByRole('link', { name: /twitter/i });
+	const instagramLink = screen.getByRole('link', { name: /instagram/i });
+	const linkedInLink = screen.getByRole('link', { name: /linkedin/i });
 	expect(githubLink).toBeInTheDocument();
 	expect(githubLink).toHaveAttribute('href', 'https://github.com/kafkaesc');
 	expect(twitterLink).toBeInTheDocument();

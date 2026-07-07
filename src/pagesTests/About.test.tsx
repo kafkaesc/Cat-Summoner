@@ -16,7 +16,7 @@ it('Has the built by notice', () => {
 
 it('Has a React link', () => {
 	render(<About />);
-	const rl = screen.getByRole('link', { name: 'React' });
+	const rl = screen.getByText('React');
 	expect(rl).toBeInTheDocument();
 	expect(rl).toHaveAttribute('href', 'https://react.dev/');
 	expect(rl).toHaveAttribute('target', '_blank');
@@ -24,7 +24,7 @@ it('Has a React link', () => {
 
 it('Has a Next.js link', () => {
 	render(<About />);
-	const nl = screen.getByRole('link', { name: 'Next.js' });
+	const nl = screen.getByText('Next.js');
 	expect(nl).toBeInTheDocument();
 	expect(nl).toHaveAttribute('href', 'https://nextjs.org/');
 	expect(nl).toHaveAttribute('target', '_blank');
@@ -32,7 +32,7 @@ it('Has a Next.js link', () => {
 
 it('Has a TypeScript link', () => {
 	render(<About />);
-	const tsl = screen.getByRole('link', { name: 'TypeScript' });
+	const tsl = screen.getByText('TypeScript');
 	expect(tsl).toBeInTheDocument();
 	expect(tsl).toHaveAttribute('href', 'https://www.typescriptlang.org/');
 	expect(tsl).toHaveAttribute('target', '_blank');
@@ -40,7 +40,7 @@ it('Has a TypeScript link', () => {
 
 it('Has a Tailwind link', () => {
 	render(<About />);
-	const tl = screen.getByRole('link', { name: 'Tailwind' });
+	const tl = screen.getByText('Tailwind');
 	expect(tl).toBeInTheDocument();
 	expect(tl).toHaveAttribute('href', 'https://tailwindcss.com/');
 	expect(tl).toHaveAttribute('target', '_blank');
@@ -48,7 +48,9 @@ it('Has a Tailwind link', () => {
 
 it('Has a React Testing Library link', () => {
 	render(<About />);
-	const rtlLink = screen.getByRole('link', { name: 'React Testing Library' });
+	const rtlLink = screen.getByRole('link', {
+		name: 'React Testing Library (opens a new tab)',
+	});
 	expect(rtlLink).toBeInTheDocument();
 	expect(rtlLink).toHaveAttribute('href', 'https://testing-library.com/');
 	expect(rtlLink).toHaveAttribute('target', '_blank');
@@ -56,7 +58,7 @@ it('Has a React Testing Library link', () => {
 
 it('Has a Jest link', () => {
 	render(<About />);
-	const jl = screen.getByRole('link', { name: 'Jest' });
+	const jl = screen.getByText('Jest');
 	expect(jl).toBeInTheDocument();
 	expect(jl).toHaveAttribute('href', 'https://jestjs.io/');
 	expect(jl).toHaveAttribute('target', '_blank');
@@ -65,7 +67,7 @@ it('Has a Jest link', () => {
 it('Has an AWS link', () => {
 	render(<About />);
 	const awsLink = screen.getByRole('link', {
-		name: 'Amazon Web Services (AWS)',
+		name: 'Amazon Web Services (AWS) (opens a new tab)',
 	});
 	expect(awsLink).toBeInTheDocument();
 	expect(awsLink).toHaveAttribute(
@@ -77,7 +79,9 @@ it('Has an AWS link', () => {
 
 it('Has the GitHub link', () => {
 	render(<About />);
-	const ghl = screen.getByRole('link', { name: 'full code for this project' });
+	const ghl = screen.getByRole('link', {
+		name: 'full code for this project (opens a new tab)',
+	});
 	expect(ghl).toBeInTheDocument();
 	expect(ghl).toHaveAttribute(
 		'href',
