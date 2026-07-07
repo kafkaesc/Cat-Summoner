@@ -49,10 +49,22 @@ it('Shows the animated grass image when loading', () => {
 		summonedCat: null,
 		summonCat: mockSummonCat,
 	});
-	render(<CatSummonCircle />);
-	const swayImg = screen.getByAltText(/slowly swaying/i);
+	const { container } = render(<CatSummonCircle />);
+	const swayImg = container.querySelector(
+		'img[src="/assets/images/grass-animated.svg"]',
+	);
 	expect(swayImg).toBeInTheDocument();
-	expect(swayImg).toHaveAttribute('src', '/assets/images/grass-animated.svg');
+});
+
+it('Announces a loading status in the status region while summoning', () => {
+	mockUseCatSummon.mockReturnValue({
+		isLoading: true,
+		summonedCat: null,
+		summonCat: mockSummonCat,
+	});
+	render(<CatSummonCircle />);
+	const status = screen.getByRole('status');
+	expect(status).toHaveTextContent(/summoning a cat/i);
 });
 
 it('Calls summonCat when a button is clicked while a summon is loading', () => {
