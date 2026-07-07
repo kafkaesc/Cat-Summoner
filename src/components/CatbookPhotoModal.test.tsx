@@ -44,3 +44,15 @@ it('Closes the modal when the close button is clicked', () => {
 		screen.queryByRole('button', { name: /close/i }),
 	).not.toBeInTheDocument();
 });
+
+it('Names the trigger button with the view-larger action', () => {
+	render(
+		<CatbookPhotoModal alt="a cat" src="/cat.jpg">
+			<span>trigger</span>
+		</CatbookPhotoModal>,
+	);
+	const trigger = screen.getByRole('button', {
+		name: 'View larger photo: a cat',
+	});
+	expect(trigger).toHaveAttribute('aria-haspopup', 'dialog');
+});

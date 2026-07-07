@@ -36,9 +36,16 @@ export default function SocialLinks() {
 			{socialLinks.map((so) => {
 				return (
 					<li key={`${so.name}-Logo`} className="inline-block mx-3">
-						<a href={so.url} rel="noreferrer" target="_blank">
+						<a
+							aria-label={`${so.name} Profile (opens a new tab)`}
+							href={so.url}
+							rel="noreferrer"
+							target="_blank"
+						>
 							<Image
-								alt={so.alt}
+								// Empty alt: the link's aria-label already names the destination,
+								// so a null alt keeps the image from being announced twice.
+								alt=""
 								height={52}
 								src={so.src}
 								style={{ height: 24, width: 'auto' }}
