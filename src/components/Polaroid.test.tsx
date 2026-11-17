@@ -8,7 +8,7 @@ it('Renders an image with the correct alt text', () => {
 
 it('Applies a className to the image', () => {
 	render(
-		<Polaroid alt="Lalo looking smug" src="/cat.jpg" className="rounded" />,
+		<Polaroid alt="Lalo looking smug" src="/cat.jpg" className="rounded-sm" />,
 	);
-	expect(screen.getByRole('img', { name: /lalo/i })).toHaveClass('rounded');
+	expect(screen.getByRole('img', { name: /lalo/i })).toHaveClass('rounded-sm');
 });

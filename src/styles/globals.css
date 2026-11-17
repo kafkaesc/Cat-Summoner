@@ -1,3 +1,73 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+	--color-*: initial;
+	--color-black: #000;
+	--color-cs-black: #222;
+	--color-cs-danger: #d90429;
+	--color-cs-danger-dark: #b20322;
+	--color-cs-danger-light: #fa0a34;
+	--color-cs-primary: #38678f;
+	--color-cs-primary-dark: #2a4d6a;
+	--color-cs-primary-light: #4681b4;
+	--color-cs-secondary: #44842b;
+	--color-cs-secondary-dark: #346421;
+	--color-cs-secondary-light: #4d9631;
+	--color-cs-secondary-xlight: #58aa38;
+	--color-cs-warning: #ffc300;
+	--color-cs-warning-dark: #ebb400;
+	--color-cs-warning-light: #ffcc27;
+	--color-cs-white: #fdfdfd;
+	--color-gray: #ddd;
+	--color-gray-dark: #bbb;
+	--color-gray-light: #eee;
+	--color-link: #00f;
+	--color-link-hover: #00c;
+	--color-link-dark-bg: #5db43b;
+	--color-link-dark-bg-hover: #53a135;
+	--color-red: #f00;
+	--color-white: #fff;
+
+	--animate-float-up: float-up 1s ease-in-out forwards;
+	--animate-float-up-500ms: float-up 500ms ease-in-out forwards;
+	--animate-float-up-750ms: float-up 750ms ease-in-out forwards;
+	--animate-float-up-2: float-up 2s ease-in-out forwards;
+	--animate-float-up-3: float-up 3s ease-in-out forwards;
+	--animate-float-up-4: float-up 4s ease-in-out forwards;
+	--animate-spin: spin 1s linear infinite;
+	--animate-spin-2: spin 2s linear infinite;
+	--animate-spin-2_5: spin 2.5s linear infinite;
+	--animate-spin-3: spin 3s linear infinite;
+	--animate-spin-4: spin 4s linear infinite;
+	--animate-wiggle: wiggle 1s ease-in-out infinite;
+	--animate-wiggle-2: wiggle 2s ease-in-out infinite;
+	--animate-wiggle-2_5: wiggle 2.5s ease-in-out infinite;
+	--animate-wiggle-3: wiggle 3s ease-in-out infinite;
+	--animate-wiggle-4: wiggle 4s ease-in-out infinite;
+
+	@keyframes float-up {
+		from {
+			transform: translateY(0);
+		}
+		to {
+			transform: translateY(-0.5em);
+		}
+	}
+	@keyframes spin {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+	@keyframes wiggle {
+		0,
+		100% {
+			transform: rotate(-15deg);
+		}
+		50% {
+			transform: rotate(15deg);
+		}
+	}
+}

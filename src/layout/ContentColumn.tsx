@@ -6,7 +6,7 @@ interface CcProps {
 
 /**
  * @param {ReactNode} children The content of the page
- * @returns {JSX.Element} The provided children wrapped in a responsive
+ * @returns {React.JSX.Element} The provided children wrapped in a responsive
  * content column ~896 pixels wide, centered, that will go to the edge of
  * the screen on smaller displays
  */
