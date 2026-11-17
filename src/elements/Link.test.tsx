@@ -22,6 +22,22 @@ it('Successfully creates a link to the homepage with an added class', () => {
 	expect(link).toHaveClass('foo-class');
 });
 
+it('Successfully creates a link to the homepage that underlines on keyboard focus', () => {
+	render(<Link href="/">Home</Link>);
+	const link = screen.getByRole('link', { name: 'Home' });
+	expect(link).toHaveClass('focus-visible:underline');
+});
+
+it('Successfully creates a link to the homepage with an added class that underlines on keyboard focus', () => {
+	render(
+		<Link className="foo-class" href="/">
+			Home
+		</Link>
+	);
+	const link = screen.getByRole('link', { name: 'Home' });
+	expect(link).toHaveClass('focus-visible:underline');
+});
+
 it('Successfully creates a dark background link to the homepage', () => {
 	render(
 		<Link href="/" linkStyle="dark-background">

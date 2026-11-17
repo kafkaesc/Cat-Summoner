@@ -32,7 +32,7 @@ export default function Link({
 	) : className ? (
 		<NextLink
 			{...props}
-			className={`text-link hover:text-link-hover hover:underline ${className}`}
+			className={`text-link hover:text-link-hover hover:underline focus-visible:underline ${className}`}
 			href={href}
 		>
 			{children}
@@ -40,7 +40,7 @@ export default function Link({
 	) : (
 		<NextLink
 			{...props}
-			className="text-link hover:text-link-hover hover:underline"
+			className="text-link hover:text-link-hover hover:underline focus-visible:underline"
 			href={href}
 		>
 			{children}
