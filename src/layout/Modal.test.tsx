@@ -41,6 +41,16 @@ it('Opens as a modal dialog on mount', () => {
 	expect(dialog).toHaveAttribute('open');
 });
 
+it('Centers the dialog with an auto margin', () => {
+	render(
+		<Modal onClose={jest.fn()} title="Cat Photo">
+			<span>modal content</span>
+		</Modal>,
+	);
+	const dialog = screen.getByRole('dialog');
+	expect(dialog).toHaveClass('m-auto');
+});
+
 it('Calls onClose when the close button is clicked', () => {
 	const onClose = jest.fn();
 	render(

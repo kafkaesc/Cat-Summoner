@@ -1,5 +1,6 @@
 // DEBUG ONLY
 
+import type { JSX } from 'react';
 import Button from '@/elements/Button';
 import { useCatbook } from '@/hooks/useCatbook';
 

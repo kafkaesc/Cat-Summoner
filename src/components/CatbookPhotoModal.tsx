@@ -15,7 +15,7 @@ interface CatbookPhotoModalProps {
  * @param {ReactNode} children The clickable trigger content
  * @param {string} src Source of the full-size cat photo
  * @param {string} title Optional heading for the modal, defaults to 'Cat'
- * @returns {JSX.Element} A button wrapping the provided children that opens
+ * @returns {React.JSX.Element} A button wrapping the provided children that opens
  * the cat photo in a modal dialog when clicked
  */
 export default function CatbookPhotoModal({
@@ -31,7 +31,7 @@ export default function CatbookPhotoModal({
 			<button
 				aria-haspopup="dialog"
 				aria-label={`View larger photo: ${alt}`}
-				className="relative block w-full h-full cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+				className="relative block w-full h-full cursor-pointer focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
 				onClick={() => setShowModal(true)}
 				type="button"
 			>

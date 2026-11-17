@@ -8,6 +8,18 @@ it('Creates a default button', () => {
 	expect(benjaminButton).toHaveTextContent(/benjamin/i);
 });
 
+it('Gives an enabled default button a pointer cursor', () => {
+	render(<Button>Benjamin</Button>);
+	const benjaminButton = screen.getByRole('button');
+	expect(benjaminButton).toHaveClass('enabled:cursor-pointer');
+});
+
+it('Gives an enabled text button a pointer cursor', () => {
+	render(<Button buttonStyle="text">Benjamin</Button>);
+	const benjaminButton = screen.getByRole('button');
+	expect(benjaminButton).toHaveClass('enabled:cursor-pointer');
+});
+
 it('Creates a disabled default button', () => {
 	render(<Button disabled>Benjamin</Button>);
 	const benjaminButton = screen.getByRole('button');
