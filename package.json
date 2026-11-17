@@ -17,7 +17,7 @@
     "@types/react-dom": "19.3.0",
     "eslint": "^9",
     "font-awesome": "^4.7.0",
-    "next": "^15.5.14",
+    "next": "^16.4.6",
     "react": "19.3.1",
     "react-dom": "19.3.1"
   },
@@ -28,7 +28,7 @@
     "@testing-library/react": "^16.3.3",
     "@types/jest": "^30.0.0",
     "autoprefixer": "^10.4.27",
-    "eslint-config-next": "^15.5.14",
+    "eslint-config-next": "^16.4.6",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
     "postcss": "^8.5.10",

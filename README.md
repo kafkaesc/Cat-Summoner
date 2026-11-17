@@ -29,7 +29,7 @@ Once the project is installed, running it just takes two steps:
 
 ## 🛠️ Tech Stack
 
-- [Next 15](https://nextjs.org)
+- [Next 16](https://nextjs.org)
 - [TypeScript 5](https://www.typescriptlang.org)
 - [React 19](https://react.dev)
 - [Tailwind 3](https://tailwindcss.com)
