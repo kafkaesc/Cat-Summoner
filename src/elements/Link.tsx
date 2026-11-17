@@ -16,7 +16,7 @@ export default function Link({
 	return linkStyle === 'dark-background' && className ? (
 		<NextLink
 			{...props}
-			className={`text-link-dark-bg hover:text-link-dark-bg-hover hover:underline ${className}`}
+			className={`text-link-dark-bg hover:text-link-dark-bg-hover hover:underline focus-visible:text-link-dark-bg-hover focus-visible:underline ${className}`}
 			href={href}
 		>
 			{children}
@@ -24,7 +24,7 @@ export default function Link({
 	) : linkStyle === 'dark-background' ? (
 		<NextLink
 			{...props}
-			className="text-link-dark-bg hover:text-link-dark-bg-hover hover:underline"
+			className="text-link-dark-bg hover:text-link-dark-bg-hover hover:underline focus-visible:text-link-dark-bg-hover focus-visible:underline"
 			href={href}
 		>
 			{children}
@@ -32,7 +32,7 @@ export default function Link({
 	) : className ? (
 		<NextLink
 			{...props}
-			className={`text-link hover:text-link-hover hover:underline focus-visible:underline ${className}`}
+			className={`text-link hover:text-link-hover hover:underline focus-visible:text-link-hover focus-visible:underline ${className}`}
 			href={href}
 		>
 			{children}
@@ -40,7 +40,7 @@ export default function Link({
 	) : (
 		<NextLink
 			{...props}
-			className="text-link hover:text-link-hover hover:underline focus-visible:underline"
+			className="text-link hover:text-link-hover hover:underline focus-visible:text-link-hover focus-visible:underline"
 			href={href}
 		>
 			{children}

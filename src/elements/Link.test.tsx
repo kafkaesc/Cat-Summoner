@@ -65,6 +65,26 @@ it('Successfully creates a dark background link to the homepage with an added cl
 	expect(link).toHaveClass('text-link-dark-bg');
 });
 
+it('Successfully creates a dark background link to the homepage that underlines on keyboard focus', () => {
+	render(
+		<Link href="/" linkStyle="dark-background">
+			Home
+		</Link>
+	);
+	const link = screen.getByRole('link', { name: 'Home' });
+	expect(link).toHaveClass('focus-visible:underline');
+});
+
+it('Successfully creates a dark background link to the homepage with an added class that underlines on keyboard focus', () => {
+	render(
+		<Link className="foo-class" href="/" linkStyle="dark-background">
+			Home
+		</Link>
+	);
+	const link = screen.getByRole('link', { name: 'Home' });
+	expect(link).toHaveClass('focus-visible:underline');
+});
+
 it('Successfully creates a link to the about page with target _blank', () => {
 	render(
 		<Link rel="noreferrer" target="_blank" href="/About">
