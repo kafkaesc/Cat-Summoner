@@ -64,6 +64,9 @@ export function useCatbook() {
 			lalo: ls.get('lalo'),
 			zelda: ls.get('zelda'),
 		};
+		// localStorage is only readable after mount, so it has to be
+		// loaded in an effect to avoid a server/client hydration mismatch
+		// eslint-disable-next-line react-hooks/set-state-in-effect
 		__setCatbookData(localCatbookData);
 		// intentionally mount-only, adding ls to the
 		// dependency array will cause an infinite loop

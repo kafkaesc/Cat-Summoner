@@ -7,7 +7,7 @@ interface CatbookRowEmptyProps {
 
 /**
  * @param {string} name Cat name for the cat
- * @returns {JSX.Element} Paragraph informing the user they haven't unlocked
+ * @returns {React.JSX.Element} Paragraph informing the user they haven't unlocked
  * any pictures for the cat and a link to the homepage to unlock more pictures.
  */
 export default function EmptyCatbookRow({ name }: CatbookRowEmptyProps) {
