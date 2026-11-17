@@ -8,7 +8,7 @@ import FrontEndTechList from '@/components/FrontEndTechList';
 import SocialLinks from '@/components/SocialLinks';
 
 /**
- * @returns {JSX.Element} Page-level JSX component for the about page
+ * @returns {React.JSX.Element} Page-level JSX component for the about page
  */
 export default function About() {
 	return (

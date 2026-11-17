@@ -28,7 +28,7 @@ const socialLinks = [
 ];
 
 /**
- * @returns {JSX.Element} Linked icons for social media accounts
+ * @returns {React.JSX.Element} Linked icons for social media accounts
  */
 export default function SocialLinks() {
 	return (

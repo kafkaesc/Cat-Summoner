@@ -8,7 +8,7 @@ import EmptyCatbook from '@/components/EmptyCatbook';
 import { useCatbook } from '@/hooks/useCatbook';
 
 /**
- * @returns {JSX.Element} A photobook showing the cat photos the user has
+ * @returns {React.JSX.Element} A photobook showing the cat photos the user has
  * previously unlocked.
  */
 export default function CatbookFull() {

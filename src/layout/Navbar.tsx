@@ -3,7 +3,7 @@ import EmLogo from './EmLogo';
 import NavItem from './NavItem';
 
 /**
- * @returns {JSX.Element} Navigation bar with links to top-level pages
+ * @returns {React.JSX.Element} Navigation bar with links to top-level pages
  */
 export default function Navbar() {
 	return (

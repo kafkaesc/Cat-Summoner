@@ -5,7 +5,7 @@ import { useCatSummon } from '@/hooks/useCatSummon';
 const cats = ['Fearless', 'Harvey', 'Lalo', 'Zelda'];
 
 /**
- * @returns {JSX.Element} Clickable buttons for each cat and a loading area
+ * @returns {React.JSX.Element} Clickable buttons for each cat and a loading area
  * that displays a new cat pic when one is summoned.
  */
 export default function CatSummonCircle() {

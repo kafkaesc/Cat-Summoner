@@ -31,7 +31,7 @@ Once the project is installed, running it just takes two steps:
 
 - [Next 15](https://nextjs.org)
 - [TypeScript 5](https://www.typescriptlang.org)
-- [React 18](https://react.dev)
+- [React 19](https://react.dev)
 - [Tailwind 3](https://tailwindcss.com)
 
 ## 🎯 Testing

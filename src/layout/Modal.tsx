@@ -21,7 +21,7 @@ interface ModalProps {
  * Close button, the Escape key, or a click on the backdrop
  * @param {string} title Heading displayed at the top of the modal and used
  * as its accessible name
- * @returns {JSX.Element} A modal dialog built on the native dialog element,
+ * @returns {React.JSX.Element} A modal dialog built on the native dialog element,
  * opened with showModal() so the browser provides top-layer rendering,
  * focus containment, and the ::backdrop overlay. Mount it to open it; it
  * stays open until unmounted.

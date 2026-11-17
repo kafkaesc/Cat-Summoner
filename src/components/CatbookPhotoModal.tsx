@@ -15,7 +15,7 @@ interface CatbookPhotoModalProps {
  * @param {ReactNode} children The clickable trigger content
  * @param {string} src Source of the full-size cat photo
  * @param {string} title Optional heading for the modal, defaults to 'Cat'
- * @returns {JSX.Element} A button wrapping the provided children that opens
+ * @returns {React.JSX.Element} A button wrapping the provided children that opens
  * the cat photo in a modal dialog when clicked
  */
 export default function CatbookPhotoModal({

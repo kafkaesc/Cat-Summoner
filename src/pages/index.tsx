@@ -4,7 +4,7 @@ import Layout from '@/layout/Layout';
 import CatSummonCircle from '@/components/CatSummonCircle';
 
 /**
- * @returns {JSX.Element} JSX component for the index/home page
+ * @returns {React.JSX.Element} JSX component for the index/home page
  */
 export default function Home() {
 	return (
