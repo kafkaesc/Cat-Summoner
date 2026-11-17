@@ -15,7 +15,7 @@ The full code for this project is hosted at [github.com/kafkaesc/cat-summoner](h
 
 ## 📋 Prerequisites
 
-- [Node 18+](https://nodejs.org)
+- [Node 22+](https://nodejs.org)
 - [npm](https://www.npmjs.com)
 
 ## 📦 Installation & Operation
