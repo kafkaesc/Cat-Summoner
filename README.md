@@ -32,7 +32,7 @@ Once the project is installed, running it just takes two steps:
 - [Next 16](https://nextjs.org)
 - [TypeScript 5](https://www.typescriptlang.org)
 - [React 19](https://react.dev)
-- [Tailwind 3](https://tailwindcss.com)
+- [Tailwind 4](https://tailwindcss.com)
 
 ## 🎯 Testing
 

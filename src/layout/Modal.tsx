@@ -53,7 +53,7 @@ export default function Modal({ children, onClose, title }: ModalProps) {
 		<dialog // NOSONAR - this is a pointer-exclusive convention, keyboard users have esc
 			ref={dialogRef}
 			aria-labelledby={titleId}
-			className="w-fit max-w-3xl p-0 bg-white border rounded-lg shadow-lg backdrop:bg-black/50"
+			className="w-fit max-w-3xl m-auto p-0 bg-white border rounded-lg shadow-lg backdrop:bg-black/50"
 			onCancel={handleCancel}
 			onMouseDown={handleBackdropMouseDown}
 		>

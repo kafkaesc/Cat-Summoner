@@ -26,7 +26,7 @@ export default function CatSummonCircle() {
 					</Button>
 				))}
 			</div>
-			<output className="block w-full md:flex-grow md:py-1 md:px-0.5">
+			<output className="block w-full md:grow md:py-1 md:px-0.5">
 				{/* The still grass is only present before the first summon,
 				as the output's initial content it gets real description */}
 				{noLoadingNoSummon && (
