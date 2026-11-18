@@ -1,0 +1,51 @@
+name: Accessibility
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - aws
+      - main
+
+jobs:
+  axe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # GitHub checkout clones the repo into the runner
+      - uses: actions/checkout@v4
+      # Install Node.js and cache npm dependencies
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      # Install dependencies via npm ci
+      - run: npm ci
+      # Build the production site
+      - run: npm run build
+      # Start the production server in the background
+      # and wait for it to respond
+      - run: |
+          npm run start &
+          for i in $(seq 1 30); do
+            curl -s -o /dev/null http://localhost:3000 && exit 0
+            sleep 1
+          done
+          echo "The server did not start within 30 seconds"
+          exit 1
+      # Scan each page with axe, failing on any WCAG 2.2 A or AA violation
+      # Uses the Chrome and matching ChromeDriver preinstalled on the runner
+      - run: >
+          npx --yes @axe-core/cli@4.14.0
+          http://localhost:3000/
+          http://localhost:3000/Catbook
+          http://localhost:3000/Catbook/zelda
+          http://localhost:3000/About
+          http://localhost:3000/FAQs
+          http://localhost:3000/does-not-exist
+          --tags wcag2a,wcag2aa,wcag21a,wcag21aa,wcag22aa
+          --chrome-path "$(command -v google-chrome)"
+          --chromedriver-path "$CHROMEWEBDRIVER/chromedriver"
+          --exit
