@@ -12,6 +12,7 @@ export default function CatbookCatError() {
 		<Layout>
 			<Head>
 				<title>Error 🐱 Cat Summoner</title>
+				<meta name="description" content="Oops! This is not a cat page on Cat Summoner." />
 			</Head>
 			<H1>Oops!</H1>
 			<P>

@@ -12,6 +12,7 @@ export default function Catbook() {
 		<Layout>
 			<Head>
 				<title>Catbook 🐱 Cat Summoner</title>
+				<meta name="description" content="The Catbook at Cat Summoner, revisit the cats you've met. Make new friends. Call a cat by name, wait a few seconds, and see a photo of them appear. Collect new photos in your Catbook, stored locally in your browser." />
 				{/* OpenGraph Meta Tags */}
 				<meta property="og:description" content="The Catbook at Cat Summoner, revisit the cats you've met. Make new friends. Call a cat by name, wait a few seconds, and see a photo of them appear. Collect new photos in your Catbook, stored locally in your browser." />
 				<meta property="og:image" content="https://cat-summoner.com/ogp.png" />

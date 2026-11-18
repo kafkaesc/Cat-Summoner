@@ -2,10 +2,11 @@
 
 Built by Jared Hettinger
 
-![Tests](https://github.com/kafkaesc/cat-summoner/actions/workflows/test.yml/badge.svg)
+[![Tests](https://github.com/kafkaesc/cat-summoner/actions/workflows/test.yml/badge.svg)](https://github.com/kafkaesc/cat-summoner/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/kafkaesc/cat-summoner/branch/main/graph/badge.svg)](https://codecov.io/gh/kafkaesc/cat-summoner)
-![Lint](https://github.com/kafkaesc/cat-summoner/actions/workflows/lint.yml/badge.svg)
-![Typecheck](https://github.com/kafkaesc/cat-summoner/actions/workflows/typecheck.yml/badge.svg)
+[![Lint](https://github.com/kafkaesc/cat-summoner/actions/workflows/lint.yml/badge.svg)](https://github.com/kafkaesc/cat-summoner/actions/workflows/lint.yml)
+[![Typecheck](https://github.com/kafkaesc/cat-summoner/actions/workflows/typecheck.yml/badge.svg)](https://github.com/kafkaesc/cat-summoner/actions/workflows/typecheck.yml)
+[![Accessibility](https://github.com/kafkaesc/cat-summoner/actions/workflows/accessibility.yml/badge.svg)](https://github.com/kafkaesc/cat-summoner/actions/workflows/accessibility.yml)
 
 Cat Summoner is a site for summoning cats. Built with React, Next, TypeScript, and Tailwind. Tested with Jest and React Testing Library. Visitors to the site can call a cat by clicking the button with their name. They will be treated to a random photo of the summoned cat. Once a photo is found it will be "unlocked" and viewable in the user's catbook.
 
@@ -46,9 +47,31 @@ Tests are written with [Jest](https://jestjs.io/) and [React Testing Library](ht
 
 [![Coverage Graph](https://codecov.io/gh/kafkaesc/cat-summoner/graphs/sunburst.svg?token=W5IE8WJBPW)](https://codecov.io/gh/kafkaesc/cat-summoner)
 
+## ✅ Quality
+
+### CI/CD
+
+Every pull request to `main` or `aws`, and every push to `main`, runs these checks via GitHub Actions. Merges to `aws` deploy to [cat-summoner.com](https://cat-summoner.com) through AWS Amplify.
+
+| Check                                                                                         | What it does                                                                   |
+| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| [Tests](https://github.com/kafkaesc/cat-summoner/actions/workflows/test.yml)                  | Runs the Jest and React Testing Library suite and uploads coverage to Codecov  |
+| [Lint](https://github.com/kafkaesc/cat-summoner/actions/workflows/lint.yml)                   | Checks the code with ESLint and Next's Core Web Vitals rules                   |
+| [Typecheck](https://github.com/kafkaesc/cat-summoner/actions/workflows/typecheck.yml)         | Type-checks the project with `tsc --noEmit`                                    |
+| [Accessibility](https://github.com/kafkaesc/cat-summoner/actions/workflows/accessibility.yml) | Builds the site and scans every page with axe for WCAG 2.2 A and AA violations |
+
+### Performance
+
+Mobile Lighthouse scores for the cat-summoner.com home page, updated weekly by the [Lighthouse check](https://github.com/kafkaesc/cat-summoner/actions/workflows/lighthouse.yml). You can [run it yourself on PageSpeed Insights](https://pagespeed.web.dev/report?url=https://cat-summoner.com).
+
+[![Performance](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kafkaesc/cat-summoner/badges/performance.json)](https://github.com/kafkaesc/cat-summoner/actions/workflows/lighthouse.yml)
+[![Accessibility](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kafkaesc/cat-summoner/badges/accessibility.json)](https://github.com/kafkaesc/cat-summoner/actions/workflows/lighthouse.yml)
+[![Best Practices](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kafkaesc/cat-summoner/badges/best-practices.json)](https://github.com/kafkaesc/cat-summoner/actions/workflows/lighthouse.yml)
+[![SEO](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kafkaesc/cat-summoner/badges/seo.json)](https://github.com/kafkaesc/cat-summoner/actions/workflows/lighthouse.yml)
+
 ## ♿ Accessibility
 
-Cat Summoner meets [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Level AA (self-assessed, November 2026). The site was audited by hand against the guidelines, and an [axe](https://github.com/dequelabs/axe-core) scan of every page, including the open photo viewer, reports no violations.
+Cat Summoner meets [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Level AA (self-assessed, November 2026). The site was audited by hand against the guidelines, and an [axe](https://github.com/dequelabs/axe-core) scan of every page, including the open photo viewer, reports no violations. An [automated axe check](https://github.com/kafkaesc/cat-summoner/actions/workflows/accessibility.yml) also runs on every pull request and every push to `main`.
 
 - **Screen readers:** Every cat photo has an endearing, hand-written description for its alt text, while decorative images use an empty `alt` so they're skipped. Summoning status, including errors, is announced through an `<output>` live region. Links that open a new tab say so.
 - **Keyboard:** The photo viewer is a native `<dialog>` that closes with Escape, is labeled by its title, and opens from a real `<button>`. Summon buttons stay enabled while a cat loads, so focus isn't lost mid-summon, and every focusable element shows a clearly visible focus ring.
