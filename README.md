@@ -46,6 +46,16 @@ Tests are written with [Jest](https://jestjs.io/) and [React Testing Library](ht
 
 [![Coverage Graph](https://codecov.io/gh/kafkaesc/cat-summoner/graphs/sunburst.svg?token=W5IE8WJBPW)](https://codecov.io/gh/kafkaesc/cat-summoner)
 
+## ♿ Accessibility
+
+Cat Summoner meets [WCAG 2.2](https://www.w3.org/TR/WCAG22/) Level AA (self-assessed, November 2026). The site was audited by hand against the guidelines, and an [axe](https://github.com/dequelabs/axe-core) scan of every page, including the open photo viewer, reports no violations.
+
+- **Screen readers:** Every cat photo has an endearing, hand-written description for its alt text, while decorative images use an empty `alt` so they're skipped. Summoning status, including errors, is announced through an `<output>` live region. Links that open a new tab say so.
+- **Keyboard:** The photo viewer is a native `<dialog>` that closes with Escape, is labeled by its title, and opens from a real `<button>`. Summon buttons stay enabled while a cat loads, so focus isn't lost mid-summon, and every focusable element shows a clearly visible focus ring.
+- **Navigation:** Pages use `<nav>` and `<main>` landmarks, and the current page is marked with `aria-current`. Navigation is only 4 items, so a skip link is unnecessary.
+- **Color and contrast:** Links stand out from body text at 3:1 or better and underline on hover and focus. Button hover states keep text contrast between 6.9:1 and 8.7:1, well above the 4.5:1 minimum.
+- **Tested by role:** Tests query elements by their role and accessible name, so a missing or broken label fails the test suite.
+
 ## 🤝 Collaboration
 
 Wow! You must really love cats. 🐱 I always welcome new collaborations so if this project strikes your fancy feel free to contact me on [Instagram](https://www.instagram.com/kafkaesc) or [X/Twitter](https://www.twitter.com/_kafkaesc) to discuss your ideas.
