@@ -21,10 +21,10 @@
 	--color-gray: #ddd;
 	--color-gray-dark: #bbb;
 	--color-gray-light: #eee;
-	--color-link: #00f;
-	--color-link-hover: #00c;
-	--color-link-dark-bg: #5db43b;
-	--color-link-dark-bg-hover: #53a135;
+	--color-link: #2563eb;
+	--color-link-hover: #1d4ed8;
+	--color-link-dark-bg: #4d9631;
+	--color-link-dark-bg-hover: #44842b;
 	--color-red: #f00;
 	--color-white: #fff;
 
@@ -69,5 +69,22 @@
 		50% {
 			transform: rotate(15deg);
 		}
+	}
+}
+
+@layer base {
+	/*
+	 * One focus ring for every focusable element, so it looks the same in
+	 * every browser. It is offset onto the page background and meets 3:1
+	 * there (5.08:1); the navbar's cs-primary background needs a black ring
+	 * (3.5:1).
+	 */
+	:focus-visible {
+		outline: 2px solid var(--color-link);
+		outline-offset: 2px;
+	}
+
+	nav :focus-visible {
+		outline-color: var(--color-black);
 	}
 }

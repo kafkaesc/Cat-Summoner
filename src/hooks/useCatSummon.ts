@@ -3,7 +3,10 @@ import { useCatbook } from '@/hooks/useCatbook';
 import { useCatImageDetails } from '@/hooks/useCatImageDetails';
 import { CatImageDetails } from '@/interfaces/CatInterfaces';
 
-/** Hook to summon a cat that also provides the summoned cat, loading state, and any errors */
+/**
+ * Hook to summon a cat that also provides the summoned cat, loading state,
+ * any errors, and a way to unlock the summoned cat once its image loads
+ */
 export function useCatSummon() {
 	const __activeTimeout = useRef<NodeJS.Timeout | null>(null);
 	const [__error, __setError] = useState<string | null>(null);
@@ -23,25 +26,31 @@ export function useCatSummon() {
 	}, []);
 
 	/**
-	 * This function will begin loading the cat image associated with the name
-	 * and ID. It will set __isLoading to have a 2.5 sec timer. The image itself
-	 * is loaded ASAP and whether to enforce the 2.5 sec wait is up to the
-	 * component calling the hook.
+	 * This function will begin loading the cat image. It will set __isLoading
+	 * to have a 2.5 sec timer. The image itself is loaded ASAP and whether to
+	 * enforce the 2.5 sec wait is up to the component calling the hook.
 	 *
-	 * @param {string} name The name of the cat to await
-	 * @param {number} id The ID of the cat's image to retrieve
 	 * @param {CatImageDetails} imageDetails Object with the details for the cat image
 	 */
-	function awaitCat(name: string, id: number, imageDetails: CatImageDetails) {
+	function awaitCat(imageDetails: CatImageDetails) {
 		__setIsLoading(true);
 		if (__activeTimeout.current) {
 			clearTimeout(__activeTimeout.current);
 		}
 		__setImage(imageDetails);
 		__activeTimeout.current = setTimeout(() => {
-			unlockCatbookImage(name, id);
 			__setIsLoading(false);
 		}, 2500);
+	}
+
+	/**
+	 * Adds the summoned cat's image to the catbook. The component calls this
+	 * once the image has actually loaded, so a photo that fails to load is
+	 * never unlocked.
+	 */
+	function unlockSummonedCat() {
+		if (!__image) return;
+		unlockCatbookImage(__image.name, __image.catImageId);
 	}
 
 	/**
@@ -80,7 +89,7 @@ export function useCatSummon() {
 		try {
 			// Get the image details for the cat and then await the cat
 			const imageDetails: CatImageDetails = getImageDetails(name, id);
-			awaitCat(name, id, imageDetails);
+			awaitCat(imageDetails);
 		} catch (e) {
 			// If there was an error, clear the loading state and set the error message
 			__setIsLoading(false);
@@ -92,6 +101,7 @@ export function useCatSummon() {
 		summonedCat: __image,
 		isLoading: __isLoading,
 		summonCat,
+		unlockSummonedCat,
 		error: __error,
 	};
 }

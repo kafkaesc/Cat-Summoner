@@ -7,7 +7,7 @@ import NavItem from './NavItem';
  */
 export default function Navbar() {
 	return (
-		<nav className="text-center bg-cs-primary text-cs-white">
+		<nav className="py-0.5 text-center bg-cs-primary text-cs-white">
 			<ContentColumn>
 				<ul>
 					<NavItem aria-label="Home" href="/">
