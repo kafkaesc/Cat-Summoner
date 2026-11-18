@@ -1,0 +1,3 @@
+# npm writes these files with its own formatting
+package.json
+package-lock.json
