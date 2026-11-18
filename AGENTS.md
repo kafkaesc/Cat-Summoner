@@ -15,7 +15,7 @@ There is no `tsc` script, so type-check with `npx tsc --noEmit`.
 - Import ordering: subfolders (A–Z) before root files (A–Z).
 - All project imports in source files use the `@/` alias, never relative paths--even same-folder siblings. Only test files use `./`.
 - Tests structure: flat `it()` calls, no `describe`, assign DOM queries to a const before `expect`/`userEvent`.
-- New code should be formatted by Prettier according to the `src/.prettierrc` file (tabs, single quotes).
+- New code should be formatted by Prettier according to the root `.prettierrc` file (tabs, single quotes).
 
 ## Definition of Done
 
