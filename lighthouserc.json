@@ -2,10 +2,10 @@
 	"ci": {
 		"collect": {
 			"url": [
-				"https://cat-summoner.com/",
-				"https://cat-summoner.com/Catbook",
-				"https://cat-summoner.com/About",
-				"https://cat-summoner.com/FAQs"
+				"https://www.cat-summoner.com/",
+				"https://www.cat-summoner.com/Catbook",
+				"https://www.cat-summoner.com/About",
+				"https://www.cat-summoner.com/FAQs"
 			],
 			"numberOfRuns": 4
 		},
