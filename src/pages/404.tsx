@@ -16,6 +16,7 @@ export default function Custom404() {
 		<>
 			<Head>
 				<title>404 🐱 Cat Summoner</title>
+				<meta name="description" content="Cat Summoner Page not found: these are not the cats you're looking for" />
 				{/* OpenGraph Meta Tags */}
 				<meta property="og:description" content="Cat Summoner Page not found: these are not the cats you're looking for" />
 				<meta property="og:image" content="https://cat-summoner.com/ogp.png" />
