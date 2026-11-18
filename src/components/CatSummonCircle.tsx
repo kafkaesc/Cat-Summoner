@@ -33,7 +33,9 @@ export default function CatSummonCircle() {
 					<Image
 						alt="An image of grass, still and quiet, waiting for a cat to be summoned. It sits on a transparent background, with the grass as a green and inviting foreground."
 						className="mx-auto md:m-0"
+						fetchPriority="high"
 						height={500}
+						loading="eager"
 						src="/assets/images/grass-still.svg"
 						width={500}
 					/>
