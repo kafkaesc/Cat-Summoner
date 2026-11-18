@@ -11,6 +11,9 @@ jobs:
   lighthouse:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # Lets the job push the score badges to the badges branch
+    permissions:
+      contents: write
     steps:
       # GitHub checkout clones the repo into the runner
       - uses: actions/checkout@v4
@@ -27,3 +30,18 @@ jobs:
         with:
           name: lighthouse-reports
           path: lighthouse-reports
+      # Turn the home page's scores into badge files, even when a minimum was
+      # missed, so the README badges show the drop
+      - if: always() && hashFiles('lighthouse-reports/manifest.json') != ''
+        run: node scripts/lighthouse-badges.mjs
+      # Replace the badges branch with the new badge files. The branch only
+      # ever holds one commit, so its history doesn't grow week to week
+      - if: always() && hashFiles('lighthouse-badges/*.json') != ''
+        working-directory: lighthouse-badges
+        run: |
+          git init -q -b badges
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -q -m 'Updating Lighthouse badges'
+          git push -q --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" badges
