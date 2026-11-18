@@ -32,6 +32,7 @@ export default function CatPage() {
 
 	// Meta tag content for the Head component
 	const title = cn + ' 🐱 Cat Summoner';
+	const description = cn + "'s page on Cat Summoner";
 	const ogDescription = cn + "'s page on Cat Summoner";
 	const ogTitle = cn + ' 🐱 Cat Summoner';
 	const ogUrl = 'https://cat-summoner.com/Catbook/' + cn;
@@ -42,6 +43,7 @@ export default function CatPage() {
 		<>
 			<Head>
 				<title>{title}</title>
+				<meta name="description" content={description} />
 				{/* OpenGraph Meta Tags */}
 				<meta property="og:description" content={ogDescription} />
 				<meta property="og:image" content="https://cat-summoner.com/ogp.png?v=2" />
