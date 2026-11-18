@@ -50,13 +50,26 @@ it('Sets summonedCat to the image details returned by getImageDetails', () => {
 	expect(result.current.summonedCat).toEqual(mockImageDetails);
 });
 
-it('Sets isLoading to false and then passes the args to unlockCatbookImage after 2.5 seconds', () => {
+it('Sets isLoading to false after 2.5 seconds without unlocking the image', () => {
 	const { result } = renderHook(() => useCatSummon());
 	act(() => result.current.summonCat('Lalo', 1));
 	expect(result.current.isLoading).toBe(true);
 	act(() => jest.advanceTimersByTime(2500));
 	expect(result.current.isLoading).toBe(false);
-	expect(mockUnlockCatbookImage).toHaveBeenCalledWith('Lalo', 1);
+	expect(mockUnlockCatbookImage).not.toHaveBeenCalled();
+});
+
+it('Passes the summoned image to unlockCatbookImage when unlockSummonedCat is called', () => {
+	const { result } = renderHook(() => useCatSummon());
+	act(() => result.current.summonCat('Lalo', 1));
+	act(() => result.current.unlockSummonedCat());
+	expect(mockUnlockCatbookImage).toHaveBeenCalledWith('lalo', 1);
+});
+
+it('Does not unlock anything when unlockSummonedCat is called before a summon', () => {
+	const { result } = renderHook(() => useCatSummon());
+	act(() => result.current.unlockSummonedCat());
+	expect(mockUnlockCatbookImage).not.toHaveBeenCalled();
 });
 
 it('Passes the catImageId to getImageDetails', () => {

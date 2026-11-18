@@ -42,3 +42,9 @@ it('Loads the className prop onto the child a element', () => {
 	expect(link).toHaveTextContent(/github link, but red/i);
 	expect(link).toHaveClass('red');
 });
+
+it('Underlines the link on keyboard focus', () => {
+	render(<A href="https://www.github.com/kafkaesc">GitHub link</A>);
+	const link = screen.getByRole('link', { name: 'GitHub link' });
+	expect(link).toHaveClass('focus-visible:underline');
+});
