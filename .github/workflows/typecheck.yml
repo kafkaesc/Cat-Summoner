@@ -1,6 +1,9 @@
 name: Typecheck
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - aws
@@ -9,6 +12,7 @@ on:
 jobs:
   typecheck:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       # GitHub checkout clones the repo into the runner
       - uses: actions/checkout@v4
