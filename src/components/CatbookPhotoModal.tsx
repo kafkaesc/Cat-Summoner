@@ -31,7 +31,7 @@ export default function CatbookPhotoModal({
 			<button
 				aria-haspopup="dialog"
 				aria-label={`View larger photo: ${alt}`}
-				className="relative block w-full h-full cursor-pointer focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+				className="relative block w-full h-full cursor-pointer"
 				onClick={() => setShowModal(true)}
 				type="button"
 			>

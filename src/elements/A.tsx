@@ -2,7 +2,8 @@ import { ComponentPropsWithoutRef } from 'react';
 
 type AProps = ComponentPropsWithoutRef<'a'>;
 
-const baseStyle = 'text-link hover:text-link-hover hover:underline';
+const baseStyle =
+	'text-link hover:text-link-hover hover:underline focus-visible:text-link-hover focus-visible:underline';
 
 /**
  * A styled anchor element that accepts all native attributes. When the link

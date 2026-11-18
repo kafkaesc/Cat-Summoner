@@ -1,7 +1,8 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import CatSummonCircle from './CatSummonCircle';
 
 const mockSummonCat = jest.fn();
+const mockUnlockSummonedCat = jest.fn();
 const mockUseCatSummon = jest.fn();
 
 jest.mock('../hooks/useCatSummon', () => ({
@@ -10,6 +11,7 @@ jest.mock('../hooks/useCatSummon', () => ({
 
 beforeEach(() => {
 	mockSummonCat.mockReset();
+	mockUnlockSummonedCat.mockReset();
 	mockUseCatSummon.mockReturnValue({
 		isLoading: false,
 		summonedCat: null,
@@ -95,4 +97,89 @@ it('Renders the summon circle result as a status region', () => {
 	render(<CatSummonCircle />);
 	const status = screen.getByRole('status');
 	expect(status).toBeInTheDocument();
+});
+
+it('Announces a failed summon in the status region', () => {
+	mockUseCatSummon.mockReturnValue({
+		error: 'No image data for args: lalo, 9',
+		isLoading: false,
+		summonedCat: null,
+		summonCat: mockSummonCat,
+	});
+	render(<CatSummonCircle />);
+	const laloBtn = screen.getByRole('button', { name: 'Lalo' });
+	fireEvent.click(laloBtn);
+	const status = screen.getByRole('status');
+	expect(status).toHaveTextContent(
+		"Lalo didn't answer your summon. Try calling them again.",
+	);
+});
+
+it('Announces a failed summon when the cat image fails to load', () => {
+	mockUseCatSummon.mockReturnValue({
+		isLoading: false,
+		summonedCat: { alt: 'Lalo on a porch', src: '/lalo-01.jpg' },
+		summonCat: mockSummonCat,
+	});
+	render(<CatSummonCircle />);
+	const laloBtn = screen.getByRole('button', { name: 'Lalo' });
+	fireEvent.click(laloBtn);
+	const laloImg = screen.getByAltText('Lalo on a porch');
+	fireEvent.error(laloImg);
+	const status = screen.getByRole('status');
+	expect(status).toHaveTextContent(/lalo didn't answer your summon/i);
+});
+
+it('Hides the previous cat while a summon has failed', () => {
+	mockUseCatSummon.mockReturnValue({
+		error: 'No image data for args: lalo, 9',
+		isLoading: false,
+		summonedCat: { alt: 'Zelda in a bag', src: '/zelda-05.jpg' },
+		summonCat: mockSummonCat,
+	});
+	render(<CatSummonCircle />);
+	const zeldaImg = screen.getByAltText('Zelda in a bag');
+	expect(zeldaImg).toHaveClass('hidden');
+});
+
+it('Clears the failure message when the next summon begins', () => {
+	mockUseCatSummon.mockReturnValue({
+		isLoading: false,
+		summonedCat: { alt: 'Lalo on a porch', src: '/lalo-01.jpg' },
+		summonCat: mockSummonCat,
+	});
+	render(<CatSummonCircle />);
+	const laloImg = screen.getByAltText('Lalo on a porch');
+	fireEvent.error(laloImg);
+	const zeldaBtn = screen.getByRole('button', { name: 'Zelda' });
+	fireEvent.click(zeldaBtn);
+	const status = screen.getByRole('status');
+	expect(status).not.toHaveTextContent(/didn't answer your summon/i);
+});
+
+it('Unlocks the summoned cat once their image loads', async () => {
+	mockUseCatSummon.mockReturnValue({
+		isLoading: false,
+		summonedCat: { alt: 'Lalo on a porch', src: '/lalo-01.jpg' },
+		summonCat: mockSummonCat,
+		unlockSummonedCat: mockUnlockSummonedCat,
+	});
+	render(<CatSummonCircle />);
+	const laloImg = screen.getByAltText('Lalo on a porch');
+	fireEvent.load(laloImg);
+	// Next's Image calls onLoad after the image decodes, a tick after the event
+	await waitFor(() => expect(mockUnlockSummonedCat).toHaveBeenCalled());
+});
+
+it('Does not unlock the summoned cat when their image fails to load', () => {
+	mockUseCatSummon.mockReturnValue({
+		isLoading: false,
+		summonedCat: { alt: 'Lalo on a porch', src: '/lalo-01.jpg' },
+		summonCat: mockSummonCat,
+		unlockSummonedCat: mockUnlockSummonedCat,
+	});
+	render(<CatSummonCircle />);
+	const laloImg = screen.getByAltText('Lalo on a porch');
+	fireEvent.error(laloImg);
+	expect(mockUnlockSummonedCat).not.toHaveBeenCalled();
 });
